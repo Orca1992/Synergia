@@ -9,7 +9,7 @@ public class Statue : MonoBehaviour
 
     [Header("Attributes")]
 
-    public float range = 6f;
+    public float range;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
 
@@ -75,7 +75,6 @@ public class Statue : MonoBehaviour
 
     void Shoot()
     {
-        //Debug.Log("Stirb, Zombie!");
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         //die referenz für das Projektil, danach wird das Ziel übegeben von der statue
         Bullet bullet = bulletGO.GetComponent<Bullet>();
@@ -86,9 +85,9 @@ public class Statue : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, range);
     }
 }

@@ -19,9 +19,13 @@ public class Enemy : MonoBehaviour
     
     void Update()
     {
+      
         //Enemy bewegt sich in die richtung(dir)
-         Vector3 dir = target.position - transform.position;
+        Vector3 dir = target.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(dir);
+        transform.rotation = rotation;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {
@@ -44,6 +48,7 @@ public class Enemy : MonoBehaviour
     void EndPath()
     {
         PlayerStats.Lives--;
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
     }
 
@@ -56,9 +61,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    //besser eine eigen Methode zu schreiben um animation oder partikel einzubauen
+    //besser eine eigene Methode zu schreiben um animation oder partikel einzubauen
     void Die()
     {
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
     }
 }

@@ -7,8 +7,13 @@ public class BuildManager : MonoBehaviour
     //singleton Pattern, one instance in the scene
     public static BuildManager instance;
 
-    //Zeus mit eigener 
-    private GameObject ZeusOToBuild;
+    //Der Nuller ist wichtig da das die Baseform ist mit BaseSockel
+    public GameObject ZeusOToBuild;
+    public GameObject PoseidonOToBuild;
+    public GameObject ArtemisOToBuild; 
+    public GameObject HermesOToBuild;
+
+    private GameObject statueToBuild;
 
     void Awake()
     {
@@ -20,19 +25,16 @@ public class BuildManager : MonoBehaviour
 
     }
 
-    //name muss noch geändert werden, hier noch als standartstatue
-    public GameObject standardStatuePrefab;
-
-     void Start()
-    {
-        ZeusOToBuild = standardStatuePrefab;
-    }
-
-
     public GameObject GetStatueToBuild()
     {
-        return ZeusOToBuild;
+        return statueToBuild;
     }
+
+    public void SetStatueToBuild(GameObject statue)
+    {
+        statueToBuild = statue;
+    }
+    
 
 
 

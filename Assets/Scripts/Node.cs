@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
+    BuildManager buildManager;
+
     public Color hoverColor;
     public Vector3 positionOffset;
 
@@ -17,10 +19,17 @@ public class Node : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+
+        buildManager = BuildManager.instance;
     }
 
     void OnMouseDown()
     {
+        // CameraController.instance.hookedOnNode = transform;
+
+        if (buildManager.GetStatueToBuild() == null)
+            return;
+
         if (statue != null)
         {
             //Debug.Log("Es ist schon eine schöne Statue auf der Platform");
@@ -29,12 +38,15 @@ public class Node : MonoBehaviour
             return;
         }
 
-        GameObject statueToBuild = BuildManager.instance.GetStatueToBuild();
+        GameObject statueToBuild = buildManager.GetStatueToBuild();
         statue = (GameObject)Instantiate(statueToBuild, transform.position + positionOffset, transform.rotation);
     }
 
     void OnMouseEnter()
     {
+        if (buildManager.GetStatueToBuild() == null)
+            return;
+
         rend.material.color = hoverColor;
     }
 

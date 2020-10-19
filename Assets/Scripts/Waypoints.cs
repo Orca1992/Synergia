@@ -17,9 +17,5 @@ public class Waypoints : MonoBehaviour
 
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
+ 
 }
