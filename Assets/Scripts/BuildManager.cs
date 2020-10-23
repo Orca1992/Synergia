@@ -34,6 +34,12 @@ public class BuildManager : MonoBehaviour
     {
         statueToBuild = statue;
     }
+
+    //geht das??
+    public void Delete()
+    {
+        Destroy(statueToBuild);
+    }
     
 
 

@@ -12,6 +12,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform spawnpoint2;
 
     public float timeBetweenWaves = 5f;
+    //die zeit wann die nächste wave spawned
     private float countdown = 2f;
 
     public Text waveCountdownText;
@@ -20,7 +21,13 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-        if(EnemiesAlive > 0)
+        if (GameManager.GameIsOver)
+        {
+            this.enabled = false;
+            return;
+        }
+
+        if (EnemiesAlive > 0)
         {
             return;
         }
@@ -43,17 +50,16 @@ public class WaveSpawner : MonoBehaviour
     {
         Wave wave = waves[waveIndex];
 
-        for (int i = 0; i < wave.count; i++)
+        for(int i = 0; i < wave.amountEnemy; i++)
         {
             SpawnEnemy(wave.enemy);
             yield return new WaitForSeconds(1f / wave.rate);
         }
 
-        waveIndex++;
-
-        if(waveIndex == waves.Length)
+        //Win-Condition, wenn alle Waves durch sind 
+        if (waveIndex == waves.Length)
         {
-            Debug.Log("Level gebonnen. Du hast meine Liebe gebonnen!");
+            Debug.Log("Level gewonnen!");
             this.enabled = false;
         }
         
@@ -64,8 +70,8 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(enemy, spawnpoint1.position, spawnpoint1.rotation);
         EnemiesAlive++;
         //in dem Fall auch hier nochmal, weil 2 gespawnt werden
-        //Instantiate(enemy, spawnpoint2.position, spawnpoint2.rotation);
-        //EnemiesAlive++;
+        Instantiate(enemy, spawnpoint2.position, spawnpoint2.rotation);
+        EnemiesAlive++;
 
     }
 }

@@ -2,22 +2,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private bool gameEnded = false;
+    public GameObject gameOverUI;
 
+    public static bool GameIsOver;
+
+    void Start()
+    {
+        GameIsOver = false;
+    }
+    
     void Update()
     {
+        if (GameIsOver)
+            return;
+
+        if(Input.GetKeyDown("e"))
+        {
+            EndGame();
+        }
         if(PlayerStats.Lives <= 0)
         {
             EndGame();
         }
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     void EndGame()
     {
-        gameEnded = true;
-        Debug.Log("Game Over!");
+        GameIsOver = true;
+        gameOverUI.SetActive(true);
     }
 }

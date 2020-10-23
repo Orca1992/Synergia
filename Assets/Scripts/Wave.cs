@@ -5,8 +5,10 @@
 // kein monobehavior, diese Klasse wird  für den inspektor gebraucht
 public class Wave
 {
+    public string name;
     public GameObject enemy;
-    public int count;
+    public int amountEnemy;
     public float rate;
 
 }
+

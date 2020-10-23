@@ -28,6 +28,7 @@ public class Statue : MonoBehaviour
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+
         //wird später ersetzt 
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;

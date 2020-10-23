@@ -13,22 +13,29 @@ public class TowerMenu : MonoBehaviour
 
     public void PurchaseZeusStatue()
     {
-        Debug.Log("Pikachu");
+        Debug.Log("Zeus, the Bolt");
         buildManager.SetStatueToBuild(buildManager.ZeusOToBuild);
     }
     public void PurchasePoseidonStatue()
     {
-        Debug.Log("wet ass GOD");
+        Debug.Log("Poseidon, the Fish");
         buildManager.SetStatueToBuild(buildManager.PoseidonOToBuild);
     }
     public void PurchaseArtemisStatue()
     {
-        Debug.Log("QuotenFRAU");
+        Debug.Log("Artemis, the Hunter");
         buildManager.SetStatueToBuild(buildManager.ArtemisOToBuild);
     }
     public void PurchaseHermesStatue()
     {
-        Debug.Log("DHL");
+        Debug.Log("Hermes, the Deliver");
         buildManager.SetStatueToBuild(buildManager.HermesOToBuild);
+    }
+
+    public void PurchaseNone()
+    {
+        Debug.Log("Delete");
+        buildManager.Delete();
+
     }
 }
