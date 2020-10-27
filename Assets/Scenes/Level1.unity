@@ -7842,6 +7842,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1126529572}
     m_Modifications:
+    - target: {fileID: 5659820264091450717, guid: 3d37b27a7139c4def886fe13ea541104,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6727635273632985494, guid: 3d37b27a7139c4def886fe13ea541104,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7902,6 +7907,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Node (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7521185328460231743, guid: 3d37b27a7139c4def886fe13ea541104,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
 --- !u!4 &1088916045 stripped
@@ -7944,7 +7954,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.9557064, b: 0.8349056, a: 1}
+  m_Color: {r: 1, g: 0.9888814, b: 0.9575472, a: 1}
   m_Intensity: 1.3
   m_Range: 10
   m_SpotAngle: 30
@@ -9511,7 +9521,7 @@ PrefabInstance:
     - target: {fileID: 1610181512112609439, guid: 494397a32d6694c42bb4676a6c78514d,
         type: 3}
       propertyPath: m_ClearFlags
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1610181512112609439, guid: 494397a32d6694c42bb4676a6c78514d,
         type: 3}
@@ -15358,14 +15368,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.9557064, b: 0.8349056, a: 1}
+  m_Color: {r: 1, g: 0.9557064, b: 0.8627451, a: 1}
   m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
