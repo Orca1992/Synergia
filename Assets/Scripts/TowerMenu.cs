@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class TowerMenu : MonoBehaviour
 {
+    public StatueBlueprint ZeusBase;
+    public StatueBlueprint PoseidonBase;
+    public StatueBlueprint ArtemisBase;
+    public StatueBlueprint HermesBase;
+
+
     BuildManager buildManager;
 
     private void Start()
@@ -11,31 +17,31 @@ public class TowerMenu : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
-    public void PurchaseZeusStatue()
+    public void SelectZeusStatue()
     {
         Debug.Log("Zeus, the Bolt");
-        buildManager.SetStatueToBuild(buildManager.ZeusOToBuild);
+        buildManager.SelectStatueToBuild(ZeusBase);
     }
-    public void PurchasePoseidonStatue()
+    public void SelectPoseidonStatue()
     {
         Debug.Log("Poseidon, the Fish");
-        buildManager.SetStatueToBuild(buildManager.PoseidonOToBuild);
+        buildManager.SelectStatueToBuild(PoseidonBase);
     }
-    public void PurchaseArtemisStatue()
+    public void SelectArtemisStatue()
     {
         Debug.Log("Artemis, the Hunter");
-        buildManager.SetStatueToBuild(buildManager.ArtemisOToBuild);
+        buildManager.SelectStatueToBuild(ArtemisBase);
     }
-    public void PurchaseHermesStatue()
+    public void SelectHermesStatue()
     {
         Debug.Log("Hermes, the Deliver");
-        buildManager.SetStatueToBuild(buildManager.HermesOToBuild);
+        buildManager.SelectStatueToBuild(HermesBase);
     }
 
     public void PurchaseNone()
     {
         Debug.Log("Delete");
-        buildManager.Delete();
+       // buildManager.Delete();
 
     }
 }

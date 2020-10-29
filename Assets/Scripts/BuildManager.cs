@@ -7,13 +7,13 @@ public class BuildManager : MonoBehaviour
     //singleton Pattern, one instance in the scene
     public static BuildManager instance;
 
-    //Der Nuller ist wichtig da das die Baseform ist mit BaseSockel
-    public GameObject ZeusOToBuild;
-    public GameObject PoseidonOToBuild;
-    public GameObject ArtemisOToBuild; 
-    public GameObject HermesOToBuild;
+    private StatueBlueprint statueToBuild;
+    private Node selectedNode;
 
-    private GameObject statueToBuild;
+    public NodeUI nodeUI;
+
+    //isr es möglich es zu bauen auf dem node?
+    public bool CanBuild { get { return statueToBuild != null; } }
 
     void Awake()
     {
@@ -25,23 +25,53 @@ public class BuildManager : MonoBehaviour
 
     }
 
-    public GameObject GetStatueToBuild()
+
+    public void BuildStatueOn(Node node)
     {
-        return statueToBuild;
+        if(PlayerStats.Money < statueToBuild.cost)
+        {
+            Debug.Log("Keine Geld");
+            return;
+        }
+
+        PlayerStats.Money -= statueToBuild.cost;
+
+        GameObject statue = (GameObject)Instantiate(statueToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        node.statue = statue;
+
+        Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
     }
 
-    public void SetStatueToBuild(GameObject statue)
+    public void SelectedNode(Node node)
+    {
+        //wenn die das node angeklickt wird was ident ist mit der node die reinkommt, wird esdelected
+        if(selectedNode == node)
+        {
+            DeselectNode();
+            return;
+
+        }
+
+        selectedNode = node;
+        statueToBuild = null;
+
+        //UI
+        nodeUI.SetTarget(node);
+    }
+
+
+    public void SelectStatueToBuild(StatueBlueprint statue)
     {
         statueToBuild = statue;
+
+        DeselectNode();
     }
 
-    //geht das??
-    public void Delete()
+    public void DeselectNode()
     {
-        Destroy(statueToBuild);
+        selectedNode = null;
+        nodeUI.Hide();
+
     }
-    
-
-
 
 }

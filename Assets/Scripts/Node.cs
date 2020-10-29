@@ -10,10 +10,12 @@ public class Node : MonoBehaviour
     public Vector3 positionOffset;
 
     private Renderer rend;
-
-    private GameObject statue;
     private Color startColor;
-    
+
+
+    [Header("Optional")]
+    public GameObject statue;
+
 
     private void Start()
     {
@@ -23,28 +25,33 @@ public class Node : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffset;
+    }
+
+
     void OnMouseDown()
     {
-        // CameraController.instance.hookedOnNode = transform;
 
-        if (buildManager.GetStatueToBuild() == null)
-            return;
-
+        //ist die 
+        //wsl auch fürs upgrades nötig
         if (statue != null)
         {
-            //Debug.Log("Es ist schon eine schöne Statue auf der Platform");
-            //zum testen um statue zu entfernen
-            Destroy(statue.gameObject);
+            buildManager.SelectedNode(this);
             return;
         }
 
-        GameObject statueToBuild = buildManager.GetStatueToBuild();
-        statue = (GameObject)Instantiate(statueToBuild, transform.position + positionOffset, transform.rotation);
+        if (!buildManager.CanBuild)
+            return;
+
+        buildManager.BuildStatueOn(this);
+        
     }
 
     void OnMouseEnter()
     {
-        if (buildManager.GetStatueToBuild() == null)
+        if (!buildManager.CanBuild)
             return;
 
         rend.material.color = hoverColor;
