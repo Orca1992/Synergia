@@ -18,4 +18,10 @@ public class NodeUI : MonoBehaviour
     {
         ui.SetActive(false);
     }
+
+    public void Upgrade()
+    {
+        target.UpgradeStatue();
+        BuildManager.instance.DeselectNode();
+    }
 }

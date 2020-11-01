@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TowerMenu : MonoBehaviour
 {
@@ -24,7 +22,7 @@ public class TowerMenu : MonoBehaviour
     }
     public void SelectPoseidonStatue()
     {
-        Debug.Log("Poseidon, the Fish");
+        Debug.Log("Poseidon, the Ocean");
         buildManager.SelectStatueToBuild(PoseidonBase);
     }
     public void SelectArtemisStatue()

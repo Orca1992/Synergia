@@ -20,19 +20,36 @@ public class CameraController : MonoBehaviour
         }
 
         // Steurung durch WASD oder wennn die Maus den Rand des Spielefensters berührt in dem Fall 5 pixel weg
-        if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
+        //if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
+        //{
+        //    transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
+        //}
+        //if (Input.GetKey("s") || Input.mousePosition.y <= panBorderThickness)
+        //{
+        //    transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
+        //}
+        //if (Input.GetKey("d") || Input.mousePosition.x >= Screen.width - panBorderThickness)
+        //{
+        //    transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
+        //}
+        //if (Input.GetKey("a") || Input.mousePosition.x <= panBorderThickness)
+        //{
+        //    transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
+        //}
+        //Steurung am rand des fenster ausgeschaltet, NERVT BEIM TESTEN
+        if (Input.GetKey("w"))
         {
             transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
         }
-        if (Input.GetKey("s") || Input.mousePosition.y <= panBorderThickness)
+        if (Input.GetKey("s"))
         {
             transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
         }
-        if (Input.GetKey("d") || Input.mousePosition.x >= Screen.width - panBorderThickness)
+        if (Input.GetKey("d"))
         {
             transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
         }
-        if (Input.GetKey("a") || Input.mousePosition.x <= panBorderThickness)
+        if (Input.GetKey("a"))
         {
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }

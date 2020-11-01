@@ -25,23 +25,6 @@ public class BuildManager : MonoBehaviour
 
     }
 
-
-    public void BuildStatueOn(Node node)
-    {
-        if(PlayerStats.Money < statueToBuild.cost)
-        {
-            Debug.Log("Keine Geld");
-            return;
-        }
-
-        PlayerStats.Money -= statueToBuild.cost;
-
-        GameObject statue = (GameObject)Instantiate(statueToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
-        node.statue = statue;
-
-        Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
-    }
-
     public void SelectedNode(Node node)
     {
         //wenn die das node angeklickt wird was ident ist mit der node die reinkommt, wird esdelected
@@ -63,7 +46,6 @@ public class BuildManager : MonoBehaviour
     public void SelectStatueToBuild(StatueBlueprint statue)
     {
         statueToBuild = statue;
-
         DeselectNode();
     }
 
@@ -72,6 +54,11 @@ public class BuildManager : MonoBehaviour
         selectedNode = null;
         nodeUI.Hide();
 
+    }
+
+    public StatueBlueprint GetStatueToBuild()
+    {
+        return statueToBuild;
     }
 
 }

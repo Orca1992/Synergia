@@ -25,9 +25,12 @@ public class WaveSpawner : MonoBehaviour
     //die zeit wann die nächste wave spawned
     private float countdown = 10f;
 
+    //für die UI 
     public Text waveCountdownText;
+    public static int waveMax = 0;
+    public static int waveCur;
 
-    private int waveIndex = 0;
+    public int waveIndex = 0;
     private float timer;
     private bool waveactive;
     float waveduration;
@@ -36,6 +39,8 @@ public class WaveSpawner : MonoBehaviour
     {
         Invoke("SpawnNextWave", countdown);
         waveactive = true;
+        waveMax = waves.Length;
+        waveCur = 1;
     }
 
     void Update()
@@ -46,16 +51,20 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        //startverzögerung
+        //boolean waveactive true, timer+ reale zeit
+        //timer größer die zeit der wellenzeit
         if (waveactive)
         {
             timer += Time.deltaTime;
             if (timer > waveduration)
             {
                 SpawnNextWave();
+                waveIndex++;
             }
         }
 
+        //wenn der index so groß ist wie die wirklich länge  und keine alle enemies besiegt sind
+        //WIN condition
         if (waveIndex == waves.Length && EnemiesAlive == 0)
         {
 
@@ -68,14 +77,15 @@ public class WaveSpawner : MonoBehaviour
         countdown -= Time.deltaTime;
 
         //Text für die UI
-        waveCountdownText.text = countdown.ToString("F2"); 
+        waveCountdownText.text = countdown.ToString("F1"); 
     }
 
-    //erlaubt erst nach einer gewissen Zeit den Code weiterauszführen
+    
     void SpawnNextWave()
     {
         timer = 0;
         waveduration = waves[waveIndex].waveduration;
+        
         //EnemiesAlive = 0;
         for (int i = 0; i < waves[waveIndex].enemies.Count; i++)
         {
@@ -84,8 +94,7 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine(SpawnEnemy(wave));
         }
 
-        //Win-Condition, wenn alle Waves durch sind 
-        waveIndex++;
+        
     }
 
     IEnumerator SpawnEnemy(Wave wavedata)
