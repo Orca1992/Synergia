@@ -7,7 +7,9 @@ public class Wave
 {
     public string name;
     public GameObject enemy;
+    public int clusterSpawn;
     public int amountEnemy;
+    // zwischen den Enemies 
     public float rate;
 
 }

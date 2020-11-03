@@ -2,22 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+[System.Serializable]
+public class WaveCont
+{
+    public List<Wave> enemies = new List<Wave>();
+    //die zeit wielange eine Wave braucht, bis die nächste wave spawnbar ist
+    public float waveduration = 30f;
+}
+
 public class WaveSpawner : MonoBehaviour
 {
     public static int EnemiesAlive = 0;
 
-    public Wave[] waves;
+    public WaveCont[] waves;
 
     public Transform spawnpoint1;
     public Transform spawnpoint2;
 
     public float timeBetweenWaves = 5f;
+
     //die zeit wann die nächste wave spawned
-    private float countdown = 2f;
+    private float countdown = 10f;
 
+    //für die UI 
     public Text waveCountdownText;
+    public static int waveMax = 0;
+    public static int waveCur;
 
-    private int waveIndex = 0;
+    public int waveIndex = 0;
+    private float timer;
+    private bool waveactive;
+    float waveduration;
+
+    void Start()
+    {
+        Invoke("SpawnNextWave", countdown);
+        waveactive = true;
+        waveMax = waves.Length;
+        waveCur = 1;
+    }
 
     void Update()
     {
@@ -27,51 +51,68 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        if (EnemiesAlive > 0)
+        //boolean waveactive true, timer+ reale zeit
+        //timer größer die zeit der wellenzeit
+        if (waveactive)
         {
-            return;
+            timer += Time.deltaTime;
+            if (timer > waveduration)
+            {
+                SpawnNextWave();
+                waveIndex++;
+            }
         }
-       if(countdown <= 0f)
+
+        //wenn der index so groß ist wie die wirklich länge  und keine alle enemies besiegt sind
+        //WIN condition
+        if (waveIndex == waves.Length && EnemiesAlive == 0)
         {
-            // so spricht man eine methode an mit IEnumerator
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-            return;
+
+            waveactive = false;
+            Debug.Log("Level gewonnen!");
+            this.enabled = false;
         }
+
 
         countdown -= Time.deltaTime;
 
         //Text für die UI
-        waveCountdownText.text = Mathf.Round(countdown).ToString(); 
+        waveCountdownText.text = countdown.ToString("F1"); 
     }
 
-    //erlaubt erst nach einer gewissen Zeit den Code weiterauszführen
-    IEnumerator SpawnWave()
+    
+    void SpawnNextWave()
     {
-        Wave wave = waves[waveIndex];
-
-        for(int i = 0; i < wave.amountEnemy; i++)
+        timer = 0;
+        waveduration = waves[waveIndex].waveduration;
+        
+        //EnemiesAlive = 0;
+        for (int i = 0; i < waves[waveIndex].enemies.Count; i++)
         {
-            SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1f / wave.rate);
+            Wave wave = waves[waveIndex].enemies[i];
+            EnemiesAlive += wave.amountEnemy;
+            StartCoroutine(SpawnEnemy(wave));
         }
 
-        //Win-Condition, wenn alle Waves durch sind 
-        if (waveIndex == waves.Length)
-        {
-            Debug.Log("Level gewonnen!");
-            this.enabled = false;
-        }
         
     }
 
-    void SpawnEnemy(GameObject enemy)
+    IEnumerator SpawnEnemy(Wave wavedata)
     {
-        Instantiate(enemy, spawnpoint1.position, spawnpoint1.rotation);
-        EnemiesAlive++;
-        //in dem Fall auch hier nochmal, weil 2 gespawnt werden
-        Instantiate(enemy, spawnpoint2.position, spawnpoint2.rotation);
-        EnemiesAlive++;
-
+        int spawned = wavedata.amountEnemy;
+        while (spawned > 0)
+        {
+            //multiple enemy spawn
+            for (int i = 0; i < wavedata.clusterSpawn; i++)
+            {
+                if (spawned > 0)
+                {
+                    Instantiate(wavedata.enemy, spawnpoint1.position, spawnpoint1.rotation);
+                    EnemiesAlive++;
+                    spawned--;
+                }
+            }
+            yield return new WaitForSeconds(wavedata.rate);
+        }
     }
 }

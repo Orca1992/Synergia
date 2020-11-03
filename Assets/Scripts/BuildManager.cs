@@ -7,13 +7,13 @@ public class BuildManager : MonoBehaviour
     //singleton Pattern, one instance in the scene
     public static BuildManager instance;
 
-    //Der Nuller ist wichtig da das die Baseform ist mit BaseSockel
-    public GameObject ZeusOToBuild;
-    public GameObject PoseidonOToBuild;
-    public GameObject ArtemisOToBuild; 
-    public GameObject HermesOToBuild;
+    private StatueBlueprint statueToBuild;
+    private Node selectedNode;
 
-    private GameObject statueToBuild;
+    public NodeUI nodeUI;
+
+    //isr es möglich es zu bauen auf dem node?
+    public bool CanBuild { get { return statueToBuild != null; } }
 
     void Awake()
     {
@@ -25,23 +25,40 @@ public class BuildManager : MonoBehaviour
 
     }
 
-    public GameObject GetStatueToBuild()
+    public void SelectedNode(Node node)
+    {
+        //wenn die das node angeklickt wird was ident ist mit der node die reinkommt, wird esdelected
+        if(selectedNode == node)
+        {
+            DeselectNode();
+            return;
+
+        }
+
+        selectedNode = node;
+        statueToBuild = null;
+
+        //UI
+        nodeUI.SetTarget(node);
+    }
+
+
+    public void SelectStatueToBuild(StatueBlueprint statue)
+    {
+        statueToBuild = statue;
+        DeselectNode();
+    }
+
+    public void DeselectNode()
+    {
+        selectedNode = null;
+        nodeUI.Hide();
+
+    }
+
+    public StatueBlueprint GetStatueToBuild()
     {
         return statueToBuild;
     }
-
-    public void SetStatueToBuild(GameObject statue)
-    {
-        statueToBuild = statue;
-    }
-
-    //geht das??
-    public void Delete()
-    {
-        Destroy(statueToBuild);
-    }
-    
-
-
 
 }

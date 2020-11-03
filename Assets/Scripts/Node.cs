@@ -10,10 +10,16 @@ public class Node : MonoBehaviour
     public Vector3 positionOffset;
 
     private Renderer rend;
-
-    private GameObject statue;
     private Color startColor;
-    
+
+
+    [HideInInspector]
+    public GameObject statue;
+    [HideInInspector]
+    public StatueBlueprint statueBlueprint;
+    [HideInInspector]
+    public bool isUpgraded;
+
 
     private void Start()
     {
@@ -23,28 +29,86 @@ public class Node : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffset;
+    }
+
+
     void OnMouseDown()
     {
-        // CameraController.instance.hookedOnNode = transform;
 
-        if (buildManager.GetStatueToBuild() == null)
-            return;
-
+        //ist die 
+        //wsl auch für upgrades nötig
         if (statue != null)
         {
-            //Debug.Log("Es ist schon eine schöne Statue auf der Platform");
-            //zum testen um statue zu entfernen
-            Destroy(statue.gameObject);
+            buildManager.SelectedNode(this);
             return;
         }
 
-        GameObject statueToBuild = buildManager.GetStatueToBuild();
-        statue = (GameObject)Instantiate(statueToBuild, transform.position + positionOffset, transform.rotation);
+        if (!buildManager.CanBuild)
+            return;
+
+
+        BuildStatue(buildManager.GetStatueToBuild());
+        
+    }
+
+    void BuildStatue(StatueBlueprint blueprint)
+    {
+        if (PlayerStats.Money < blueprint.cost)
+        {
+            Debug.Log("Nicht genug Geld!");
+            return;
+        }
+
+        PlayerStats.Money -= blueprint.cost;
+
+        GameObject _statue = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        statue = _statue;
+
+        statueBlueprint = blueprint;
+
+        //Buildeffekt hier? staub?
+        //GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
+        //Destroy(effect, 5f);
+
+        Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
+    }
+
+
+    //einbauen wie ich 3-4 verschiedene Upgrades erstelle? muss eingebaut werden
+    public void UpgradeStatue()
+    {
+        if (PlayerStats.Money < statueBlueprint.upgradeCost1)
+        {
+            Debug.Log("Nicht genug Geld um aufzuleveln!");
+            return;
+        }
+
+        PlayerStats.Money -= statueBlueprint.upgradeCost1;
+
+        //Alte Statue wird gelöscht
+        Destroy(statue);
+
+
+        //Neue upgrade Statue wird platziert
+        GameObject _statue = (GameObject)Instantiate(statueBlueprint.upgradedPrefab1, GetBuildPosition(), Quaternion.identity);
+        statue = _statue;
+
+        //Buildeffekt hier? staub?
+        //GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
+        //Destroy(effect, 5f);
+
+        isUpgraded = true;
+
+
+        Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
     }
 
     void OnMouseEnter()
     {
-        if (buildManager.GetStatueToBuild() == null)
+        if (!buildManager.CanBuild)
             return;
 
         rend.material.color = hoverColor;

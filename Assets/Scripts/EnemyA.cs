@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyA : MonoBehaviour
 {
+
+    // Enemy der Statuen angreift
     public float speed = 10f;
     public float range = 3f;
     private float stoppingDistance = 3f;
