@@ -643,7 +643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88943160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0652304, y: 0.04919201, z: -4.3}
+  m_LocalPosition: {x: 7.0652304, y: 0, z: -4.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1014869284}
@@ -5926,6 +5926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a496bb7c2a47b4aaa1cb36e8abe94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startMoney: 400
   startLives: 20
 --- !u!114 &756769739
 MonoBehaviour:
@@ -5939,14 +5940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c206abe0cf714ae484f1ccfff61542f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZeusOToBuild: {fileID: 8093492355512256514, guid: 6884fa46169a346efb8944a21c974493,
-    type: 3}
-  PoseidonOToBuild: {fileID: 3579962169341545555, guid: 33321c3d906364e65b49f77229628b8b,
-    type: 3}
-  ArtemisOToBuild: {fileID: 556289759115673176, guid: 4cb8e1a8dd6784902886853789125216,
-    type: 3}
-  HermesOToBuild: {fileID: 9074139059582408246, guid: 702003b85158b4ae59d3c61d7c7e2930,
-    type: 3}
+  nodeUI: {fileID: 0}
 --- !u!114 &756769740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5960,26 +5954,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - name: Wave 1
-    enemy: {fileID: 8021833786982242520, guid: c7e62452517d04077a1f06c07f4cff50, type: 3}
-    amountEnemy: 5
-    rate: 1
-  - name: Wave 2
-    enemy: {fileID: 8021833786982242520, guid: c7e62452517d04077a1f06c07f4cff50, type: 3}
-    amountEnemy: 7
-    rate: 1
-  - name: Wave 3
-    enemy: {fileID: 7850564266441266073, guid: 466aea1d411a54fa99cfe2a0f7e07021, type: 3}
-    amountEnemy: 10
-    rate: 1
-  - name: Wave 4
-    enemy: {fileID: 8021833786982242520, guid: c7e62452517d04077a1f06c07f4cff50, type: 3}
-    amountEnemy: 15
-    rate: 1
+  - enemies: []
+    waveduration: 30
+  - enemies: []
+    waveduration: 30
+  - enemies: []
+    waveduration: 30
+  - enemies: []
+    waveduration: 30
   spawnpoint1: {fileID: 748106598}
   spawnpoint2: {fileID: 748106598}
   timeBetweenWaves: 15
   waveCountdownText: {fileID: 185223926}
+  waveIndex: 0
 --- !u!4 &756769741
 Transform:
   m_ObjectHideFlags: 0
@@ -6486,7 +6473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871432808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.12, y: -0.03919202, z: -4.3}
+  m_LocalPosition: {x: 12.12, y: 0.02, z: -4.3}
   m_LocalScale: {x: 0.19999999, y: 1, z: 1.58}
   m_Children: []
   m_Father: {fileID: 88943161}
@@ -6710,7 +6697,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887540071}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 29.71, y: -0.03919202, z: -13}
+  m_LocalPosition: {x: 29.71, y: 0.02, z: -13}
   m_LocalScale: {x: 0.08, y: 1, z: 3.35}
   m_Children: []
   m_Father: {fileID: 88943161}
@@ -7676,7 +7663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014869283}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -37.73, y: -0.03919202, z: 9.5}
+  m_LocalPosition: {x: -37.73, y: 0.02, z: 9.5}
   m_LocalScale: {x: 0.2, y: 1, z: 5.715679}
   m_Children: []
   m_Father: {fileID: 88943161}
@@ -9701,6 +9688,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21bcaf1625614ebf889791db574f525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZeusBase:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradedPrefab1: {fileID: 0}
+    upgradeCost1: 0
+    upgradedPrefab2: {fileID: 0}
+    upgradeCost2: 0
+    upgradedPrefab3: {fileID: 0}
+    upgradeCost3: 0
+  PoseidonBase:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradedPrefab1: {fileID: 0}
+    upgradeCost1: 0
+    upgradedPrefab2: {fileID: 0}
+    upgradeCost2: 0
+    upgradedPrefab3: {fileID: 0}
+    upgradeCost3: 0
+  ArtemisBase:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradedPrefab1: {fileID: 0}
+    upgradeCost1: 0
+    upgradedPrefab2: {fileID: 0}
+    upgradeCost2: 0
+    upgradedPrefab3: {fileID: 0}
+    upgradeCost3: 0
+  HermesBase:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradedPrefab1: {fileID: 0}
+    upgradeCost1: 0
+    upgradedPrefab2: {fileID: 0}
+    upgradeCost2: 0
+    upgradedPrefab3: {fileID: 0}
+    upgradeCost3: 0
 --- !u!114 &1349355832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10598,7 +10621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472486242}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.17, y: -0.03919202, z: -2.44}
+  m_LocalPosition: {x: -10.17, y: 0.02, z: -2.44}
   m_LocalScale: {x: 0.19999999, y: 1, z: 2.31}
   m_Children: []
   m_Father: {fileID: 88943161}
@@ -12337,7 +12360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704311141}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.23, y: -0.03919202, z: 19.75}
+  m_LocalPosition: {x: -10.23, y: 0.02, z: 19.75}
   m_LocalScale: {x: 0.08, y: 1, z: 1.84}
   m_Children: []
   m_Father: {fileID: 88943161}
@@ -13208,7 +13231,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1853863268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 756769739}
+        m_MethodName: Delete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1853863268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14407,7 +14441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024952636}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.9, y: -0.03919202, z: -13}
+  m_LocalPosition: {x: 1.9, y: 0.02, z: -13}
   m_LocalScale: {x: 0.2, y: 1, z: 2.24}
   m_Children: []
   m_Father: {fileID: 88943161}
@@ -14569,7 +14603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055265601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -42.09, y: -0.03919202, z: -6.02}
+  m_LocalPosition: {x: -42.09, y: 0.02, z: -6.02}
   m_LocalScale: {x: 0.08, y: 1, z: 2.86}
   m_Children: []
   m_Father: {fileID: 88943161}
@@ -15064,7 +15098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110960063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0}
   m_LocalScale: {x: 10.48, y: 1.5, z: 4.86}
   m_Children: []
   m_Father: {fileID: 0}

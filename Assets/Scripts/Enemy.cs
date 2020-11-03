@@ -9,27 +9,32 @@ public class Enemy : MonoBehaviour
 
     private Transform target;
     private int wavepointIndex = 0;
+    private bool canMove;
 
     void Start()
     {
         //erster punkt des arrays
         target = Waypoints.points[0];
+        canMove = true;
 
     }
     
     void Update()
     {
-      
-        //Enemy bewegt sich in die richtung(dir)
-        Vector3 dir = target.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(dir);
-        transform.rotation = rotation;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
+      if (canMove)
         {
-            GetNextWaypoint();
+            //Enemy bewegt sich in die richtung(dir)
+            Vector3 dir = target.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(dir);
+            transform.rotation = rotation;
+            transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+
+
+            if (Vector3.Distance(transform.position, target.position) <= 0.2f)
+            {
+                GetNextWaypoint();
+            }
+
         }
     }
 
@@ -66,5 +71,19 @@ public class Enemy : MonoBehaviour
     {
         WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
+    }
+
+    //ZeusPoseidonBullet
+    public void StopMove(float duration)
+    {
+        canMove = false;
+        StartCoroutine(MoveDuration(duration));
+
+    }
+
+    private IEnumerator MoveDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        canMove = true;
     }
 }
