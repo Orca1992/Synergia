@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &4753902813051204171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321570903093928427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb970749d45664addbfb582834c4a21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1886869307627154384
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  statueType: 2
+  sockelType: 3
   range: 5
   fireRate: 1.5
   enemyTag: Enemy
@@ -180,6 +194,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3265311283028838616}
     m_Modifications:
+    - target: {fileID: 1784834763218153003, guid: e8839d87202c7874abeba580d0f0cc09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6413782359550541910, guid: e8839d87202c7874abeba580d0f0cc09,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -260,6 +279,12 @@ PrefabInstance:
 --- !u!4 &5021838876261240726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6413782359550541910, guid: e8839d87202c7874abeba580d0f0cc09,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068122869650493376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &321570903093928427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1784834763218153003, guid: e8839d87202c7874abeba580d0f0cc09,
     type: 3}
   m_PrefabInstance: {fileID: 2068122869650493376}
   m_PrefabAsset: {fileID: 0}

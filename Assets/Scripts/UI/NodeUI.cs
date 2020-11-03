@@ -19,7 +19,7 @@ public class NodeUI : MonoBehaviour
         ui.SetActive(false);
     }
 
-    public void Upgrade()
+    public void UpgradeSockel(GodType type)
     {
         target.UpgradeStatue();
         BuildManager.instance.DeselectNode();

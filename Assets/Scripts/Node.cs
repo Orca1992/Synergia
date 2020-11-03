@@ -88,7 +88,6 @@ public class Node : MonoBehaviour
 
         PlayerStats.Money -= statueBlueprint.upgradeCost1;
 
-
         //Alte Statue wird gelöscht
         Destroy(statue);
 

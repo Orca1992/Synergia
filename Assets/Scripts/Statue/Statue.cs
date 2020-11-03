@@ -6,23 +6,28 @@ using UnityEngine;
 public class Statue : MonoBehaviour
 {
     public Transform target;
+    public GodType statueType;
+    public GodType sockelType;
+
 
     [Header("Attributes")]
-
+    private TowerStats activeStats;
     public float range;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+    private StatueConfig config;
 
     [Header("Unity Setup Fields")]
 
     public string enemyTag = "Enemy";
 
-    public GameObject bulletPrefab;
+    //public GameObject bulletPrefab;
     public Transform firePoint;
 
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        config = GetComponent<StatueConfig>();
     }
 
     void UpdateTarget()
@@ -76,10 +81,10 @@ public class Statue : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bulletGO = (GameObject)Instantiate(activeStats.bulltePrefab, firePoint.position, firePoint.rotation);
         //die referenz für das Projektil, danach wird das Ziel übegeben von der statue
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-
+        bullet.damage = activeStats.damage;
         if (bullet != null)
         {
             bullet.Seek(target);
@@ -90,5 +95,11 @@ public class Statue : MonoBehaviour
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public void ChangeStatue(GodType type) {
+        statueType = type;
+        config.SetStatue(type);
+        activeStats = config.GetStats;
     }
 }

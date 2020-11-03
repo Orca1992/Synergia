@@ -1903,6 +1903,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 562388114}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &649093372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3686781524296007197, guid: 205864b05e8344bccb7e03a10d063bf5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3686781523162247307}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &649093373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649093372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da461df7f8b5b4d0d99437f2a0507531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  nodeUI: {fileID: 1439422679}
 --- !u!4 &687451907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6727635273632985494, guid: 3d37b27a7139c4def886fe13ea541104,
@@ -4796,10 +4816,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  statueType: 0
+  sockelType: 0
   range: 0
   fireRate: 1
   enemyTag: Enemy
-  bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
 --- !u!114 &1515783170
 MonoBehaviour:
@@ -4814,10 +4835,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  statueType: 0
+  sockelType: 0
   range: 0
   fireRate: 1
   enemyTag: Enemy
-  bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
 --- !u!114 &1515783171
 MonoBehaviour:
@@ -4832,10 +4854,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  statueType: 0
+  sockelType: 0
   range: 0
   fireRate: 1
   enemyTag: Enemy
-  bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
 --- !u!114 &1515783172
 MonoBehaviour:
@@ -4850,10 +4873,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  statueType: 0
+  sockelType: 0
   range: 0
   fireRate: 1
   enemyTag: Enemy
-  bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
 --- !u!1 &1612290072
 GameObject:
@@ -4889,6 +4913,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1625789991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3686781523340697938, guid: 205864b05e8344bccb7e03a10d063bf5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3686781523162247307}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1625789996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625789991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da461df7f8b5b4d0d99437f2a0507531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  nodeUI: {fileID: 1439422679}
 --- !u!1 &1636855426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3686781524782308873, guid: 205864b05e8344bccb7e03a10d063bf5,
@@ -6333,7 +6377,7 @@ PrefabInstance:
     - target: {fileID: 3686781523340697936, guid: 205864b05e8344bccb7e03a10d063bf5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3686781523340697936, guid: 205864b05e8344bccb7e03a10d063bf5,
         type: 3}
@@ -6349,16 +6393,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1439422679}
+      objectReference: {fileID: 1439422678}
     - target: {fileID: 3686781523340697936, guid: 205864b05e8344bccb7e03a10d063bf5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Upgrade
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3686781523340697936, guid: 205864b05e8344bccb7e03a10d063bf5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686781523340697936, guid: 205864b05e8344bccb7e03a10d063bf5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3686781523340697937, guid: 205864b05e8344bccb7e03a10d063bf5,
         type: 3}
