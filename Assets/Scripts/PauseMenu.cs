@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Menu()
     {
-        Debug.Log("go bakk to menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
