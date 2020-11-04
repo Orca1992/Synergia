@@ -32,14 +32,17 @@ public class PauseMenu : MonoBehaviour
 
     public void Retry()
     {
-        Toggle();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //Toggle();
+        SceneManager.LoadScene("Level1");
 
     }
 
     public void Menu()
     {
-        Debug.Log("go bakk to menu");
+        SceneManager.LoadScene("MainMenu");
     }
+
+    
+    
 
 }
