@@ -3836,7 +3836,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756769736}
+      - m_Target: {fileID: 756769737}
         m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
@@ -6419,7 +6419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4031e528bf26c467483f74acc0d24703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 925570742}
 --- !u!114 &756769737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6429,10 +6428,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 756769735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f58465bae3ba451ca376a5428adbc82, type: 3}
+  m_Script: {fileID: 11500000, guid: c4ec078498c8a074dae8a0aff29351d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 2000877744}
+  ui: {fileID: 925570742}
 --- !u!114 &756769738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6445,6 +6444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a496bb7c2a47b4aaa1cb36e8abe94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startMoney: 400
   startLives: 20
 --- !u!114 &756769739
 MonoBehaviour:
@@ -6458,14 +6458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c206abe0cf714ae484f1ccfff61542f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZeusOToBuild: {fileID: 8093492355512256514, guid: 6884fa46169a346efb8944a21c974493,
-    type: 3}
-  PoseidonOToBuild: {fileID: 3579962169341545555, guid: 33321c3d906364e65b49f77229628b8b,
-    type: 3}
-  ArtemisOToBuild: {fileID: 556289759115673176, guid: 4cb8e1a8dd6784902886853789125216,
-    type: 3}
-  HermesOToBuild: {fileID: 9074139059582408246, guid: 702003b85158b4ae59d3c61d7c7e2930,
-    type: 3}
+  nodeUI: {fileID: 0}
 --- !u!114 &756769740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6479,26 +6472,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - name: Wave 1
-    enemy: {fileID: 8021833786982242520, guid: c7e62452517d04077a1f06c07f4cff50, type: 3}
-    amountEnemy: 5
-    rate: 1
-  - name: Wave 2
-    enemy: {fileID: 8021833786982242520, guid: c7e62452517d04077a1f06c07f4cff50, type: 3}
-    amountEnemy: 7
-    rate: 1
-  - name: Wave 3
-    enemy: {fileID: 7850564266441266073, guid: 466aea1d411a54fa99cfe2a0f7e07021, type: 3}
-    amountEnemy: 10
-    rate: 1
-  - name: Wave 4
-    enemy: {fileID: 8021833786982242520, guid: c7e62452517d04077a1f06c07f4cff50, type: 3}
-    amountEnemy: 15
-    rate: 1
+  - enemies:
+    - name: 
+      enemy: {fileID: 1399388254697164, guid: 8875bf7e954e6394fa0dec7602dd78d6, type: 3}
+      clusterSpawn: 0
+      amountEnemy: 0
+      rate: 0
+    - name: 
+      enemy: {fileID: 0}
+      clusterSpawn: 0
+      amountEnemy: 0
+      rate: 0
+    waveduration: 30
+  - enemies: []
+    waveduration: 30
   spawnpoint1: {fileID: 748106598}
   spawnpoint2: {fileID: 748106598}
   timeBetweenWaves: 15
   waveCountdownText: {fileID: 185223926}
+  waveIndex: 0
 --- !u!4 &756769741
 Transform:
   m_ObjectHideFlags: 0
@@ -7326,7 +7318,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886093756}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a1189cc499591224584de202b8275037, type: 3}
@@ -10621,6 +10613,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21bcaf1625614ebf889791db574f525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZeusBase:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradedPrefab1: {fileID: 0}
+    upgradeCost1: 0
+    upgradedPrefab2: {fileID: 0}
+    upgradeCost2: 0
+    upgradedPrefab3: {fileID: 0}
+    upgradeCost3: 0
+  PoseidonBase:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradedPrefab1: {fileID: 0}
+    upgradeCost1: 0
+    upgradedPrefab2: {fileID: 0}
+    upgradeCost2: 0
+    upgradedPrefab3: {fileID: 0}
+    upgradeCost3: 0
+  ArtemisBase:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradedPrefab1: {fileID: 0}
+    upgradeCost1: 0
+    upgradedPrefab2: {fileID: 0}
+    upgradeCost2: 0
+    upgradedPrefab3: {fileID: 0}
+    upgradeCost3: 0
+  HermesBase:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradedPrefab1: {fileID: 0}
+    upgradeCost1: 0
+    upgradedPrefab2: {fileID: 0}
+    upgradeCost2: 0
+    upgradedPrefab3: {fileID: 0}
+    upgradeCost3: 0
 --- !u!114 &1349355832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11464,7 +11492,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 364.6, y: 190.3}
-  m_SizeDelta: {x: 55, y: 55}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1427805863
 MonoBehaviour:
@@ -12291,7 +12319,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -361, y: 190.3}
-  m_SizeDelta: {x: 57, y: 57}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532874931
 MonoBehaviour:
@@ -13000,8 +13028,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756769736}
-        m_MethodName: Toggle
+      - m_Target: {fileID: 756769735}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14855,7 +14883,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756769736}
+      - m_Target: {fileID: 756769737}
         m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
@@ -15129,6 +15157,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pantheon
       objectReference: {fileID: 0}
+    - target: {fileID: 8428054920492010984, guid: a59a4b3e246c245c198df1625f45c6a4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1a6cd77049541f4b91b59c39af7f7b4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a59a4b3e246c245c198df1625f45c6a4, type: 3}
 --- !u!4 &1880787389 stripped
@@ -17263,10 +17296,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2143436616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a850a3e6a12c41079bac9be5d5f090f, type: 3}
+  m_Script: {fileID: 11500000, guid: de593bd09ae657545a77c62dada2e88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveText: {fileID: 2143436619}
+  waveText: {fileID: 0}
 --- !u!114 &2143436619
 MonoBehaviour:
   m_ObjectHideFlags: 0
