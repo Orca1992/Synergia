@@ -10598,42 +10598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21bcaf1625614ebf889791db574f525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZeusBase:
-    prefab: {fileID: 0}
-    cost: 0
-    upgradedPrefab1: {fileID: 0}
-    upgradeCost1: 0
-    upgradedPrefab2: {fileID: 0}
-    upgradeCost2: 0
-    upgradedPrefab3: {fileID: 0}
-    upgradeCost3: 0
-  PoseidonBase:
-    prefab: {fileID: 0}
-    cost: 0
-    upgradedPrefab1: {fileID: 0}
-    upgradeCost1: 0
-    upgradedPrefab2: {fileID: 0}
-    upgradeCost2: 0
-    upgradedPrefab3: {fileID: 0}
-    upgradeCost3: 0
-  ArtemisBase:
-    prefab: {fileID: 0}
-    cost: 0
-    upgradedPrefab1: {fileID: 0}
-    upgradeCost1: 0
-    upgradedPrefab2: {fileID: 0}
-    upgradeCost2: 0
-    upgradedPrefab3: {fileID: 0}
-    upgradeCost3: 0
-  HermesBase:
-    prefab: {fileID: 0}
-    cost: 0
-    upgradedPrefab1: {fileID: 0}
-    upgradeCost1: 0
-    upgradedPrefab2: {fileID: 0}
-    upgradeCost2: 0
-    upgradedPrefab3: {fileID: 0}
-    upgradeCost3: 0
 --- !u!114 &1349355832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14555,8 +14519,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840051611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.21, y: 0.68846, z: 6.1896}
-  m_LocalScale: {x: 1.412445, y: 2.1186674, z: 1.9963973}
+  m_LocalPosition: {x: 14.21, y: 0.68846, z: 6.62}
+  m_LocalScale: {x: 1.412445, y: 2.1186674, z: 2.1329508}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
