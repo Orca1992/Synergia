@@ -8,5 +8,6 @@ public class MenuButtonScript : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("Level1");
+        
     }
 }

@@ -32,9 +32,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Retry()
     {
-        //Toggle();
         SceneManager.LoadScene("Level1");
-
+        Toggle();
     }
 
     public void Menu()
