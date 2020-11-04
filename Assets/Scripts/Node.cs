@@ -8,21 +8,22 @@ public class Node : MonoBehaviour
 
     public Color hoverColor;
     public Vector3 positionOffset;
+    public Transform statueTransform;
 
     private Renderer rend;
     private Color startColor;
 
+    private bool isBuild;
 
-    [HideInInspector]
-    public GameObject statue;
-    [HideInInspector]
-    public StatueBlueprint statueBlueprint;
+    private Statue statue;
+ 
     [HideInInspector]
     public bool isUpgraded;
 
 
     private void Start()
     {
+        statue = statueTransform.GetComponent<Statue>();
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
 
@@ -38,9 +39,7 @@ public class Node : MonoBehaviour
     void OnMouseDown()
     {
 
-        //ist die 
-        //wsl auch für upgrades nötig
-        if (statue != null)
+        if (!isBuild)
         {
             buildManager.SelectedNode(this);
             return;
@@ -48,62 +47,60 @@ public class Node : MonoBehaviour
 
         if (!buildManager.CanBuild)
             return;
-
-
-        BuildStatue(buildManager.GetStatueToBuild());
-        
+       
     }
 
-    void BuildStatue(StatueBlueprint blueprint)
-    {
-        if (PlayerStats.Money < blueprint.cost)
-        {
-            Debug.Log("Nicht genug Geld!");
-            return;
-        }
-
-        PlayerStats.Money -= blueprint.cost;
-
-        GameObject _statue = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
-        statue = _statue;
-
-        statueBlueprint = blueprint;
-
-        //Buildeffekt hier? staub?
-        //GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
-        //Destroy(effect, 5f);
-
-        Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
-    }
+    
 
 
     //einbauen wie ich 3-4 verschiedene Upgrades erstelle? muss eingebaut werden
-    public void UpgradeStatue()
+    public void Upgrade(GodType typ)
     {
-        if (PlayerStats.Money < statueBlueprint.upgradeCost1)
+        //keine Statue gebaut
+        if(statue.statueType == GodType.None)
         {
-            Debug.Log("Nicht genug Geld um aufzuleveln!");
-            return;
+            int buildingCost = statue.config.StatueCost(typ);
+
+            if (PlayerStats.Money < buildingCost)
+            {
+                Debug.Log("Nicht genug Geld um aufzuleveln!");
+                return;
+            }
+
+            PlayerStats.Money -= buildingCost;
+
+
+            //Buildeffekt hier? staub?
+            //GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
+            //Destroy(effect, 5f);
+
+            statue.ChangeStatue(typ);
+
+            Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
         }
+        //Statue gebaut, aber kein Sockel gebaut
+        else if(statue.sockelType == GodType.None)
+        {
+            int buildingCost = statue.config.SockelCost(statue.statueType, typ);
 
-        PlayerStats.Money -= statueBlueprint.upgradeCost1;
+            if (PlayerStats.Money < buildingCost)
+            {
+                Debug.Log("Nicht genug Geld um aufzuleveln!");
+                return;
+            }
 
-        //Alte Statue wird gelöscht
-        Destroy(statue);
-
-
-        //Neue upgrade Statue wird platziert
-        GameObject _statue = (GameObject)Instantiate(statueBlueprint.upgradedPrefab1, GetBuildPosition(), Quaternion.identity);
-        statue = _statue;
-
-        //Buildeffekt hier? staub?
-        //GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
-        //Destroy(effect, 5f);
-
-        isUpgraded = true;
+            PlayerStats.Money -= buildingCost;
 
 
-        Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
+            //Buildeffekt hier? staub?
+            //GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
+            //Destroy(effect, 5f);
+
+            statue.ChangeSockel(typ);
+
+            Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
+        }
+        
     }
 
     void OnMouseEnter()

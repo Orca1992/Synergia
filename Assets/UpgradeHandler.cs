@@ -16,6 +16,6 @@ public class UpgradeHandler : MonoBehaviour
     }
     void OnButtonClick()
     {
-        nodeUI.UpgradeSockel(type);
+        nodeUI.Upgrade(type);
     }
 }

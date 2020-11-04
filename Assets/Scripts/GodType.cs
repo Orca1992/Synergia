@@ -3,8 +3,9 @@
 [Serializable]
 public enum GodType
 {
+    None,
     Zeus,
     Poseidon,
-    Arthemis,
+    Artemis,
     Hermes
 }

@@ -6,16 +6,19 @@ using UnityEngine;
 public class Statue : MonoBehaviour
 {
     public Transform target;
-    public GodType statueType;
-    public GodType sockelType;
+    public GodType statueType { get; private set; }
+    public GodType sockelType { get; private set; }
 
 
     [Header("Attributes")]
     private TowerStats activeStats;
+    public StatueConfig config;
+    public int cost;
+
     public float range;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
-    private StatueConfig config;
+    
 
     [Header("Unity Setup Fields")]
 
@@ -26,8 +29,11 @@ public class Statue : MonoBehaviour
 
     void Start()
     {
+
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         config = GetComponent<StatueConfig>();
+        statueType = GodType.None;
+        sockelType = GodType.None;
     }
 
     void UpdateTarget()
@@ -97,9 +103,19 @@ public class Statue : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
-    public void ChangeStatue(GodType type) {
+    //setter für die godtype statue und sockel
+    public void ChangeStatue(GodType type)
+    {
         statueType = type;
         config.SetStatue(type);
-        activeStats = config.GetStats;
+        activeStats = config.GetStats();
     }
+
+    public void ChangeSockel(GodType type)
+    {
+        sockelType = type;
+        config.SetSockel(type);
+    }
+
+
 }

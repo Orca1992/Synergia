@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+
+//wird nicht genutzt bei der neuen variante
 public class StatueBlueprint
 {
     public GameObject prefab;

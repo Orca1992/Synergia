@@ -7,7 +7,7 @@ public class BuildManager : MonoBehaviour
     //singleton Pattern, one instance in the scene
     public static BuildManager instance;
 
-    private StatueBlueprint statueToBuild;
+    private Statue statueToBuild;
     private Node selectedNode;
 
     public NodeUI nodeUI;
@@ -25,9 +25,10 @@ public class BuildManager : MonoBehaviour
 
     }
 
+    //base statue mit soll ausgewählt werden
     public void SelectedNode(Node node)
     {
-        //wenn die das node angeklickt wird was ident ist mit der node die reinkommt, wird esdelected
+        //beim zweiten mal anklicken, veschwindet die nodeUI
         if(selectedNode == node)
         {
             DeselectNode();
@@ -36,14 +37,14 @@ public class BuildManager : MonoBehaviour
         }
 
         selectedNode = node;
-        statueToBuild = null;
+        
 
         //UI
         nodeUI.SetTarget(node);
     }
 
-
-    public void SelectStatueToBuild(StatueBlueprint statue)
+    //upgrade die base, da sie schon erstellt wurde
+    public void SelectStatueToBuild(Statue statue)
     {
         statueToBuild = statue;
         DeselectNode();
@@ -56,7 +57,7 @@ public class BuildManager : MonoBehaviour
 
     }
 
-    public StatueBlueprint GetStatueToBuild()
+    public Statue GetStatueToBuild()
     {
         return statueToBuild;
     }

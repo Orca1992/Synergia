@@ -2,9 +2,17 @@
 
 public class NodeUI : MonoBehaviour
 {
-    public GameObject ui;
+    BuildManager buildManager;
 
+    public GameObject ui;
+    public Statue statue;
+    
     private Node target;
+
+    private void Start()
+    {
+        buildManager = BuildManager.instance;
+    }
 
     public void SetTarget (Node t)
     {
@@ -19,9 +27,11 @@ public class NodeUI : MonoBehaviour
         ui.SetActive(false);
     }
 
-    public void UpgradeSockel(GodType type)
+    public void Upgrade(GodType type)
     {
-        target.UpgradeStatue();
+        target.Upgrade(type);
         BuildManager.instance.DeselectNode();
     }
+
+    
 }
