@@ -11,7 +11,7 @@ public class Statue : MonoBehaviour
 
 
     [Header("Attributes")]
-    private TowerStats activeStats;
+    public TowerStats activeStats;
     public StatueConfig config;
 
     public float range;
@@ -85,14 +85,14 @@ public class Statue : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("BANG");
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        //GameObject bulletGO = (GameObject)Instantiate(activeStats.bulletPrefab, firePoint.position, firePoint.rotation);
+
+        GameObject bulletGO = (GameObject)Instantiate(activeStats.bulletPrefab, firePoint.position, firePoint.rotation);
         //die referenz für das Projektil, danach wird das Ziel übegeben von der statue
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-        bullet.damage = activeStats.damage;
+        
         if (bullet != null)
         {
+            bullet.damage = activeStats.damage;
             bullet.Seek(target);
         }
     }
