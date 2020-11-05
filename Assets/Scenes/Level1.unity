@@ -5318,14 +5318,12 @@ MonoBehaviour:
 
     ~Wave 2: 15 Enemies~
 
-    
 
-    ~Wave 3: 25
-    Enemies~
+    ~Wave 3: 25 Enemies~
 
-    
 
-    ~Wave 4: 30 Enemies~'
+    ~Wave
+    4: 30 Enemies~'
 --- !u!222 &538784949
 CanvasRenderer:
   m_ObjectHideFlags: 0
