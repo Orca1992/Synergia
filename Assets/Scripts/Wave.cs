@@ -5,7 +5,6 @@
 // kein monobehavior, diese Klasse wird  für den inspektor gebraucht
 public class Wave
 {
-    public string name;
     public GameObject enemy;
     public int clusterSpawn;
     public int amountEnemy;

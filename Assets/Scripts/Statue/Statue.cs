@@ -13,7 +13,6 @@ public class Statue : MonoBehaviour
     [Header("Attributes")]
     private TowerStats activeStats;
     public StatueConfig config;
-    public int cost;
 
     public float range;
     public float fireRate = 1f;
@@ -87,7 +86,7 @@ public class Statue : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject)Instantiate(activeStats.bulltePrefab, firePoint.position, firePoint.rotation);
+        GameObject bulletGO = (GameObject)Instantiate(activeStats.bulletPrefab, firePoint.position, firePoint.rotation);
         //die referenz für das Projektil, danach wird das Ziel übegeben von der statue
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         bullet.damage = activeStats.damage;

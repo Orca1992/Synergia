@@ -30,7 +30,7 @@ public class WaveSpawner : MonoBehaviour
     public static int waveMax = 0;
     public static int waveCur;
 
-    public int waveIndex = 0;
+    private int waveIndex = 0;
     private float timer;
     private bool waveactive;
     float waveduration;
@@ -60,6 +60,7 @@ public class WaveSpawner : MonoBehaviour
             {
                 SpawnNextWave();
                 waveIndex++;
+                waveCur++;
             }
         }
 

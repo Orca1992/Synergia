@@ -7,5 +7,6 @@ public enum GodType
     Zeus,
     Poseidon,
     Artemis,
-    Hermes
+    Hermes,
+    Sell
 }

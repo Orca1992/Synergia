@@ -78,9 +78,15 @@ public class Node : MonoBehaviour
 
             Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
         }
+
         //Statue gebaut, aber kein Sockel gebaut
         else if(statue.sockelType == GodType.None)
         {
+            if(statue.statueType == GodType.Sell)
+            {
+
+            }
+
             int buildingCost = statue.config.SockelCost(statue.statueType, typ);
 
             if (PlayerStats.Money < buildingCost)
