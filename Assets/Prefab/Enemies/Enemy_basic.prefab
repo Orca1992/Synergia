@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Achilles
       objectReference: {fileID: 0}
+    - target: {fileID: 1399388254697164, guid: 8875bf7e954e6394fa0dec7602dd78d6, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4362624783808420, guid: 8875bf7e954e6394fa0dec7602dd78d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -23,7 +23,7 @@ public class Statue : MonoBehaviour
 
     public string enemyTag = "Enemy";
 
-    //public GameObject bulletPrefab;
+    public GameObject bulletPrefab;
     public Transform firePoint;
 
     void Start()
@@ -39,7 +39,6 @@ public class Statue : MonoBehaviour
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
 
-        //wird später ersetzt 
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
@@ -86,7 +85,9 @@ public class Statue : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject)Instantiate(activeStats.bulletPrefab, firePoint.position, firePoint.rotation);
+        Debug.Log("BANG");
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        //GameObject bulletGO = (GameObject)Instantiate(activeStats.bulletPrefab, firePoint.position, firePoint.rotation);
         //die referenz für das Projektil, danach wird das Ziel übegeben von der statue
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         bullet.damage = activeStats.damage;

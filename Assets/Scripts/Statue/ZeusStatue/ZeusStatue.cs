@@ -5,8 +5,6 @@ using UnityEngine;
 public class ZeusStatue : Statue
 {
 
-
-
     protected override void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

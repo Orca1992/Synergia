@@ -27,6 +27,8 @@ public class StatueConfig : MonoBehaviour
         return activeStatue.GetComponent<TowerStats>();
     }
 
+
+    // hier wird angegeben wieviel die 
     public int StatueCost (GodType statuetyp)
     {
         int cost = 0;
