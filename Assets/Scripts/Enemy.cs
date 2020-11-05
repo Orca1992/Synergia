@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    BuildManager buildManager;
     public int health = 100;
     public float speed = 10f;
+    public int earnings = 10;
 
     private Transform target;
     private int wavepointIndex = 0;
@@ -17,6 +19,7 @@ public class Enemy : MonoBehaviour
         target = Waypoints.points[0];
         canMove = true;
 
+        buildManager = BuildManager.instance;
     }
     
     void Update()
@@ -63,6 +66,8 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             Die();
+            PlayerStats.Money += earnings;
+
         }
     }
 

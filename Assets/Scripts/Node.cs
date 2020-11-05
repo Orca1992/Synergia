@@ -85,6 +85,8 @@ public class Node : MonoBehaviour
             if(statue.statueType == GodType.Sell)
             {
 
+                statue.ChangeStatue(GodType.None);
+
             }
 
             int buildingCost = statue.config.SockelCost(statue.statueType, typ);
