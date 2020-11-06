@@ -93,6 +93,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  damage: 10
+  damage: 40
   impactEffect: {fileID: 1909643612146315548, guid: 3e433c3dcddbc481a8da0d394e91bd2c,
     type: 3}
