@@ -23,7 +23,7 @@ public class WaveSpawner : MonoBehaviour
     public float timeBetweenWaves = 5f;
 
     //die zeit wann die nächste wave spawned
-    private float countdown = 10f;
+    public float countdown = 20f;
 
     //für die UI 
     public Text waveCountdownText;

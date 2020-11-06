@@ -6530,15 +6530,64 @@ MonoBehaviour:
     - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
         type: 3}
       clusterSpawn: 3
-      amountEnemy: 8
+      amountEnemy: 6
       rate: 0.73
     - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
         type: 3}
       clusterSpawn: 2
-      amountEnemy: 6
+      amountEnemy: 9
       rate: 1
     waveduration: 30
   - enemies:
+    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+        type: 3}
+      clusterSpawn: 4
+      amountEnemy: 6
+      rate: 1.88
+    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+        type: 3}
+      clusterSpawn: 4
+      amountEnemy: 8
+      rate: 1.88
+    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+        type: 3}
+      clusterSpawn: 4
+      amountEnemy: 6
+      rate: 1.88
+    waveduration: 30
+  - enemies:
+    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+        type: 3}
+      clusterSpawn: 4
+      amountEnemy: 7
+      rate: 1.88
+    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+        type: 3}
+      clusterSpawn: 4
+      amountEnemy: 8
+      rate: 1.88
+    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+        type: 3}
+      clusterSpawn: 4
+      amountEnemy: 10
+      rate: 1.88
+    waveduration: 30
+  - enemies:
+    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+        type: 3}
+      clusterSpawn: 4
+      amountEnemy: 6
+      rate: 1.88
+    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+        type: 3}
+      clusterSpawn: 4
+      amountEnemy: 6
+      rate: 1.88
+    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+        type: 3}
+      clusterSpawn: 4
+      amountEnemy: 10
+      rate: 1.88
     - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
         type: 3}
       clusterSpawn: 4
@@ -6548,6 +6597,7 @@ MonoBehaviour:
   spawnpoint1: {fileID: 748106598}
   spawnpoint2: {fileID: 748106598}
   timeBetweenWaves: 15
+  countdown: 10
   waveCountdownText: {fileID: 1517977625}
 --- !u!4 &756769741
 Transform:
@@ -7524,7 +7574,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a1189cc499591224584de202b8275037, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.52
+  m_Volume: 0.209
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8704,10 +8754,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 105
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -9711,17 +9761,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Wave 1: 10 Enemies
+  m_Text: 'Wave 1: 15 Enemies
 
 
-    Wave 2: 15 Enemies
+    Wave 2: 20 Enemies
 
 
-    Wave 3: 20 Enemies
+    Wave 3: 25 Enemies
 
 
     Wave
-    4: 25 Enemies'
+    4: 30 Enemies'
 --- !u!222 &1176082756
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16503,7 +16553,7 @@ RectTransform:
   m_GameObject: {fileID: 2013363671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1049891431}
   m_Father: {fileID: 1091183235}
@@ -16511,8 +16561,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 301, y: -176}
-  m_SizeDelta: {x: 295.58435, y: 126.61093}
+  m_AnchoredPosition: {x: 299, y: -189}
+  m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2013363673
 MonoBehaviour:
@@ -16534,7 +16584,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.9764151, b: 0.9764151, a: 0.7058824}
+    m_NormalColor: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
     m_HighlightedColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
