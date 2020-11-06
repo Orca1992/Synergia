@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &228479250187324582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261704444617206455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cec33d2b62243b0b17848309893e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
+  cost: 100
+  bulletPrefab: {fileID: 4629858410870654290, guid: 825895a6fb8c645bf89b8f660d4ea3fc,
+    type: 3}
 --- !u!1 &7521185328460231743
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,16 +137,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6727635273632985494}
     m_Modifications:
-    - target: {fileID: 147051005495581638, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
-        type: 3}
-      propertyPath: damage
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 823920442357466842, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
-        type: 3}
-      propertyPath: damage
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 4451447664541848988, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,16 +197,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: GodStatue
       objectReference: {fileID: 0}
-    - target: {fileID: 5118521706485341436, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
-        type: 3}
-      propertyPath: fireRate
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443ab1aec91be4ff4a1c2aa03a69e163, type: 3}
 --- !u!4 &2916718344295287160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4451447664541848988, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+    type: 3}
+  m_PrefabInstance: {fileID: 1566403785487834340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4261704444617206455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357546142686049875, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
     type: 3}
   m_PrefabInstance: {fileID: 1566403785487834340}
   m_PrefabAsset: {fileID: 0}
