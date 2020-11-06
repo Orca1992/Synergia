@@ -57,6 +57,7 @@ public class StatueConfig : MonoBehaviour
     {
         int cost = 0;
 
+        setVisability(true);
         switch (sockelTyp)
         {
             case GodType.Zeus:
@@ -72,7 +73,7 @@ public class StatueConfig : MonoBehaviour
                 cost = hermesBase.GetComponent<SockelStats>().GetCombination(statuetyp).cost;
                 break;
         }
-
+        setVisability(false);
         return cost;
     } 
 
@@ -107,6 +108,10 @@ public class StatueConfig : MonoBehaviour
                 activeStatue = hermesStatue;
                 hermesStatue.SetActive(true);
                 break;
+            case GodType.Sell:
+                activeStatue = null;
+                break;
+                
         }
           
     }
@@ -135,6 +140,9 @@ public class StatueConfig : MonoBehaviour
                 activeSockel = hermesBase;
                 hermesBase.SetActive(true);
                 break;
+            case GodType.Sell:
+                activeSockel = null;
+                break;
         }
     }
 
@@ -149,5 +157,14 @@ public class StatueConfig : MonoBehaviour
         poseidonBase.SetActive(visable);
         artemisBase.SetActive(visable);
         hermesBase.SetActive(visable);
+
+        if(activeStatue != null)
+        {
+            activeStatue.SetActive(true);
+        }
+        if (activeSockel != null)
+        {
+            activeSockel.SetActive(true);
+        }
     }
 }

@@ -74,8 +74,9 @@ public class Statue : MonoBehaviour
 
         //shooting Rate
 
-        if(fireCountdown <= 0f)
+        if(fireCountdown <= 0f && statueType != GodType.None)
         {
+
             Shoot();
             fireCountdown = 1f / fireRate;
         }
@@ -108,13 +109,30 @@ public class Statue : MonoBehaviour
     {
         statueType = type;
         config.SetStatue(type);
-        activeStats = config.GetStats();
+
+        if (type == GodType.Sell)
+        {
+            activeStats = null;
+            statueType = GodType.None;
+        }
+        else
+        {
+            
+            activeStats = config.GetStats();
+        }
+        
     }
 
     public void ChangeSockel(GodType type)
     {
         sockelType = type;
         config.SetSockel(type);
+
+        if (type == GodType.Sell)
+        {
+            sockelType = GodType.None;
+        }
+        
     }
 
 

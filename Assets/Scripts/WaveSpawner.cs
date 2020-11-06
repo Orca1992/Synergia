@@ -27,20 +27,18 @@ public class WaveSpawner : MonoBehaviour
 
     //für die UI 
     public Text waveCountdownText;
-    public static int waveMax = 0;
-    public static int waveCur;
 
-    private int waveIndex = 0;
+    private int waveIndex = -1;
     private float timer;
     private bool waveactive;
     float waveduration;
 
+    public int GetMaxWaves { get { return waves.Length; } }
+    public int GetCurrentWave { get { return waveIndex+1; } }
+
     void Start()
     {
-        Invoke("SpawnNextWave", countdown);
-        waveactive = true;
-        waveMax = waves.Length;
-        waveCur = 1;
+        Invoke("StartGame", countdown);
     }
 
     void Update()
@@ -59,9 +57,14 @@ public class WaveSpawner : MonoBehaviour
             if (timer > waveduration)
             {
                 SpawnNextWave();
-                waveIndex++;
-                waveCur++;
             }
+        }
+        else
+        {
+            countdown -= Time.deltaTime;
+
+            //Text für die UI
+            waveCountdownText.text = countdown.ToString("F1");
         }
 
         //wenn der index so groß ist wie die wirklich länge  und keine alle enemies besiegt sind
@@ -75,18 +78,21 @@ public class WaveSpawner : MonoBehaviour
         }
 
 
-        countdown -= Time.deltaTime;
-
-        //Text für die UI
-        waveCountdownText.text = countdown.ToString("F1"); 
+        
     }
 
     
     void SpawnNextWave()
     {
+        waveIndex++;
         timer = 0;
+        if(waveIndex >= waves.Length)
+        {
+            //alle Wellen verbraucht, spiel gewonnen weil überlebt
+            return;
+        }
         waveduration = waves[waveIndex].waveduration;
-        
+        //Debug.LogFormat("maxWaves: {0} von {1}", waveIndex+1, waves.Length );
         //EnemiesAlive = 0;
         for (int i = 0; i < waves[waveIndex].enemies.Count; i++)
         {
@@ -109,11 +115,19 @@ public class WaveSpawner : MonoBehaviour
                 if (spawned > 0)
                 {
                     Instantiate(wavedata.enemy, spawnpoint1.position, spawnpoint1.rotation);
-                    EnemiesAlive++;
+                    //Debug.Log("spawned");
                     spawned--;
                 }
             }
             yield return new WaitForSeconds(wavedata.rate);
         }
+        //Debug.Log("spawn finish!");
+    }
+
+    private void StartGame()
+    {
+        SpawnNextWave();
+        waveactive = true;
+        waveCountdownText.gameObject.SetActive(false);
     }
 }
