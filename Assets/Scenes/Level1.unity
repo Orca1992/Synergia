@@ -6525,6 +6525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794a2fa7865374c238faa0fab5982e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdown: 10
   waves:
   - enemies:
     - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
@@ -6596,8 +6597,6 @@ MonoBehaviour:
     waveduration: 30
   spawnpoint1: {fileID: 748106598}
   spawnpoint2: {fileID: 748106598}
-  timeBetweenWaves: 15
-  countdown: 10
   waveCountdownText: {fileID: 1517977625}
 --- !u!4 &756769741
 Transform:
@@ -8839,7 +8838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.9803922, g: 0.69803923, b: 0.34117648, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -10680,7 +10679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12698,7 +12697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -17606,7 +17605,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ZeusStatue : Statue
 {
+    
+
 
     protected override void OnDrawGizmosSelected()
     {

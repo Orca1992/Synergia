@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_Synergia.-1745592568.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="GreekPack1" t="Include">
+          <e p="README.txt" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="BuildManager.cs" t="Include" />
+          <e p="Bullets" t="Include">
+            <e p="Bullet.cs" t="Include" />
+            <e p="ZeusBullets" t="Include">
+              <e p="ZeusBulletArtemis.cs" t="Include" />
+              <e p="ZeusBulletBase.cs" t="Include" />
+              <e p="ZeusBulletHermes.cs" t="Include" />
+              <e p="ZeusBulletPoseidon.cs" t="Include" />
+            </e>
+          </e>
+          <e p="CameraController.cs" t="Include" />
+          <e p="CameraControllerS.cs" t="Include" />
+          <e p="Enemy.cs" t="Include" />
+          <e p="EnemyA.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="GodType.cs" t="Include" />
+          <e p="MenuButtonScript.cs" t="Include" />
+          <e p="Node.cs" t="Include" />
+          <e p="PlayerStats.cs" t="Include" />
+          <e p="Statue" t="Include">
+            <e p="ArtemisStatue.cs" t="Include" />
+            <e p="HermesStatue.cs" t="Include" />
+            <e p="PoseidonStatue.cs" t="Include" />
+            <e p="Statue.cs" t="Include" />
+            <e p="ZeusStatue" t="Include">
+              <e p="ZeusStatue.cs" t="Include" />
+              <e p="ZeusStatueArtemisBase.cs" t="Include" />
+              <e p="ZeusStatueHermesBase.cs" t="Include" />
+              <e p="ZeusStatuePoseidonBase.cs" t="Include" />
+            </e>
+          </e>
+          <e p="StatueBlueprint.cs" t="Include" />
+          <e p="SubWave.cs" t="Include" />
+          <e p="TowerMenu.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="LivesUI.cs" t="Include" />
+            <e p="NodeUI.cs" t="Include" />
+            <e p="PauseMenu.cs" t="Include" />
+            <e p="WaveUI.cs" t="Include" />
+          </e>
+          <e p="Wave.cs" t="Include" />
+          <e p="WaveSpawner.cs" t="Include" />
+          <e p="WaveUI.cs" t="Include" />
+          <e p="Waypoints.cs" t="Include" />
+        </e>
+        <e p="StatueConfig.cs" t="Include" />
+        <e p="TowerStats.cs" t="Include" />
+        <e p="UpgradeHandler.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Synergia.sln" t="IncludeFlat" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

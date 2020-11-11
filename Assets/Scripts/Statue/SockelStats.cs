@@ -29,4 +29,5 @@ public class ComboStats
 {
     public GodType towerGod;
     public int cost;
+    public GameObject bulletPrefab;
 }

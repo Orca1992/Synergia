@@ -10,4 +10,9 @@ public class MenuButtonScript : MonoBehaviour
         SceneManager.LoadScene("Level1");
         
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -21,6 +21,22 @@ MonoBehaviour:
     cost: 200
   - towerGod: 4
     cost: 200
+--- !u!114 &228479250187324582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357546142686049875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cec33d2b62243b0b17848309893e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
+  cost: 100
+  bulletPrefab: {fileID: 4629858410870654290, guid: 825895a6fb8c645bf89b8f660d4ea3fc,
+    type: 3}
 --- !u!114 &4101504562334397958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +148,10 @@ MonoBehaviour:
   enemyTag: Enemy
   bulletPrefab: {fileID: 6109158938042981230, guid: 922b89d62a4004d2687d550afb8716eb,
     type: 3}
-  firePoint: {fileID: 8962667402346787957}
+  activeFirepoint: {fileID: 0}
+  firePointPoseidon: {fileID: 8528497791217520673}
+  firePointZeus: {fileID: 8962667402346787957}
+  firePointArtemis: {fileID: 1344638396359086635}
 --- !u!114 &8169978808279731970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +478,18 @@ GameObject:
 --- !u!4 &8962667402346787957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5956002967902263641, guid: 8ff44d795fe4b408299150e2fc293373,
+    type: 3}
+  m_PrefabInstance: {fileID: 3370438136544292140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1344638396359086635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4354750904104353543, guid: 8ff44d795fe4b408299150e2fc293373,
+    type: 3}
+  m_PrefabInstance: {fileID: 3370438136544292140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8528497791217520673 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6385396386294119693, guid: 8ff44d795fe4b408299150e2fc293373,
     type: 3}
   m_PrefabInstance: {fileID: 3370438136544292140}
   m_PrefabAsset: {fileID: 0}

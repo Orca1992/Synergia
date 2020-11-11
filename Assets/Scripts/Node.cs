@@ -58,11 +58,13 @@ public class Node : MonoBehaviour
     //einbauen wie ich 3-4 verschiedene Upgrades erstelle? muss eingebaut werden
     public void Upgrade(GodType typ)
     {
-        int buildingCost = statue.config.StatueCost(typ);
+        int buildingCost;
+
         //keine Statue gebaut
-        if (statue.statueType == GodType.None)
+        
+        if (statue.statueType == GodType.None && statue.statueType != GodType.Sell)
         {
-            
+            buildingCost = statue.config.StatueCost(typ);
 
             if (PlayerStats.Money < buildingCost)
             {
@@ -74,21 +76,32 @@ public class Node : MonoBehaviour
 
 
             GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
-            Destroy(effect, 5f);
+            Destroy(effect, 1f);
 
             statue.ChangeStatue(typ);
+            statue.ChangeSockel(typ);
+//            statue.SetBullet(statue.statueType, statue.sockelType);
 
             Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
         }
-        else if(typ == GodType.Sell)
+        else if (typ == GodType.Sell)
         {
+            buildingCost = statue.config.StatueCost(statue.statueType);
             statue.ChangeStatue(typ);
             statue.ChangeSockel(typ);
-            PlayerStats.Money += buildingCost / 2;
+//            statue.SetBullet(statue.statueType, statue.sockelType);
+            PlayerStats.Money += (buildingCost / 2);
+
+            //sell-effect einbauen
+
+            Debug.Log("Statue wurde verkauft! Money left: " + PlayerStats.Money);
         }
-        //Statue gebaut, aber kein Sockel gebaut
-        else if(statue.sockelType == GodType.None)
+
+
+        //Statue gebaut, aber kein Sockel
+        else if(statue.sockelType != typ)
         {
+            
 
             //die Sockelkosten 
             buildingCost = statue.config.SockelCost(statue.statueType, typ);
@@ -102,14 +115,15 @@ public class Node : MonoBehaviour
             PlayerStats.Money -= buildingCost;
 
 
-            //Buildeffekt hier? staub?
-            //GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
-            //Destroy(effect, 5f);
+            GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
+            Destroy(effect, 1f);
 
             statue.ChangeSockel(typ);
+//            statue.SetBullet(statue.statueType, statue.sockelType);
 
             Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
         }
+        
         
     }
 

@@ -13,25 +13,22 @@ public class WaveCont
 
 public class WaveSpawner : MonoBehaviour
 {
+    
+    public float countdown = 20f; //der Countdown, Anfang des Levels
     public static int EnemiesAlive = 0;
+    private int waveIndex = -1;
+    private float timer;
+    private bool waveactive;
+    float waveduration; // der Zeitabstand der nächsten Welle
+
 
     public WaveCont[] waves;
 
     public Transform spawnpoint1;
     public Transform spawnpoint2;
 
-    public float timeBetweenWaves = 5f;
-
-    //die zeit wann die nächste wave spawned
-    public float countdown = 20f;
-
-    //für die UI 
+    [Header("WaveUI")]
     public Text waveCountdownText;
-
-    private int waveIndex = -1;
-    private float timer;
-    private bool waveactive;
-    float waveduration;
 
     public int GetMaxWaves { get { return waves.Length; } }
     public int GetCurrentWave { get { return waveIndex+1; } }
@@ -50,10 +47,10 @@ public class WaveSpawner : MonoBehaviour
         }
 
         //boolean waveactive true, timer+ reale zeit
-        //timer größer die zeit der wellenzeit
         if (waveactive)
         {
             timer += Time.deltaTime;
+            //timer größer die zeit der wellenzeit
             if (timer > waveduration)
             {
                 SpawnNextWave();
@@ -67,17 +64,16 @@ public class WaveSpawner : MonoBehaviour
             waveCountdownText.text = countdown.ToString("F1");
         }
 
-        //wenn der index so groß ist wie die wirklich länge  und keine alle enemies besiegt sind
-        //WIN condition
+        //WIN-CONDITION
+        //wenn der index so groß ist wie die wirklich länge und es keine enemies leben
         if (waveIndex == waves.Length && EnemiesAlive == 0)
         {
 
             waveactive = false;
+            //- WIN UI einbauen
             Debug.Log("Level gewonnen!");
             this.enabled = false;
         }
-
-
         
     }
 
@@ -86,13 +82,16 @@ public class WaveSpawner : MonoBehaviour
     {
         waveIndex++;
         timer = 0;
+
         if(waveIndex >= waves.Length)
         {
-            //alle Wellen verbraucht, spiel gewonnen weil überlebt
+            //alle Wellen verbraucht, spiel gewonnen alle Wellen überlebt
             return;
         }
+
         waveduration = waves[waveIndex].waveduration;
-        //Debug.LogFormat("maxWaves: {0} von {1}", waveIndex+1, waves.Length );
+        Debug.LogFormat("maxWaves: {0} von {1}", waveIndex+1, waves.Length );
+
         //EnemiesAlive = 0;
         for (int i = 0; i < waves[waveIndex].enemies.Count; i++)
         {
@@ -106,21 +105,33 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnEnemy(Wave wavedata)
     {
+        Debug.Log(wavedata.rate);
         int spawned = wavedata.amountEnemy;
         while (spawned > 0)
         {
             //multiple enemy spawn
-            for (int i = 0; i < wavedata.clusterSpawn; i++)
+            
+            if (spawned > 0)
             {
-                if (spawned > 0)
-                {
-                    Instantiate(wavedata.enemy, spawnpoint1.position, spawnpoint1.rotation);
-                    //Debug.Log("spawned");
-                    spawned--;
-                }
+                Instantiate(wavedata.enemy, spawnpoint1.position, spawnpoint1.rotation);
+                //Debug.Log("spawned");
+                spawned--;
             }
-            yield return new WaitForSeconds(wavedata.rate);
+                yield return new WaitForSeconds(wavedata.rate);
+            
+
+            //for (int i = 0; i < wavedata.clusterSpawn; i++)
+            //{
+            //    if (spawned > 0)
+            //    {
+            //        Instantiate(wavedata.enemy, spawnpoint1.position, spawnpoint1.rotation);
+            //        //Debug.Log("spawned");
+            //        spawned--;
+            //    }
+            //}
+            //yield return new WaitForSeconds(wavedata.rate);
         }
+
         //Debug.Log("spawn finish!");
     }
 

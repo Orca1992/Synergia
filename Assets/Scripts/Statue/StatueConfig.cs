@@ -27,6 +27,19 @@ public class StatueConfig : MonoBehaviour
         return activeStatue.GetComponent<TowerStats>();
     }
 
+    public GameObject GetCurProjectile(GodType basetyp)
+    {
+        if(activeSockel != null)
+        {
+            return activeSockel.GetComponent<SockelStats>().GetCombination(basetyp).bulletPrefab;
+           
+        }
+        else
+        {
+            return null;
+        }
+    }
+
 
     // hier wird angegeben wieviel die 
     public int StatueCost (GodType statuetyp)
