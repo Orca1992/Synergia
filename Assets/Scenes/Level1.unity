@@ -6535,7 +6535,7 @@ MonoBehaviour:
       clusterSpawn: 3
       amountEnemy: 6
       rate: 0.73
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+    - enemy: {fileID: 6665467134484858918, guid: 7c2532d3c20d2674f8cf7e1078e82a8d,
         type: 3}
       clusterSpawn: 2
       amountEnemy: 9
@@ -6547,12 +6547,12 @@ MonoBehaviour:
       clusterSpawn: 4
       amountEnemy: 6
       rate: 1.88
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+    - enemy: {fileID: 6665467134484858918, guid: 7c2532d3c20d2674f8cf7e1078e82a8d,
         type: 3}
       clusterSpawn: 4
       amountEnemy: 8
       rate: 1.88
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+    - enemy: {fileID: 6654729073406219025, guid: e3f6088d9a4f2144c9bfd30e3ac8ca6a,
         type: 3}
       clusterSpawn: 4
       amountEnemy: 6
