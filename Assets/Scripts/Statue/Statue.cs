@@ -32,10 +32,7 @@ public class Statue : MonoBehaviour
     public Transform firePointArtemis;
 
     [Header("WaterBeam")]
-    public bool useBeam = false;
-
-    public int damageOverTime = 30;
-    public float slowPct = .5f;
+    private bool useBeam = false;
 
     public LineRenderer line;
     public ParticleSystem impactBeam;
@@ -102,26 +99,27 @@ public class Statue : MonoBehaviour
 
     void Update()
     {
-        if(target == null)
-        {
-            if(useBeam)
-            {
-                if(line.enabled)
-                {
-                    line.enabled = false;
-                    impactBeam.Stop();
-                }
-            }
+        if (statueType == GodType.Hermes)
             return;
-        }
+
+        
 
         //shooting Rate
         if(useBeam)
         {
-            Beam();
+            if (target == null)
+            {
+                line.enabled = false;
+                impactBeam.Stop();
+            }
+            else
+            {
+                Beam();
+            }
         }
         else
         {
+           
             if (fireCountdown <= 0f && statueType != GodType.None)
             {
                 SetFirepoint(statueType);
@@ -138,8 +136,9 @@ public class Statue : MonoBehaviour
 
     void Beam()
     {
-        target.GetComponent<Enemy>().TakeDamage(damageOverTime * Time.deltaTime);
-        target.GetComponent<Enemy>().Slow(slowPct);
+        target.GetComponent<Enemy>().TakeDamage((towerStats.damage + upgradeStats.damage) * Time.deltaTime);
+        //
+        target.GetComponent<Enemy>().Slow(towerStats.fireRate + upgradeStats.fireRate);
 
         //graphic
         if (!line.enabled)
@@ -189,7 +188,10 @@ public class Statue : MonoBehaviour
         statueType = type;
         config.SetStatue(type);
         config.SetSockel(type);
-
+        if(type == GodType.Poseidon)
+        {
+            useBeam = true;
+        }
         if (type == GodType.Sell)
         {
             SellTower();

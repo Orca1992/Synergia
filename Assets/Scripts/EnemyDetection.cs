@@ -26,6 +26,28 @@ public class EnemyDetection : MonoBehaviour
         else
         {
             GetComponent<SphereCollider>().radius = range;
+            foreach(var enemy in enemies)
+            {
+                //die distanz zwischen gegner und turm  größer ist als die max reichweite
+                if (Vector3.Distance(enemy.transform.position, transform.position) >= range)
+                {
+                    enemies.Remove(enemy);
+                }
+            }
+            if(!enemies.Contains(curTarget))
+            {
+                if (enemies.Count > 0)
+                {
+                    curTarget = enemies[enemies.Count - 1];
+                    OnTargetChanged?.Invoke(curTarget);
+                }
+                else
+                {
+                    curTarget = null;
+                    OnTargetChanged?.Invoke(curTarget);
+                }
+            }
+            
         }
     }
 
