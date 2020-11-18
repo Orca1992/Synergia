@@ -32,7 +32,7 @@ public class Statue : MonoBehaviour
     public Transform firePointArtemis;
 
     [Header("WaterBeam")]
-    private bool useBeam = false;
+    public bool useBeam = false;
 
     public LineRenderer line;
     public ParticleSystem impactBeam;
@@ -46,7 +46,7 @@ public class Statue : MonoBehaviour
         detection.OnTargetChanged += OnTargetChanged;
         detection.ownStatue = this;
         //für die Towerrange
-        detection.Init(0f, false);
+        detection.Init(0f, true);
         //InvokeRepeating("UpdateTarget", 0f, 0.5f);
         config = GetComponent<StatueConfig>();
         statueType = GodType.None;
