@@ -2483,6 +2483,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1612290073}
     m_Modifications:
+    - target: {fileID: 1936716530485266580, guid: 3d37b27a7139c4def886fe13ea541104,
+        type: 3}
+      propertyPath: combination.Array.data[1].range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936716530485266580, guid: 3d37b27a7139c4def886fe13ea541104,
+        type: 3}
+      propertyPath: combination.Array.data[1].fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936716530485266580, guid: 3d37b27a7139c4def886fe13ea541104,
+        type: 3}
+      propertyPath: combination.Array.data[1].damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695343211159440181, guid: 3d37b27a7139c4def886fe13ea541104,
+        type: 3}
+      propertyPath: combination.Array.data[2].cost
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6727635273632985494, guid: 3d37b27a7139c4def886fe13ea541104,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2543,7 +2563,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Node (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2956628956042530751, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
+    - {fileID: 1627843850471133250, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
+    - {fileID: 8869351017105516690, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
+    - {fileID: 2221361721660021310, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
 --- !u!4 &957125051 stripped
 Transform:
@@ -2697,7 +2721,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3063,13 +3087,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: 0
+  delaySubWaveTimer: 10
   waves:
   - enemies:
     - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
         type: 3}
       clusterSpawn: 1
       amountEnemy: 3
-      rate: 5
+      rate: 3
     - enemy: {fileID: 8021833786982242520, guid: c7e62452517d04077a1f06c07f4cff50,
         type: 3}
       clusterSpawn: 100
@@ -4250,7 +4275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1571789592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4440,7 +4465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612290072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.85, y: 0.1, z: -11.388983}
+  m_LocalPosition: {x: 3.5, y: 0.1, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 825687969285074413}
@@ -5173,6 +5198,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5959493411655057432, guid: 3d37b27a7139c4def886fe13ea541104,
+        type: 3}
+      propertyPath: useBeam
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6727635273632985494, guid: 3d37b27a7139c4def886fe13ea541104,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5516,7 +5546,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Node
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2221361721660021310, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
+    - {fileID: 2956628956042530751, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
+    - {fileID: 8869351017105516690, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
+    - {fileID: 1627843850471133250, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3d37b27a7139c4def886fe13ea541104, type: 3}
 --- !u!4 &825687969285074413 stripped
 Transform:

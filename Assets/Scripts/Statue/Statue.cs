@@ -5,43 +5,51 @@ using UnityEngine;
 
 public class Statue : MonoBehaviour
 {
+    [Header("General")]
     public Transform target;
+    private Transform activeFirepoint;
+    public ComboStats towerStats { get; private set; }
+    //
+    private ComboStats upgradeStats;
+
     public GodType statueType { get; private set; }
     public GodType sockelType { get; private set; }
 
+    [Header("Range")]
+    //public string enemyTag = "Enemy";
     public GameObject rangePrefab;
     private EnemyDetection detection;
 
-
-    [Header("Attributes")]
-    public TowerStats activeStats;
+    
+    [Header("Shooting")]
     public StatueConfig config;
 
-    public float range;
-    public float fireRate = 1f;
     private float fireCountdown = 0f;
-    
 
-    [Header("Unity Setup Fields")]
-
-    public string enemyTag = "Enemy";
-
-    private GameObject activeBullet;
-
-
-    private Transform activeFirepoint;
-
+    [Header("Firepoints")]
     public Transform firePointPoseidon;
     public Transform firePointZeus;
     public Transform firePointArtemis;
 
+    [Header("WaterBeam")]
+    public bool useBeam = false;
+
+    public int damageOverTime = 30;
+    public float slowPct = .5f;
+
+    public LineRenderer line;
+    public ParticleSystem impactBeam;
+
+
     void Start()
     {
+        upgradeStats = new ComboStats();
         var rangeGO = Instantiate(rangePrefab, transform.position, Quaternion.identity);
         detection = rangeGO.GetComponent<EnemyDetection>();
         detection.OnTargetChanged += OnTargetChanged;
+        detection.ownStatue = this;
         //für die Towerrange
-        detection.Init(15f);
+        detection.Init(0f, false);
         //InvokeRepeating("UpdateTarget", 0f, 0.5f);
         config = GetComponent<StatueConfig>();
         statueType = GodType.None;
@@ -96,45 +104,84 @@ public class Statue : MonoBehaviour
     {
         if(target == null)
         {
+            if(useBeam)
+            {
+                if(line.enabled)
+                {
+                    line.enabled = false;
+                    impactBeam.Stop();
+                }
+            }
             return;
         }
 
         //shooting Rate
-
-        if(fireCountdown <= 0f && statueType != GodType.None)
+        if(useBeam)
         {
-            SetFirepoint(statueType);
-            if(target != null)
-            {
-                Shoot();
-                fireCountdown = 1f / fireRate;
-            }
+            Beam();
         }
-        
-        fireCountdown -= Time.deltaTime; 
+        else
+        {
+            if (fireCountdown <= 0f && statueType != GodType.None)
+            {
+                SetFirepoint(statueType);
+                if (target != null)
+                {
+                    Shoot();
+                    fireCountdown = 1f / (towerStats.range + upgradeStats.range);
+                }
+            }
+            fireCountdown -= Time.deltaTime;
+        }  
+    }
+
+
+    void Beam()
+    {
+        target.GetComponent<Enemy>().TakeDamage(damageOverTime * Time.deltaTime);
+        target.GetComponent<Enemy>().Slow(slowPct);
+
+        //graphic
+        if (!line.enabled)
+        {
+            line.enabled = true;
+            impactBeam.Play();
+
+        }
+        line.SetPosition(0, firePointPoseidon.position);
+        line.SetPosition(1, target.position);
+
+        //Vector3 dir = firePointPoseidon.position = target.position;
+
+        //impactBeam.transform.position = target.position + dir.normalized * .5f;
+
+        //impactBeam.transform.rotation = Quaternion.LookRotation(dir);
+
+        impactBeam.transform.position = target.position;
+
     }
 
     void Shoot()
     {
 
-        GameObject bulletGO = (GameObject)Instantiate(activeBullet, activeFirepoint.position, activeFirepoint.rotation);
+        GameObject bulletGO = (GameObject)Instantiate(towerStats.bulletPrefab, activeFirepoint.position, activeFirepoint.rotation);
         //die referenz für das Projektil, danach wird das Ziel übegeben von der statue
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         
         if (bullet != null)
         {
-            bullet.damage = activeStats.damage;
+            bullet.damage = towerStats.damage + upgradeStats.damage;
             //problem mit null
             bullet.Seek(target);
             
         }
     }
 
-    protected virtual void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, range);
-    }
+    //protected virtual void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.white;
+    //    Gizmos.DrawWireSphere(transform.position, range);
+    //}
 
     //setter für die godtype statue und sockel
     public void ChangeStatue(GodType type)
@@ -145,17 +192,13 @@ public class Statue : MonoBehaviour
 
         if (type == GodType.Sell)
         {
-            detection.setStatus(false);
-            activeStats = null;
-            activeBullet = null;
-            statueType = GodType.None;
+            SellTower();
         }
         else
         {
-            
-            activeStats = config.GetStats();
+            towerStats = config.GetStats(statueType);
         }
-        
+
     }
 
     public void ChangeSockel(GodType type)
@@ -165,15 +208,39 @@ public class Statue : MonoBehaviour
 
         if (type == GodType.Sell)
         {
-            detection.setStatus(false);
-            sockelType = GodType.None;
-            activeBullet = null;
+            SellTower();
         }
         else
         {
-            activeBullet = config.GetCurProjectile(statueType);
+           towerStats = config.GetStats(statueType);
+           detection.Init(towerStats.range + upgradeStats.buffRange, statueType == GodType.Hermes? true : false);
+           
+        }      
+    }
+
+    private void SellTower()
+    {
+        if(statueType == GodType.Hermes)
+        {
+            detection.OnTowerSell();
         }
-        
+        detection.SetStatus(false);
+        statueType = GodType.None;
+        sockelType = GodType.None;
+    }
+
+    public void onBuff(ComboStats buff)
+    {
+        upgradeStats = buff;
+        detection.Init(towerStats.range + upgradeStats.buffRange, statueType == GodType.Hermes ? true : false);
+    }
+
+    public void clearBuff()
+    {
+        upgradeStats.buffRange = 0f;
+        upgradeStats.damage = 0f;
+        upgradeStats.fireRate = 0f;
+
     }
 
     public void SetFirepoint(GodType statuetyp)
@@ -194,65 +261,5 @@ public class Statue : MonoBehaviour
                 break;
         }
     }
-
-    //public void SetBullet(GodType statuetyp, GodType sockeltyp)
-    //{
-    //    switch (statuetyp)
-    //    {
-    //        case GodType.Zeus:
-    //             switch(sockeltyp)
-    //             {
-    //                case GodType.Zeus:
-    //                    activeBullet = activeStats.baseBullet;
-    //                    break;
-    //                case GodType.Poseidon:
-    //                    activeBullet = activeStats.upgradeBullet1;
-    //                    break;
-    //                case GodType.Artemis:
-    //                    activeBullet = activeStats.upgradeBullet2;
-    //                    break;
-    //                default:
-    //                    activeBullet = null;
-    //                    break;
-    //            }
-    //         case GodType.Poseidon:
-    //            switch(sockeltyp)
-    //            {
-    //                case GodType.Poseidon:
-    //                    activeBullet = activeStats.baseBullet;
-    //                    break;
-    //                case GodType.Zeus:
-    //                    activeBullet = activeStats.upgradeBullet1;
-    //                    break;
-    //                case GodType.Artemis:
-    //                    activeBullet = activeStats.upgradeBullet2;
-    //                    break;
-    //                default:
-    //                    activeBullet = null;
-    //                    break;
-    //            }
-    //        case GodType.Artemis:
-    //            switch(sockeltyp)
-    //            {
-    //            case GodType.Artemis:
-    //                activeBullet = activeStats.baseBullet;
-    //                break;
-    //            case GodType.Zeus:
-    //                activeBullet = activeStats.upgradeBullet1;
-    //                break;
-    //            case GodType.Poseidon:
-    //                activeBullet = activeStats.upgradeBullet2;
-    //                break;
-    //            default:
-    //                activeBullet = null;
-    //                    break;
-    //            }
-    //        case GodType.Hermes:
-    //            activeBullet = null;
-    //            break;
-
-    //    }
-    //}
-
 
 }

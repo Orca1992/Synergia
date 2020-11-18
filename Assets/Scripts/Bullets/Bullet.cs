@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
 
     public float speed = 1f;
-    public int damage = 1;
+    public float damage = 1;
 
     //ein wenig mit Partikel gearbeitet :)
     public GameObject impactEffect;

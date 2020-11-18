@@ -61,10 +61,14 @@ public class Node : MonoBehaviour
         int buildingCost;
 
         //keine Statue gebaut
-        
-        if (statue.statueType == GodType.None && statue.statueType != GodType.Sell)
+        if (statue.statueType == GodType.None)
         {
-            buildingCost = statue.config.StatueCost(typ);
+            if(typ == GodType.Sell)
+            {
+                return;
+            }
+
+            buildingCost = statue.config.SockelCost(typ, typ);
 
             if (PlayerStats.Money < buildingCost)
             {
@@ -74,26 +78,36 @@ public class Node : MonoBehaviour
 
             PlayerStats.Money -= buildingCost;
 
-
-            GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
-            Destroy(effect, 1f);
-
+            if(statue.statueType != GodType.Sell)
+            {
+                GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
+                Destroy(effect, 1f);
+                
+            }
+            
             statue.ChangeStatue(typ);
             statue.ChangeSockel(typ);
-//            statue.SetBullet(statue.statueType, statue.sockelType);
+
+            if (statue.statueType == GodType.Poseidon)
+            {
+                statue.useBeam = true;
+                Debug.Log("ich bin Poseidon, ich schieße einen Wasserstrahl!");
+            }
+
+            //statue.SetBullet(statue.statueType, statue.sockelType);
 
             Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
         }
         else if (typ == GodType.Sell)
         {
-            buildingCost = statue.config.StatueCost(statue.statueType);
+            buildingCost = statue.config.SockelCost(statue.statueType, statue.sockelType);
             statue.ChangeStatue(typ);
             statue.ChangeSockel(typ);
 //            statue.SetBullet(statue.statueType, statue.sockelType);
             PlayerStats.Money += (buildingCost / 2);
 
             //sell-effect einbauen
-
+            statue.useBeam = false;
             Debug.Log("Statue wurde verkauft! Money left: " + PlayerStats.Money);
         }
 

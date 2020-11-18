@@ -7,14 +7,26 @@ using UnityEngine.Events;
 public class EnemyDetection : MonoBehaviour
 {
     private List<GameObject> enemies = new List<GameObject>();
+    private List<GameObject> statues = new List<GameObject>();
     private GameObject curTarget;
-    public UnityAction<GameObject> OnTargetChanged;
     private bool isActive;
 
-    public void Init(float range)
+    public Statue ownStatue;
+    public UnityAction<GameObject> OnTargetChanged;
+
+
+    public void Init(float range, bool isBuffTower)
     {
         isActive = true;
-        GetComponent<SphereCollider>().radius = range;
+        if(isBuffTower)
+        {
+            TowersInRange(range);
+            GetComponent<SphereCollider>().radius = 0;
+        }
+        else
+        {
+            GetComponent<SphereCollider>().radius = range;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +35,7 @@ public class EnemyDetection : MonoBehaviour
         {
             return;
         }
-        Debug.Log(other.name);
+        //Debug.Log(other.name);
         if(other.CompareTag("Enemy"))
         {
             if(curTarget == null)
@@ -33,7 +45,9 @@ public class EnemyDetection : MonoBehaviour
             }
             enemies.Add(other.gameObject);
         }
+
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (!isActive)
@@ -64,12 +78,37 @@ public class EnemyDetection : MonoBehaviour
         }
     }
 
-    public void setStatus(bool status)
+    private void TowersInRange(float range)
+    {
+        statues.Clear();
+        Collider[] targets = Physics.OverlapSphere(transform.position, range);
+        foreach (var objects in targets)
+        {
+            if (objects.CompareTag("Statue"))
+            {
+                statues.Add(objects.GetComponent<Node>().statueTransform.gameObject);
+            }
+        }
+        foreach (var statue in statues)
+        {
+            statue.GetComponent<Statue>().onBuff(ownStatue.towerStats);
+        }
+    }
+
+    public void OnTowerSell()
+    {
+        foreach (var statue in statues)
+        {
+            statue.GetComponent<Statue>().clearBuff();
+        }
+    }
+    public void SetStatus(bool status)
     {
         isActive = status;
         if(!status)
         {
-            enemies.Clear(); 
+            enemies.Clear();
+            statues.Clear();
         }
 
     }

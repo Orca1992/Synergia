@@ -7,9 +7,9 @@ public class ZeusStatue : Statue
     
 
 
-    protected override void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, range);
-    }
+    //protected override void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.yellow;
+    //    Gizmos.DrawWireSphere(transform.position, range);
+    //}
 }

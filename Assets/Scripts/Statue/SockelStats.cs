@@ -22,6 +22,9 @@ public class SockelStats : MonoBehaviour
     }
 
     
+
+
+    
 }
 
 [Serializable]
@@ -30,4 +33,12 @@ public class ComboStats
     public GodType towerGod;
     public int cost;
     public GameObject bulletPrefab;
+    public float range;
+    public float fireRate;
+    public float damage;
+
+    public float buffRange;
+
+
 }
+

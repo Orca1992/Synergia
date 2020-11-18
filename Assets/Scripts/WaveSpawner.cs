@@ -21,6 +21,7 @@ public class WaveSpawner : MonoBehaviour
     private bool waveactive;
     float waveduration; // der Zeitabstand der nächsten Welle
 
+    public int delaySubWaveTimer;
 
     public WaveCont[] waves;
 
@@ -40,6 +41,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(timer);
         if (GameManager.GameIsOver)
         {
             this.enabled = false;
@@ -49,9 +51,10 @@ public class WaveSpawner : MonoBehaviour
         //boolean waveactive true, timer+ reale zeit
         if (waveactive)
         {
+
             timer += Time.deltaTime;
             //timer größer die zeit der wellenzeit
-            if (timer > waveduration)
+            if (timer > waveduration || EnemiesAlive == 0)
             {
                 SpawnNextWave();
             }
@@ -93,19 +96,25 @@ public class WaveSpawner : MonoBehaviour
         Debug.LogFormat("maxWaves: {0} von {1}", waveIndex+1, waves.Length );
 
         //EnemiesAlive = 0;
+        StartCoroutine(DelaySubWave(delaySubWaveTimer));
+
+    }
+
+    IEnumerator DelaySubWave(int delayAmount)
+    {
         for (int i = 0; i < waves[waveIndex].enemies.Count; i++)
         {
+
             Wave wave = waves[waveIndex].enemies[i];
             EnemiesAlive += wave.amountEnemy;
             StartCoroutine(SpawnEnemy(wave));
+            yield return new WaitForSeconds(delayAmount);
         }
-
-        
     }
 
     IEnumerator SpawnEnemy(Wave wavedata)
     {
-        Debug.Log(wavedata.rate);
+        //Debug.Log(wavedata.rate);
         int spawned = wavedata.amountEnemy;
         while (spawned > 0)
         {
@@ -118,7 +127,7 @@ public class WaveSpawner : MonoBehaviour
                 spawned--;
             }
                 yield return new WaitForSeconds(wavedata.rate);
-            
+
 
             //for (int i = 0; i < wavedata.clusterSpawn; i++)
             //{

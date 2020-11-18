@@ -20,18 +20,11 @@ public class StatueConfig : MonoBehaviour
     private GameObject activeStatue;
     private GameObject activeSockel;
 
-    //Von der jeweiligen Statue Stats die auf die activeStatue übertragen wird
-    public TowerStats GetStats()
-    {
-
-        return activeStatue.GetComponent<TowerStats>();
-    }
-
-    public GameObject GetCurProjectile(GodType basetyp)
+    public ComboStats GetStats(GodType basetyp)
     {
         if(activeSockel != null)
         {
-            return activeSockel.GetComponent<SockelStats>().GetCombination(basetyp).bulletPrefab;
+            return activeSockel.GetComponent<SockelStats>().GetCombination(basetyp);
            
         }
         else
@@ -42,29 +35,29 @@ public class StatueConfig : MonoBehaviour
 
 
     // hier wird angegeben wieviel die 
-    public int StatueCost (GodType statuetyp)
-    {
-        int cost = 0;
-        setVisability(true);
+    //public int StatueCost (GodType statuetyp)
+    //{
+    //    int cost = 0;
+    //    setVisability(true);
 
-        switch (statuetyp)
-        {
-            case GodType.Zeus:
-                cost = zeusStatue.GetComponent<TowerStats>().cost;
-                break;
-            case GodType.Poseidon:
-                cost = poseidonStatue.GetComponent<TowerStats>().cost;
-                break;
-            case GodType.Artemis:
-                cost = artemisStatue.GetComponent<TowerStats>().cost;
-                break;
-            case GodType.Hermes:
-                cost = hermesStatue.GetComponent<TowerStats>().cost;
-                break;
-        }
-        setVisability(false);
-        return cost;
-    }
+    //    switch (statuetyp)
+    //    {
+    //        case GodType.Zeus:
+    //            cost = zeusStatue.GetComponent<TowerStats>().cost;
+    //            break;
+    //        case GodType.Poseidon:
+    //            cost = poseidonStatue.GetComponent<TowerStats>().cost;
+    //            break;
+    //        case GodType.Artemis:
+    //            cost = artemisStatue.GetComponent<TowerStats>().cost;
+    //            break;
+    //        case GodType.Hermes:
+    //            cost = hermesStatue.GetComponent<TowerStats>().cost;
+    //            break;
+    //    }
+    //    setVisability(false);
+    //    return cost;
+    //}
 
     public int SockelCost(GodType statuetyp, GodType sockelTyp)
     {

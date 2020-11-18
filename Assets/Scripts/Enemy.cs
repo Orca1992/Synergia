@@ -5,9 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     BuildManager buildManager;
-    public int health = 100;
-    public float speed = 10f;
-    public int earnings = 10;
+    public float health = 100;
+    public float startspeed = 10f;
+    [HideInInspector]
+    public float speed;
+    public int worth = 10;
 
     private Transform target;
     private int wavepointIndex = 0;
@@ -18,6 +20,8 @@ public class Enemy : MonoBehaviour
         //erster punkt des arrays
         target = Waypoints.points[0];
         canMove = true;
+
+        speed = startspeed;
 
         buildManager = BuildManager.instance;
     }
@@ -38,6 +42,7 @@ public class Enemy : MonoBehaviour
                 GetNextWaypoint();
             }
 
+            speed = startspeed;
         }
     }
 
@@ -60,13 +65,13 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
         if(health <= 0)
         {
             Die();
-            PlayerStats.Money += earnings;
+            PlayerStats.Money += worth;
 
         }
     }
@@ -84,6 +89,11 @@ public class Enemy : MonoBehaviour
         canMove = false;
         StartCoroutine(MoveDuration(duration));
 
+    }
+    //PoseidonBeam
+    public void Slow(float pct)
+    {
+        speed = startspeed * (1f - pct);
     }
 
     private IEnumerator MoveDuration(float duration)
