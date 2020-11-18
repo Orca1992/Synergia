@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        //wenn  kein ziel getroffen haben
+        //wenn es kein ziel getroffen hat
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
 

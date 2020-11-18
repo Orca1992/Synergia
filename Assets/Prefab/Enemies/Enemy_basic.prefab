@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 80
+  startspeed: 1
   speed: 5
-  earnings: 15
+  worth: 10
 --- !u!65 &-8588039839360438653
 BoxCollider:
   m_ObjectHideFlags: 0
