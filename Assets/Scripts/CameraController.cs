@@ -9,7 +9,11 @@ public class CameraController : MonoBehaviour
     public float scrollSpeed = 5f;
     public float minY = 10f;
     public float maxY = 80f;
-
+    public int minXPosition = 0;
+    public int maxXPosition = 65;
+    public int minZPosition = -50;
+    public int maxZPosition = -100;
+   
     // Update is called once per frame
     void Update()
     {
@@ -39,19 +43,32 @@ public class CameraController : MonoBehaviour
         //Steurung am rand des fenster ausgeschaltet, NERVT BEIM TESTEN
         if (Input.GetKey("w"))
         {
-            transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
+            if (transform.position.z < minZPosition)
+            {
+                transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World); 
+            }
         }
         if (Input.GetKey("s"))
         {
-            transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
+            if (transform.position.z > maxZPosition)
+            {
+                transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
+            }
+
         }
         if (Input.GetKey("d"))
         {
-            transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
+            if (transform.position.x < maxXPosition)
+            {
+                transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
+            }
         }
         if (Input.GetKey("a"))
-        {
-            transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
+        { 
+            if (transform.position.x > minXPosition)
+            {
+                transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
+            }
         }
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
