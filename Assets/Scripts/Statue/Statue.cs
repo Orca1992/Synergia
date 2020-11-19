@@ -126,7 +126,7 @@ public class Statue : MonoBehaviour
                 if (target != null)
                 {
                     Shoot();
-                    fireCountdown = 1f / (towerStats.range + upgradeStats.range);
+                    fireCountdown = 1f / (towerStats.fireRate + upgradeStats.fireRate);
                 }
             }
             fireCountdown -= Time.deltaTime;

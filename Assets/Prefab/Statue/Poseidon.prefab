@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5527936437190617761}
-  - component: {fileID: 5910925400512113924}
   - component: {fileID: 8358851678589014552}
   m_Layer: 0
   m_Name: Poseidon
@@ -34,20 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5910925400512113924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7623463845641916865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97cec33d2b62243b0b17848309893e61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
-  cost: 100
 --- !u!120 &8358851678589014552
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -97,8 +82,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.3944458
-        value: 0.100002885
+        time: 0.41445008
+        value: 0.27143538
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -286,11 +271,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Trident
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927450831820104137, guid: 7a327397f0561be4ca75e91510f71d39,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a327397f0561be4ca75e91510f71d39, type: 3}
