@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9109613718191780260}
   - component: {fileID: 2127647996645318204}
+  - component: {fileID: -484530806212928395}
   m_Layer: 0
   m_Name: StrongEnemy
   m_TagString: Enemy
@@ -48,6 +49,19 @@ MonoBehaviour:
   startspeed: 10
   speed: 0
   worth: 30
+--- !u!65 &-484530806212928395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654729073406219025}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7771611, z: 1}
+  m_Center: {x: 0, y: 0.93795323, z: 0}
 --- !u!1001 &8070952434066916315
 PrefabInstance:
   m_ObjectHideFlags: 0

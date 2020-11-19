@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    BuildManager buildManager;
     public float health = 100;
     public float startspeed = 10f;
     [HideInInspector]
@@ -23,7 +22,6 @@ public class Enemy : MonoBehaviour
 
         speed = startspeed;
 
-        buildManager = BuildManager.instance;
     }
     
     void Update()

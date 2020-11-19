@@ -20,6 +20,7 @@ public class EnemyDetection : MonoBehaviour
         isActive = true;
         if(isBuffTower)
         {
+            Debug.Log(range);
             TowersInRange(range);
             GetComponent<SphereCollider>().radius = 0;
         }
@@ -38,7 +39,7 @@ public class EnemyDetection : MonoBehaviour
             {
                 if (enemies.Count > 0)
                 {
-                    curTarget = enemies[enemies.Count - 1];
+                    curTarget = enemies[enemies.Count - 1];   
                     OnTargetChanged?.Invoke(curTarget);
                 }
                 else

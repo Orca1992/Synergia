@@ -126,7 +126,7 @@ public class Statue : MonoBehaviour
                 if (target != null)
                 {
                     Shoot();
-                    fireCountdown = 1f / (towerStats.fireRate + upgradeStats.fireRate);
+                    fireCountdown = 1f * (towerStats.fireRate + upgradeStats.fireRate);
                 }
             }
             fireCountdown -= Time.deltaTime;
@@ -175,12 +175,6 @@ public class Statue : MonoBehaviour
             
         }
     }
-
-    //protected virtual void OnDrawGizmosSelected()
-    //{
-    //    Gizmos.color = Color.white;
-    //    Gizmos.DrawWireSphere(transform.position, range);
-    //}
 
     //setter für die godtype statue und sockel
     public void ChangeStatue(GodType type)
