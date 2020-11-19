@@ -56,8 +56,15 @@ public class Statue : MonoBehaviour
 
     private void OnTargetChanged(GameObject newTarget)
     {
-        target = newTarget.transform;
-        Debug.Log(newTarget);
+        if(newTarget != null)
+        {
+         target = newTarget.transform;
+        }
+        else
+        {
+            target = null;
+
+        }
     }
 
 

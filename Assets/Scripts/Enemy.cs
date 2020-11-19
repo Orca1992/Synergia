@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Enemy : MonoBehaviour
 {
+    public Action<GameObject> onDeath;
     public float health = 100;
     public float startspeed = 10f;
     [HideInInspector]
@@ -78,6 +80,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         WaveSpawner.EnemiesAlive--;
+        onDeath?.Invoke(gameObject);
         Destroy(gameObject);
     }
 

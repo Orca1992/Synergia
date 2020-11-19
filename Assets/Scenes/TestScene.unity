@@ -3087,27 +3087,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: 0
-  delaySubWaveTimer: 10
   waves:
   - enemies:
     - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
         type: 3}
-      clusterSpawn: 1
       amountEnemy: 3
       rate: 3
+      extraWavetime: 0
     - enemy: {fileID: 6665467134484858918, guid: 7c2532d3c20d2674f8cf7e1078e82a8d,
         type: 3}
-      clusterSpawn: 100
       amountEnemy: 4
       rate: 3
-    waveduration: 30
+      extraWavetime: 0
   - enemies:
     - enemy: {fileID: 6654729073406219025, guid: e3f6088d9a4f2144c9bfd30e3ac8ca6a,
         type: 3}
-      clusterSpawn: 1
-      amountEnemy: 10
+      amountEnemy: 2
       rate: 1
-    waveduration: 5
+      extraWavetime: 0
   spawnpoint1: {fileID: 1191616937}
   spawnpoint2: {fileID: 130907442}
   waveCountdownText: {fileID: 1422882595}

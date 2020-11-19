@@ -52,6 +52,26 @@ public class EnemyDetection : MonoBehaviour
         }
     }
 
+    private void OnEnemyDeath(GameObject enemy)
+    {
+        if(enemies.Contains(enemy))
+        {
+            enemies.Remove(enemy);
+
+        }
+
+        if (enemies.Count > 0)
+        {
+            curTarget = enemies[enemies.Count - 1];
+            OnTargetChanged?.Invoke(curTarget);
+        }
+        else
+        {
+            curTarget = null;
+            OnTargetChanged?.Invoke(curTarget);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(!isActive)
@@ -67,6 +87,7 @@ public class EnemyDetection : MonoBehaviour
                 OnTargetChanged?.Invoke(curTarget);
             }
             enemies.Add(other.gameObject);
+            other.gameObject.GetComponent<Enemy>().onDeath += OnEnemyDeath;
         }
 
     }
@@ -82,6 +103,7 @@ public class EnemyDetection : MonoBehaviour
             
             if (enemies.Contains(other.gameObject))
             {
+                other.gameObject.GetComponent<Enemy>().onDeath -= OnEnemyDeath;
                 enemies.Remove(other.gameObject);
                 if(curTarget == other.gameObject)
                 {

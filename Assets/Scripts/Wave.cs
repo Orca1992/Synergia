@@ -6,10 +6,10 @@
 public class Wave
 {
     public GameObject enemy;
-    public int clusterSpawn;
     public int amountEnemy;
     // zwischen den Enemies 
     public float rate;
+    public float extraWavetime;
 
 }
 
