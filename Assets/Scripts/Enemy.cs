@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public float speed;
     public int worth = 10;
 
+    public GameObject die_effect;
+
     private Transform target;
     private int wavepointIndex = 0;
     private bool canMove;
@@ -79,6 +81,9 @@ public class Enemy : MonoBehaviour
     //besser eine eigene Methode zu schreiben um animation oder partikel einzubauen
     void Die()
     {
+        GameObject effectIns = (GameObject)Instantiate(die_effect, transform.position, transform.rotation);
+        Destroy(die_effect, 2f);
+
         WaveSpawner.EnemiesAlive--;
         onDeath?.Invoke(gameObject);
         Destroy(gameObject);

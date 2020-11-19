@@ -169,7 +169,7 @@ PrefabInstance:
     - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: combination.Array.data[2].fireRate
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
@@ -261,7 +261,7 @@ PrefabInstance:
         type: 3}
       propertyPath: combination.Array.data[2].bulletPrefab
       value: 
-      objectReference: {fileID: 6109158938042981230, guid: 922b89d62a4004d2687d550afb8716eb,
+      objectReference: {fileID: 1429683656700473998, guid: 3a73909cfa86b4dcfabd91f28b761159,
         type: 3}
     - target: {fileID: 1106868038212768880, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
@@ -490,6 +490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: combination.Array.data[1].range
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[2].fireRate
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8962667402346787957, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}

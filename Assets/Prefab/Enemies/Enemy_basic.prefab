@@ -48,9 +48,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 80
-  startspeed: 1
+  startspeed: 5
   speed: 5
   worth: 10
+  die_effect: {fileID: 1948246521168881508, guid: c7d1f5291222b4bb9b8a20eeb753d903,
+    type: 3}
 --- !u!65 &-8588039839360438653
 BoxCollider:
   m_ObjectHideFlags: 0
