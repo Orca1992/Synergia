@@ -20,7 +20,8 @@ public class WaveSpawner : MonoBehaviour
     private float waveTime;
     private bool gameFinished;
     private bool uiActive;
-    
+
+    public GameObject winUI;
 
     public WaveCont[] waves;
 
@@ -36,6 +37,7 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         Invoke("StartGame", countdown);
+        winUI.SetActive(false);
     }
 
     void Update()
@@ -88,6 +90,7 @@ public class WaveSpawner : MonoBehaviour
         if(waveIndex >= waves.Length)
         {
             //alle Wellen verbraucht, spiel gewonnen alle Wellen überlebt
+
             waveactive = false;
             gameFinished = true;
             return;
@@ -167,7 +170,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void GameFinish()
     {
-        //WIN UI return
+        winUI.SetActive(true);
         Debug.Log("Ende");
 
     }

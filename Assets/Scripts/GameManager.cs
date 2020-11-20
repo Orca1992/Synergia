@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverUI;
-
+    
     public static bool GameIsOver;
 
     void Start()
@@ -32,31 +32,38 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
     public void Restart()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
     public void Level1()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
     public void Level2()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(2);
     }
     public void Level3()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(3);
     }
     public void Level4()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(4);
     }
     public void Level5()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(5);
     }
 
@@ -65,4 +72,6 @@ public class GameManager : MonoBehaviour
         GameIsOver = true;
         gameOverUI.SetActive(true);
     }
+
+    
 }

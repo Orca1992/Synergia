@@ -4470,7 +4470,7 @@ PrefabInstance:
     - target: {fileID: 1610181512112609438, guid: 494397a32d6694c42bb4676a6c78514d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1610181512112609438, guid: 494397a32d6694c42bb4676a6c78514d,
         type: 3}
@@ -4560,7 +4560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4263841483440332, guid: e2c439f7b7fd64a76b2361da9da77586, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4263841483440332, guid: e2c439f7b7fd64a76b2361da9da77586, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7261,12 +7261,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: 10
+  winUI: {fileID: 282060098}
   waves:
   - enemies:
     - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
         type: 3}
       amountEnemy: 6
-      rate: 0.73
+      rate: 1
       extraWavetime: 0
     - enemy: {fileID: 6665467134484858918, guid: 7c2532d3c20d2674f8cf7e1078e82a8d,
         type: 3}
@@ -7277,7 +7278,7 @@ MonoBehaviour:
     - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
         type: 3}
       amountEnemy: 6
-      rate: 1.88
+      rate: 1
       extraWavetime: 0
     - enemy: {fileID: 6665467134484858918, guid: 7c2532d3c20d2674f8cf7e1078e82a8d,
         type: 3}
@@ -9646,8 +9647,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756769737}
-        m_MethodName: Retry
+      - m_Target: {fileID: 756769736}
+        m_MethodName: Level2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10429,7 +10430,7 @@ Transform:
   m_LocalScale: {x: 0.77981, y: 0.77981, z: 0.77981}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &1111034740 stripped
 Transform:
@@ -11343,8 +11344,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756769737}
-        m_MethodName: Retry
+      - m_Target: {fileID: 756769736}
+        m_MethodName: Level1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16806,8 +16807,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756769737}
-        m_MethodName: Retry
+      - m_Target: {fileID: 756769736}
+        m_MethodName: Level1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17048,7 +17049,7 @@ PrefabInstance:
     - target: {fileID: 2493712757326686496, guid: a59a4b3e246c245c198df1625f45c6a4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2493712757326686496, guid: a59a4b3e246c245c198df1625f45c6a4,
         type: 3}
@@ -17541,7 +17542,7 @@ RectTransform:
   - {fileID: 1091183235}
   - {fileID: 1331273276}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19293,5 +19294,5 @@ Transform:
   m_LocalScale: {x: 0.77981, y: 0.77981, z: 0.77981}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50.000004, y: 81.57201, z: 0}
