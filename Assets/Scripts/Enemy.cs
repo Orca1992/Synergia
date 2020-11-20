@@ -81,7 +81,7 @@ public class Enemy : MonoBehaviour
     //besser eine eigene Methode zu schreiben um animation oder partikel einzubauen
     void Die()
     {
-        GameObject effectIns = (GameObject)Instantiate(die_effect, transform.position, transform.rotation);
+        GameObject dieIns = (GameObject)Instantiate(die_effect, transform.position, transform.rotation);
         Destroy(die_effect, 2f);
 
         WaveSpawner.EnemiesAlive--;
