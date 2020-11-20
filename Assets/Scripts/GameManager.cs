@@ -67,6 +67,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(5);
     }
 
+    public void LevelSelect()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(6);
+    }
+
     void EndGame()
     {
         GameIsOver = true;
