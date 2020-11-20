@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   damage: 25
-  impactEffect: {fileID: 1988597929228896345, guid: d531573616ba346898d467b20657ef8c,
+  impactEffect: {fileID: 1454807473737458, guid: 6108438f5e38d0b4b8fed06af6b74254,
     type: 3}
   stunChance: 0.68
   MinMaxStun: {x: 2, y: 4}

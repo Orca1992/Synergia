@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
     {
         PlayerStats.Lives--;
         WaveSpawner.EnemiesAlive--;
-        Destroy(gameObject);
+        DestroyImmediate(gameObject, true);
     }
 
     public void TakeDamage(float amount)
@@ -81,12 +81,13 @@ public class Enemy : MonoBehaviour
     //besser eine eigene Methode zu schreiben um animation oder partikel einzubauen
     void Die()
     {
-        GameObject dieIns = (GameObject)Instantiate(die_effect, transform.position, transform.rotation);
-        Destroy(die_effect, 2f);
+        //GameObject dieIns = (GameObject)Instantiate(die_effect, transform.position, transform.rotation);
+        //Destroy(die_effect, 2f);
 
         WaveSpawner.EnemiesAlive--;
         onDeath?.Invoke(gameObject);
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        DestroyImmediate(gameObject, true);
     }
 
     //ZeusPoseidonBullet

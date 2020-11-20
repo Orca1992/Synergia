@@ -20,7 +20,6 @@ public class EnemyDetection : MonoBehaviour
         isActive = true;
         if(isBuffTower)
         {
-            Debug.Log(range);
             TowersInRange(range);
             GetComponent<SphereCollider>().radius = 0;
         }

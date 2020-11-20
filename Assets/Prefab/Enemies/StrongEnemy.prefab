@@ -47,10 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be649505d45c487ea4c2c6f41a1dcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 120
-  startspeed: 5
+  health: 200
+  startspeed: 2
   speed: 0
-  worth: 30
+  worth: 50
   die_effect: {fileID: 1948246521168881508, guid: c7d1f5291222b4bb9b8a20eeb753d903,
     type: 3}
 --- !u!65 &-484530806212928395

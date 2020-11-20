@@ -91,7 +91,7 @@ public class Node : MonoBehaviour
             if (statue.statueType == GodType.Poseidon)
             {
                 statue.useBeam = true;
-                Debug.Log("ich bin Poseidon, ich schieße einen Wasserstrahl!");
+                //Debug.Log("ich bin Poseidon, ich schieße einen Wasserstrahl!");
             }
 
             //statue.SetBullet(statue.statueType, statue.sockelType);
@@ -135,7 +135,7 @@ public class Node : MonoBehaviour
             statue.ChangeSockel(typ);
 //            statue.SetBullet(statue.statueType, statue.sockelType);
 
-            Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
+            //Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
         }
         
         
