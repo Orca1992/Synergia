@@ -12,16 +12,18 @@ public class Enemy : MonoBehaviour
     public float speed;
     public int worth = 10;
 
+    private Transform[] path;
     public GameObject die_effect;
 
     private Transform target;
     private int wavepointIndex = 0;
     private bool canMove;
 
-    void Start()
+    public void Init(Transform[] path)
     {
+        this.path = path;
         //erster punkt des arrays
-        target = Waypoints.points[0];
+        target = path[0];
         canMove = true;
 
         speed = startspeed;
@@ -50,14 +52,14 @@ public class Enemy : MonoBehaviour
 
     void GetNextWaypoint()
     {
-        if(wavepointIndex >= Waypoints.points.Length - 1)
+        if(wavepointIndex >= path.Length - 1)
         {
             EndPath();
             return;
         }
 
         wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
+        target = path[wavepointIndex];
     }
 
     void EndPath()
@@ -81,8 +83,8 @@ public class Enemy : MonoBehaviour
     //besser eine eigene Methode zu schreiben um animation oder partikel einzubauen
     void Die()
     {
-        //GameObject dieIns = (GameObject)Instantiate(die_effect, transform.position, transform.rotation);
-        //Destroy(die_effect, 2f);
+        GameObject dieIns = (GameObject)Instantiate(die_effect, transform.position, transform.rotation);
+        Destroy(die_effect, 2f);
 
         WaveSpawner.EnemiesAlive--;
         onDeath?.Invoke(gameObject);

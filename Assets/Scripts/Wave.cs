@@ -10,6 +10,6 @@ public class Wave
     // zwischen den Enemies 
     public float rate;
     public float extraWavetime;
-
+    public Waypoints waypoints;
 }
 
