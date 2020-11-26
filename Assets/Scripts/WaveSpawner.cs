@@ -25,9 +25,6 @@ public class WaveSpawner : MonoBehaviour
 
     public WaveCont[] waves;
 
-    public Transform spawnpoint1;
-    public Transform spawnpoint2;
-
     [Header("WaveUI")]
     public Text waveCountdownText;
 
@@ -133,9 +130,9 @@ public class WaveSpawner : MonoBehaviour
             
             if (spawned > 0)
             {
-                int random = Random.Range(0, 2);
-                Transform spawnpos = random == 0 ? spawnpoint1 : spawnpoint2;
-                Instantiate(wavedata.enemy, spawnpos.position , spawnpos.rotation);
+                
+                var GO = Instantiate(wavedata.enemy, wavedata.waypoints.points[0].position , wavedata.waypoints.points[0].rotation);
+                GO.GetComponent<Enemy>().Init(wavedata.waypoints.points);
                 //Debug.Log("spawned");
                 spawned--;
             }
