@@ -3657,19 +3657,20 @@ MonoBehaviour:
       amountEnemy: 3
       rate: 3
       extraWavetime: 0
+      waypoints: {fileID: 0}
     - enemy: {fileID: 6665467134484858918, guid: 7c2532d3c20d2674f8cf7e1078e82a8d,
         type: 3}
       amountEnemy: 4
       rate: 3
       extraWavetime: 0
+      waypoints: {fileID: 0}
   - enemies:
     - enemy: {fileID: 6654729073406219025, guid: e3f6088d9a4f2144c9bfd30e3ac8ca6a,
         type: 3}
       amountEnemy: 2
       rate: 1
       extraWavetime: 0
-  spawnpoint1: {fileID: 1191616937}
-  spawnpoint2: {fileID: 130907442}
+      waypoints: {fileID: 0}
   waveCountdownText: {fileID: 461723858}
 --- !u!114 &1150570465
 MonoBehaviour:
@@ -4368,7 +4369,7 @@ RectTransform:
   - {fileID: 65607509}
   - {fileID: 1252174419}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6425,6 +6426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5d42c1b028e4620850df236764105d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: []
 --- !u!1 &2045509830
 GameObject:
   m_ObjectHideFlags: 0
@@ -6817,7 +6819,7 @@ Transform:
   - {fileID: 558888353}
   - {fileID: 2084607201}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2104369446
 GameObject:
@@ -7387,7 +7389,7 @@ PrefabInstance:
     - target: {fileID: 2493712757326686496, guid: a59a4b3e246c245c198df1625f45c6a4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2493712757326686496, guid: a59a4b3e246c245c198df1625f45c6a4,
         type: 3}
@@ -7595,7 +7597,7 @@ PrefabInstance:
     - target: {fileID: 3686781524449224796, guid: 205864b05e8344bccb7e03a10d063bf5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3686781524449224796, guid: 205864b05e8344bccb7e03a10d063bf5,
         type: 3}
