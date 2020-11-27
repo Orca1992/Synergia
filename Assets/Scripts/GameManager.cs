@@ -73,6 +73,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(6);
     }
 
+    public void HowToPlay()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(7);
+    }
+
     void EndGame()
     {
         Time.timeScale = 0f;
