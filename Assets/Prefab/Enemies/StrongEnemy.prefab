@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6654729073406219025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 6591415101959786367}
   - {fileID: 6402102393942194370}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
-  startspeed: 2
+  startspeed: 2.5
   speed: 0
   worth: 50
   die_effect: {fileID: 1948246521168881508, guid: c7d1f5291222b4bb9b8a20eeb753d903,
