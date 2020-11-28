@@ -74,33 +74,6 @@ public class Statue : MonoBehaviour
         {
             return;
         }
-//        target = detection.GetEnemy();
-
-
-        //GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-
-        //float shortestDistance = Mathf.Infinity;
-        //GameObject nearestEnemy = null;
-
-        //foreach (GameObject enemy in enemies)
-        //{
-        //    //speichert die Distanz der Gegner in Unity units
-        //    float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-        //    if (distanceToEnemy < shortestDistance)
-        //    {
-        //        shortestDistance = distanceToEnemy;
-        //        nearestEnemy = enemy;
-        //    }
-        //}
-
-        //if (nearestEnemy != null && shortestDistance <= range)
-        //{
-        //    target = nearestEnemy.transform;
-        //}
-        //else
-        //{
-        //    target = null;
-        //}
 
     }
 
@@ -157,13 +130,16 @@ public class Statue : MonoBehaviour
         line.SetPosition(0, firePointPoseidon.position);
         line.SetPosition(1, target.position);
 
-        //Vector3 dir = firePointPoseidon.position = target.position;
 
-        //impactBeam.transform.position = target.position + dir.normalized * .5f;
+        //mit dem particle
+        Vector3 dir = firePointPoseidon.position = target.position;
 
-        //impactBeam.transform.rotation = Quaternion.LookRotation(dir);
+        impactBeam.transform.position = target.position + dir.normalized * .5f;
 
-        impactBeam.transform.position = target.position;
+        impactBeam.transform.rotation = Quaternion.LookRotation(dir);
+
+        //ohne dem particle 
+        //impactBeam.transform.position = target.position;
 
     }
 

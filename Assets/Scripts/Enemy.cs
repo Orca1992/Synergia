@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         GameObject dieIns = (GameObject)Instantiate(die_effect, transform.position, transform.rotation);
-        Destroy(die_effect, 2f);
+        DestroyImmediate(die_effect, true);
 
         WaveSpawner.EnemiesAlive--;
         onDeath?.Invoke(gameObject);
