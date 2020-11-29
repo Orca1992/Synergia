@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     private int wavepointIndex = 0;
     private bool canMove;
 
+    private AudioSource source;
     public void Init(Transform[] path)
     {
         this.path = path;
@@ -74,6 +75,7 @@ public class Enemy : MonoBehaviour
         health -= amount;
         if(health <= 0)
         {
+            
             Die();
             PlayerStats.Money += worth;
 
@@ -84,7 +86,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         GameObject dieIns = (GameObject)Instantiate(die_effect, transform.position, transform.rotation);
-        Destroy(die_effect, 2f);
+        DestroyImmediate(die_effect, true);
 
         WaveSpawner.EnemiesAlive--;
         onDeath?.Invoke(gameObject);

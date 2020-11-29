@@ -13,6 +13,8 @@ public class Bullet : MonoBehaviour
     //ein wenig mit Partikel gearbeitet :)
     public GameObject impactEffect;
 
+    
+
     public void Seek(Transform _target)
     {
         target = _target;
@@ -33,6 +35,7 @@ public class Bullet : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame)
         {
+
             HitTarget();
             return;
         }
