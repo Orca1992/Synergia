@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 9222205775017054511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.089999996, y: 0.089999996, z: 0.089999996}
+  m_LocalScale: {x: 0.09, y: 0.90000004, z: 0.09}
   m_Children:
   - {fileID: 2646463229412256112}
   - {fileID: 8863966202380144151}
@@ -351,6 +351,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8408233587236850581}
     m_Modifications:
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[0].cost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[1].cost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[2].cost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106868038212768880, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[0].cost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106868038212768880, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[2].cost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106868038212768880, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].cost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[1].cost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[2].cost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].cost
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4451447664541848988, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -417,6 +462,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1744643140068867116, guid: 9816af62bf52f47abb58b6f6857602a9,
         type: 3}
+    - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[0].cost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[1].cost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].cost
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443ab1aec91be4ff4a1c2aa03a69e163, type: 3}
 --- !u!4 &2646463229412256112 stripped
