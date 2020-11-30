@@ -13,7 +13,12 @@ public class EnemyDetection : MonoBehaviour
 
     public Statue ownStatue;
     public UnityAction<GameObject> OnTargetChanged;
+    public Transform rangeIndicator;
 
+    public void SetRange(float range)
+    {
+        rangeIndicator.localScale = new Vector3(range * 2f, 0.1f, range * 2f);
+    }
 
     public void Init(float range, bool isBuffTower)
     {
@@ -156,5 +161,7 @@ public class EnemyDetection : MonoBehaviour
         }
 
     }
+
+    
 
 }

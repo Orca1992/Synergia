@@ -46,7 +46,7 @@ ParticleSystem:
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9649,15 +9649,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744643140068867116}
-  m_LocalRotation: {x: 0.000013790843, y: 0.9999849, z: -0.00461059, w: 0.0029910782}
-  m_LocalPosition: {x: 0.128617, y: -0.20077127, z: -21.599943}
+  m_LocalRotation: {x: 0.000013791776, y: 0.999985, z: -0.0046076165, w: 0.0029932112}
+  m_LocalPosition: {x: 0.11692733, y: -0.18615921, z: -19.782202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1738634370207077188}
   - {fileID: 1738909109748571412}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.528, y: 179.65701, z: 0}
 --- !u!198 &1941224935178814194
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9672,7 +9672,7 @@ ParticleSystem:
   cullingMode: 1
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9910,8 +9910,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 1
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:

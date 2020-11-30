@@ -2641,7 +2641,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  startspeed: 10
   speed: 5
+  worth: 10
+  die_effect: {fileID: 0}
 --- !u!1 &8042393950733068399
 GameObject:
   m_ObjectHideFlags: 0

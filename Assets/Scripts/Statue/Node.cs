@@ -15,10 +15,10 @@ public class Node : MonoBehaviour
     private Renderer rend;
     private Color startColor;
 
-    private bool isBuild;
+    public bool isBuild { get; private set; }
 
-    private Statue statue;
- 
+    public Statue statue { get; private set; }
+
     [HideInInspector]
     public bool isUpgraded;
 
@@ -40,22 +40,14 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-
-        if (!isBuild)
-        {
+       
             buildManager.SelectedNode(this);
-            return;
-        }
-
-        if (!buildManager.CanBuild)
-            return;
        
     }
 
     
 
 
-    //einbauen wie ich 3-4 verschiedene Upgrades erstelle? muss eingebaut werden
     public void Upgrade(GodType typ)
     {
         int buildingCost;
@@ -87,6 +79,7 @@ public class Node : MonoBehaviour
             
             statue.ChangeStatue(typ);
             statue.ChangeSockel(typ);
+            isBuild = true;
 
             if (statue.statueType == GodType.Poseidon)
             {
@@ -105,6 +98,7 @@ public class Node : MonoBehaviour
             statue.ChangeSockel(typ);
 //            statue.SetBullet(statue.statueType, statue.sockelType);
             PlayerStats.Money += (buildingCost / 2);
+            isBuild = false;
 
             //sell-effect einbauen
             statue.useBeam = false;
@@ -112,11 +106,10 @@ public class Node : MonoBehaviour
         }
 
 
-        //Statue gebaut, aber kein Sockel
-        else if(statue.sockelType != typ)
+    
+        else if(statue.sockelType != typ && !isUpgraded)
         {
             
-
             //die Sockelkosten 
             buildingCost = statue.config.SockelCost(statue.statueType, typ);
 
@@ -133,6 +126,8 @@ public class Node : MonoBehaviour
             Destroy(effect, 1f);
 
             statue.ChangeSockel(typ);
+            isBuild = true;
+            isUpgraded = true;
 //            statue.SetBullet(statue.statueType, statue.sockelType);
 
             //Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
@@ -143,8 +138,6 @@ public class Node : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (!buildManager.CanBuild)
-            return;
 
         rend.material.color = hoverColor;
     }

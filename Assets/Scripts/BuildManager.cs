@@ -12,9 +12,6 @@ public class BuildManager : MonoBehaviour
 
     public NodeUI nodeUI;
 
-    //isr es möglich es zu bauen auf dem node?
-    public bool CanBuild { get { return statueToBuild != null; } }
-
     void Awake()
     {
         if(instance != null)
@@ -28,19 +25,17 @@ public class BuildManager : MonoBehaviour
     //base statue mit soll ausgewählt werden
     public void SelectedNode(Node node)
     {
-        //beim zweiten mal anklicken, veschwindet die nodeUI
-        if(selectedNode == node)
-        {
-            DeselectNode();
-            return;
-
-        }
-
+        //
+        DeselectNode();
         selectedNode = node;
-        
-
         //UI
         nodeUI.SetTarget(node);
+
+        if (node.isBuild)
+        {
+            selectedNode.statue.ShowRangeIndicator(true);
+        }
+
     }
 
     //upgrade die base, da sie schon erstellt wurde
@@ -52,6 +47,14 @@ public class BuildManager : MonoBehaviour
 
     public void DeselectNode()
     {
+        if(selectedNode == null)
+        {
+            return;
+        }
+        if(selectedNode.isBuild)
+        {
+            selectedNode.statue.ShowRangeIndicator(false);
+        }
         selectedNode = null;
         nodeUI.Hide();
 
