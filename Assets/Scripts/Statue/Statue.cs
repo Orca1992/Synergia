@@ -35,8 +35,8 @@ public class Statue : MonoBehaviour
     public bool useBeam = false;
 
     public LineRenderer line;
-    public ParticleSystem impactBeam;
-
+    public GameObject impactBeamPrefab;
+    private GameObject impactBeam;
 
     void Start()
     {
@@ -52,6 +52,20 @@ public class Statue : MonoBehaviour
         statueType = GodType.None;
         sockelType = GodType.None;
 
+        impactBeam = Instantiate(impactBeamPrefab, transform.position, Quaternion.identity);
+
+    }
+
+    public void ShowRangeIndicator(bool isShowing)
+    {
+        if(isShowing)
+        {
+            detection.SetRange(towerStats.range + upgradeStats.buffRange);
+        }
+        else
+        {
+            detection.SetRange(0f);
+        }
     }
 
     private void OnTargetChanged(GameObject newTarget)
@@ -90,7 +104,7 @@ public class Statue : MonoBehaviour
             if (target == null)
             {
                 line.enabled = false;
-                impactBeam.Stop();
+                impactBeam.GetComponent<ParticleSystem>().Stop();
             }
             else
             {
@@ -124,22 +138,23 @@ public class Statue : MonoBehaviour
         if (!line.enabled)
         {
             line.enabled = true;
-            impactBeam.Play();
+            impactBeam.GetComponent<ParticleSystem>().Play();
 
         }
         line.SetPosition(0, firePointPoseidon.position);
         line.SetPosition(1, target.position);
 
 
-        //mit dem particle
-        Vector3 dir = firePointPoseidon.position = target.position;
+        //particle with direction 
+        //Vector3 dir = firePointPoseidon.position = target.position;
 
-        impactBeam.transform.position = target.position + dir.normalized * .5f;
+        //impactBeam.transform.position = target.position + dir.normalized * .5f;
 
-        impactBeam.transform.rotation = Quaternion.LookRotation(dir);
+        //impactBeam.transform.rotation = Quaternion.LookRotation(dir);
 
-        //ohne dem particle 
-        //impactBeam.transform.position = target.position;
+        //particle at the position of the target
+        impactBeam.transform.position = target.position;
+ 
 
     }
 
