@@ -16,7 +16,7 @@ public class UpgradeHandler : MonoBehaviour
     }
     void OnButtonClick()
     {
-        Debug.Log(type);
+//        Debug.Log(type);
         nodeUI.Upgrade(type);
     }
 }
