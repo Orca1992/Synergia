@@ -462,6 +462,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1744643140068867116, guid: 9816af62bf52f47abb58b6f6857602a9,
         type: 3}
+    - target: {fileID: 5237106059057089386, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: combination.Array.data[0].cost
@@ -476,6 +481,11 @@ PrefabInstance:
         type: 3}
       propertyPath: combination.Array.data[3].cost
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153764940954470579, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443ab1aec91be4ff4a1c2aa03a69e163, type: 3}
