@@ -13,9 +13,9 @@ public class CameraController : MonoBehaviour
     public int maxXPosition = 65;
     public int minZPosition = -50;
     public int maxZPosition = -100;
-   
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(GameManager.GameIsOver)
         {

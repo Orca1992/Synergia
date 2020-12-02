@@ -686,6 +686,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8408233587236850581, guid: 7bbf848132c1740d896ab23fbae44bcd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 9222205775017054511, guid: 7bbf848132c1740d896ab23fbae44bcd,
         type: 3}
       propertyPath: m_Name
@@ -1068,6 +1073,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8408233587236850581, guid: 7bbf848132c1740d896ab23fbae44bcd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9222205775017054511, guid: 7bbf848132c1740d896ab23fbae44bcd,
         type: 3}
@@ -3915,19 +3925,19 @@ MonoBehaviour:
   winUI: {fileID: 819817405}
   waves:
   - enemies:
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+    - enemy: {fileID: 7413204824723255175, guid: 5e44a4cee0ba3479992f9e69d234781d,
         type: 3}
       amountEnemy: 10
       rate: 3
       extraWavetime: 0
       waypoints: {fileID: 2039127911}
-    - enemy: {fileID: 6665467134484858918, guid: 7c2532d3c20d2674f8cf7e1078e82a8d,
+    - enemy: {fileID: 857471916493421472, guid: 1d364fe4f870e496881b65624ee06a47,
         type: 3}
       amountEnemy: 10
       rate: 3
       extraWavetime: 0
       waypoints: {fileID: 2039127911}
-    - enemy: {fileID: 6654729073406219025, guid: e3f6088d9a4f2144c9bfd30e3ac8ca6a,
+    - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
       amountEnemy: 10
       rate: 3
@@ -7152,6 +7162,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8408233587236850581, guid: 7bbf848132c1740d896ab23fbae44bcd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9222205775017054511, guid: 7bbf848132c1740d896ab23fbae44bcd,
         type: 3}

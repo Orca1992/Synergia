@@ -19,7 +19,9 @@ public class Enemy : MonoBehaviour
     private int wavepointIndex = 0;
     private bool canMove;
 
+    Animator animator;
     private AudioSource source;
+
     public void Init(Transform[] path)
     {
         this.path = path;
@@ -30,11 +32,19 @@ public class Enemy : MonoBehaviour
         speed = startspeed;
 
     }
-    
+
+    void Start()
+    {
+
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
       if (canMove)
         {
+            animator.SetBool("isWalking", true);
+
             //Enemy bewegt sich in die richtung(dir)
             Vector3 dir = target.position - transform.position;
             Quaternion rotation = Quaternion.LookRotation(dir);
@@ -86,8 +96,8 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         GameObject dieIns = (GameObject)Instantiate(die_effect, transform.position, transform.rotation);
-        
 
+        animator.SetBool("isWalking", false);
         WaveSpawner.EnemiesAlive--;
         onDeath?.Invoke(gameObject);
         //Destroy(gameObject);
@@ -97,6 +107,7 @@ public class Enemy : MonoBehaviour
     //ZeusPoseidonBullet
     public void StopMove(float duration)
     {
+        animator.SetBool("isWalking", false);
         canMove = false;
         StartCoroutine(MoveDuration(duration));
 
