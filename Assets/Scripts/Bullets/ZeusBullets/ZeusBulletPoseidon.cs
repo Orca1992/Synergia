@@ -19,8 +19,9 @@ public class ZeusBulletPoseidon : Bullet
         {
             if (Random.Range(0f, 1f) <= stunChance)
             {
-                e.StopMove(Random.Range(MinMaxStun.x,MinMaxStun.y));
+                e.StopMove(Random.Range(MinMaxStun.x, MinMaxStun.y));
             }
+
             e.TakeDamage(damage);
         }
 

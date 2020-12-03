@@ -286,7 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a183293dd8c455cb866f670e337792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
   positionOffset: {x: 0, y: 0, z: 0}
   statueTransform: {fileID: 2646463229412256112}
   _buildEffect___: {fileID: 8783113376481011759, guid: 280dd43b51a8f466d909a153e3dc9668,
@@ -366,6 +365,31 @@ PrefabInstance:
       propertyPath: combination.Array.data[2].cost
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[1].fireRate
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].fireRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].buffRange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1106868038212768880, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: combination.Array.data[0].cost
@@ -381,6 +405,22 @@ PrefabInstance:
       propertyPath: combination.Array.data[3].cost
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1106868038212768880, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[0].bulletPrefab
+      value: 
+      objectReference: {fileID: 8976140288818313756, guid: 67a71fe77c2754f5b8685095a1407742,
+        type: 3}
+    - target: {fileID: 1106868038212768880, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106868038212768880, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[2].range
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: combination.Array.data[1].cost
@@ -395,6 +435,21 @@ PrefabInstance:
         type: 3}
       propertyPath: combination.Array.data[3].cost
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[1].range
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[1].fireRate
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4451447664541848988, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
@@ -481,6 +536,16 @@ PrefabInstance:
         type: 3}
       propertyPath: combination.Array.data[3].cost
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[2].range
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6153764940954470579, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}

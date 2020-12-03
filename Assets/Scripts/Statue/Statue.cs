@@ -131,7 +131,6 @@ public class Statue : MonoBehaviour
     void Beam()
     {
         target.GetComponent<Enemy>().TakeDamage((towerStats.damage + upgradeStats.damage) * Time.deltaTime);
-        //
         target.GetComponent<Enemy>().Slow(towerStats.fireRate + upgradeStats.fireRate);
 
         //graphic
@@ -144,15 +143,7 @@ public class Statue : MonoBehaviour
         line.SetPosition(0, firePointPoseidon.position);
         line.SetPosition(1, target.position);
 
-
-        //particle with direction 
-        //Vector3 dir = firePointPoseidon.position = target.position;
-
-        //impactBeam.transform.position = target.position + dir.normalized * .5f;
-
-        //impactBeam.transform.rotation = Quaternion.LookRotation(dir);
-
-        //particle at the position of the target
+        //target Animation
         impactBeam.transform.position = target.position;
  
 
@@ -166,7 +157,7 @@ public class Statue : MonoBehaviour
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         
         if (bullet != null)
-        {
+        { 
             bullet.damage = towerStats.damage + upgradeStats.damage;
             //problem mit null
             bullet.Seek(target);
