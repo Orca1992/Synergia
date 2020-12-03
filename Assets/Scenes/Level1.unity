@@ -5869,7 +5869,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: minY
-      value: 45
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: scrollSpeed
@@ -5885,15 +5885,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: minXPosition
-      value: -40
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: minZPosition
-      value: -40
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: maxZPosition
-      value: -75
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1610181512112609424, guid: 494397a32d6694c42bb4676a6c78514d,
         type: 3}
