@@ -39116,6 +39116,11 @@ PrefabInstance:
       propertyPath: minXPosition
       value: -40
       objectReference: {fileID: 0}
+    - target: {fileID: 8096631718853508083, guid: bd373f38bda854d01bd38b0f25431f4c,
+        type: 3}
+      propertyPath: minY
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 8096631720672702919, guid: bd373f38bda854d01bd38b0f25431f4c,
         type: 3}
       propertyPath: MinDistance
