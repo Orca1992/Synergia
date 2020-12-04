@@ -10400,81 +10400,81 @@ MonoBehaviour:
   winUI: {fileID: 1153523597}
   waves:
   - enemies:
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+    - enemy: {fileID: 7413204824723255175, guid: 5e44a4cee0ba3479992f9e69d234781d,
         type: 3}
       amountEnemy: 6
       rate: 0.73
       extraWavetime: 0
-      waypoints: {fileID: 0}
-    - enemy: {fileID: 6665467134484858918, guid: 7c2532d3c20d2674f8cf7e1078e82a8d,
+      waypoints: {fileID: 1795969777}
+    - enemy: {fileID: 857471916493421472, guid: 1d364fe4f870e496881b65624ee06a47,
         type: 3}
       amountEnemy: 9
       rate: 1
       extraWavetime: 0
-      waypoints: {fileID: 0}
+      waypoints: {fileID: 1795969777}
   - enemies:
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+    - enemy: {fileID: 7413204824723255175, guid: 5e44a4cee0ba3479992f9e69d234781d,
         type: 3}
       amountEnemy: 6
       rate: 1.88
       extraWavetime: 0
-      waypoints: {fileID: 0}
-    - enemy: {fileID: 6665467134484858918, guid: 7c2532d3c20d2674f8cf7e1078e82a8d,
+      waypoints: {fileID: 1795969777}
+    - enemy: {fileID: 857471916493421472, guid: 1d364fe4f870e496881b65624ee06a47,
         type: 3}
       amountEnemy: 8
       rate: 1.88
       extraWavetime: 0
-      waypoints: {fileID: 0}
-    - enemy: {fileID: 6654729073406219025, guid: e3f6088d9a4f2144c9bfd30e3ac8ca6a,
+      waypoints: {fileID: 1795969777}
+    - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
       amountEnemy: 6
       rate: 1.88
       extraWavetime: 0
-      waypoints: {fileID: 0}
+      waypoints: {fileID: 1795969777}
   - enemies:
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+    - enemy: {fileID: 7413204824723255175, guid: 5e44a4cee0ba3479992f9e69d234781d,
         type: 3}
       amountEnemy: 7
       rate: 1.88
       extraWavetime: 0
-      waypoints: {fileID: 0}
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+      waypoints: {fileID: 1795969777}
+    - enemy: {fileID: 7413204824723255175, guid: 5e44a4cee0ba3479992f9e69d234781d,
         type: 3}
       amountEnemy: 8
       rate: 1.88
       extraWavetime: 0
-      waypoints: {fileID: 0}
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+      waypoints: {fileID: 1795969777}
+    - enemy: {fileID: 857471916493421472, guid: 1d364fe4f870e496881b65624ee06a47,
         type: 3}
       amountEnemy: 10
       rate: 1.88
       extraWavetime: 0
-      waypoints: {fileID: 0}
+      waypoints: {fileID: 1795969777}
   - enemies:
     - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
         type: 3}
       amountEnemy: 6
       rate: 1.88
       extraWavetime: 0
-      waypoints: {fileID: 0}
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+      waypoints: {fileID: 1795969777}
+    - enemy: {fileID: 7413204824723255175, guid: 5e44a4cee0ba3479992f9e69d234781d,
         type: 3}
       amountEnemy: 6
       rate: 1.88
       extraWavetime: 0
-      waypoints: {fileID: 0}
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+      waypoints: {fileID: 1795969777}
+    - enemy: {fileID: 857471916493421472, guid: 1d364fe4f870e496881b65624ee06a47,
         type: 3}
       amountEnemy: 10
       rate: 1.88
       extraWavetime: 0
-      waypoints: {fileID: 0}
-    - enemy: {fileID: 3914991540746471854, guid: cb0824867220f40bc969882caa28b043,
+      waypoints: {fileID: 1795969777}
+    - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
       amountEnemy: 8
       rate: 1.88
       extraWavetime: 0
-      waypoints: {fileID: 0}
+      waypoints: {fileID: 1795969777}
   waveCountdownText: {fileID: 1467687465}
 --- !u!4 &643448749
 Transform:
