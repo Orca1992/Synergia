@@ -1282,7 +1282,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: minY
-      value: 45
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: scrollSpeed

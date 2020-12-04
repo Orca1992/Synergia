@@ -6,7 +6,7 @@ public class Node : MonoBehaviour
 {
     BuildManager buildManager;
 
-    public Color hoverColor;
+    //public Color hoverColor;
     public Vector3 positionOffset;
     public Transform statueTransform;
 
@@ -45,8 +45,6 @@ public class Node : MonoBehaviour
        
     }
 
-    
-
 
     public void Upgrade(GodType typ)
     {
@@ -64,6 +62,7 @@ public class Node : MonoBehaviour
 
             if (PlayerStats.Money < buildingCost)
             {
+                //in der ui anzeigen
                 Debug.Log("Nicht genug Geld um aufzuleveln!");
                 return;
             }
@@ -72,9 +71,7 @@ public class Node : MonoBehaviour
 
             if(statue.statueType != GodType.Sell)
             {
-                GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
-                Destroy(effect, 1f);
-                
+                Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
             }
             
             statue.ChangeStatue(typ);
@@ -94,19 +91,21 @@ public class Node : MonoBehaviour
         else if (typ == GodType.Sell)
         {
             buildingCost = statue.config.SockelCost(statue.statueType, statue.sockelType);
-            statue.ChangeStatue(typ);
-            statue.ChangeSockel(typ);
-//            statue.SetBullet(statue.statueType, statue.sockelType);
+            statue.ChangeStatue(GodType.None);
+            statue.ChangeSockel(GodType.None);
+
             PlayerStats.Money += (buildingCost / 2);
+
             isBuild = false;
+            isUpgraded = false;
+            statue.useBeam = false;
 
             //sell-effect einbauen
-            statue.useBeam = false;
+
             Debug.Log("Statue wurde verkauft! Money left: " + PlayerStats.Money);
         }
 
-
-    
+        //wenn der Sockel nicht der angegebener Typ ist und nicht upgegraded
         else if(statue.sockelType != typ && !isUpgraded)
         {
             
@@ -115,6 +114,7 @@ public class Node : MonoBehaviour
 
             if (PlayerStats.Money < buildingCost)
             {
+                //in der ui anzeigen
                 Debug.Log("Nicht genug Geld um aufzuleveln!");
                 return;
             }
@@ -122,28 +122,25 @@ public class Node : MonoBehaviour
             PlayerStats.Money -= buildingCost;
 
 
-            GameObject effect = (GameObject)Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
-            Destroy(effect, 1f);
+            Instantiate(_buildEffect___, GetBuildPosition(), Quaternion.identity);
 
             statue.ChangeSockel(typ);
             isBuild = true;
             isUpgraded = true;
-//            statue.SetBullet(statue.statueType, statue.sockelType);
 
             //Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
-        }
+        }     
         
-        
     }
 
-    void OnMouseEnter()
-    {
+    //void OnMouseEnter()
+    //{
 
-        rend.material.color = hoverColor;
-    }
+    //    rend.material.color = hoverColor;
+    //}
 
-    private void OnMouseExit()
-    {
-        rend.material.color = startColor;
-    }
+    //private void OnMouseExit()
+    //{
+    //    rend.material.color = startColor;
+    //}
 }

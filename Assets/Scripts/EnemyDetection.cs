@@ -26,7 +26,7 @@ public class EnemyDetection : MonoBehaviour
         if(isBuffTower)
         {
             TowersInRange(range);
-            GetComponent<SphereCollider>().radius = 0;
+            GetComponent<SphereCollider>().radius = range;
         }
         else
         {

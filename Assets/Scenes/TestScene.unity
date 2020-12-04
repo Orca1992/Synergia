@@ -1009,15 +1009,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1612290073}
     m_Modifications:
-    - target: {fileID: 5483705142401987679, guid: 7bbf848132c1740d896ab23fbae44bcd,
+    - target: {fileID: 1358256489945824672, guid: 7bbf848132c1740d896ab23fbae44bcd,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: combination.Array.data[3].range
+      value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 7301386252791955486, guid: 7bbf848132c1740d896ab23fbae44bcd,
+    - target: {fileID: 3675596158788167730, guid: 7bbf848132c1740d896ab23fbae44bcd,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: combination.Array.data[0].range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776641150587595581, guid: 7bbf848132c1740d896ab23fbae44bcd,
+        type: 3}
+      propertyPath: combination.Array.data[2].range
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8408233587236850581, guid: 7bbf848132c1740d896ab23fbae44bcd,
         type: 3}
@@ -1073,11 +1078,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8408233587236850581, guid: 7bbf848132c1740d896ab23fbae44bcd,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9222205775017054511, guid: 7bbf848132c1740d896ab23fbae44bcd,
         type: 3}
@@ -3877,7 +3877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150570459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6877441, y: 0.0048828125, z: 1.8554688}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3921,7 +3921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794a2fa7865374c238faa0fab5982e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 0
+  countdown: 5
   winUI: {fileID: 819817405}
   waves:
   - enemies:
