@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicPLayerScript : MonoBehaviour
+public class MusicPlayerScript : MonoBehaviour
 {
     public AudioSource AudioSource;
 
