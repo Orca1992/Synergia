@@ -70,6 +70,7 @@ public class WaveSpawner : MonoBehaviour
         {
             if(!uiActive)
             {
+                Debug.Log("Gewonnen");
                 GameFinish();
                 uiActive = true;
             }
@@ -139,7 +140,6 @@ public class WaveSpawner : MonoBehaviour
                 yield return new WaitForSeconds(wavedata.rate);
         }
 
-        //Debug.Log("spawn finish!");
     }
 
     private float GetTotalWaveTime()
