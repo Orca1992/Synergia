@@ -70,9 +70,9 @@ public class WaveSpawner : MonoBehaviour
         {
             if(!uiActive)
             {
-                Debug.Log("Gewonnen");
                 GameFinish();
                 uiActive = true;
+                return;
             }
 
         }

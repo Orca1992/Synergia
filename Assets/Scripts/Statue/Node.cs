@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Node : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Node : MonoBehaviour
     public GameObject _buildEffect___;
 
     private Renderer rend;
-    private Color startColor;
+    public Text money;
 
     public bool isBuild { get; private set; }
 
@@ -28,7 +29,6 @@ public class Node : MonoBehaviour
     {
         statue = statueTransform.GetComponent<Statue>();
         rend = GetComponent<Renderer>();
-        startColor = rend.material.color;
 
         buildManager = BuildManager.instance;
     }
@@ -41,8 +41,6 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-
-        buildManager.DeselectNode();
 
         if (statue != null)
         {
@@ -72,6 +70,7 @@ public class Node : MonoBehaviour
             if (PlayerStats.Money < buildingCost)
             {
                 //in der ui anzeigen
+                
                 Debug.Log("Nicht genug Geld um aufzuleveln!");
                 return;
             }
