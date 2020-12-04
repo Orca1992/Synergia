@@ -10,7 +10,7 @@ public class Statue : MonoBehaviour
     private Transform activeFirepoint;
     public ComboStats towerStats { get; private set; }
     //
-    private ComboStats upgradeStats;
+    public ComboStats upgradeStats;
 
     public GodType statueType { get; private set; }
     public GodType sockelType { get; private set; }
@@ -40,13 +40,14 @@ public class Statue : MonoBehaviour
 
     void Start()
     {
+        towerStats = new ComboStats();
         upgradeStats = new ComboStats();
         var rangeGO = Instantiate(rangePrefab, transform.position, Quaternion.identity);
         detection = rangeGO.GetComponent<EnemyDetection>();
         detection.OnTargetChanged += OnTargetChanged;
         detection.ownStatue = this;
         //für die Towerrange
-        detection.Init(0f, true);
+        detection.Init(0f, false);
         //InvokeRepeating("UpdateTarget", 0f, 0.5f);
         config = GetComponent<StatueConfig>();
         statueType = GodType.None;

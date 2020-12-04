@@ -131,16 +131,21 @@ public class EnemyDetection : MonoBehaviour
     {
         statues.Clear();
         Collider[] targets = Physics.OverlapSphere(transform.position, range);
+
         foreach (var objects in targets)
         {
-            if (objects.CompareTag("Statue"))
+            if (objects.CompareTag("Node"))
             {
                 statues.Add(objects.GetComponent<Node>().statueTransform.gameObject);
             }
         }
         foreach (var statue in statues)
         {
-            statue.GetComponent<Statue>().onBuff(ownStatue.towerStats);
+            if (statue.GetComponent<Statue>().statueType != GodType.Hermes)
+            {
+                Debug.Log(statue.GetComponent<Statue>().statueType);
+                statue.GetComponent<Statue>().onBuff(ownStatue.towerStats);
+            } 
         }
     }
 

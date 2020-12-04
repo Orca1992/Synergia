@@ -48,13 +48,14 @@ public class BuildManager : MonoBehaviour
     public void DeselectNode()
     {
         if(selectedNode == null)
-        {
+        { 
             return;
         }
         if(selectedNode.isBuild)
         {
             selectedNode.statue.ShowRangeIndicator(false);
         }
+
         selectedNode = null;
         nodeUI.Hide();
 

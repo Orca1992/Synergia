@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Statue
+  - Node
   layers:
   - Default
   - TransparentFX
