@@ -22,6 +22,14 @@ public class BuildManager : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(1) && selectedNode != null)
+        {
+            DeselectNode();
+        }
+    }
+
     //base statue mit soll ausgewählt werden
     public void SelectedNode(Node node)
     {
@@ -47,7 +55,9 @@ public class BuildManager : MonoBehaviour
 
     public void DeselectNode()
     {
-        if(selectedNode == null)
+        
+
+        if (selectedNode == null)
         { 
             return;
         }
@@ -55,9 +65,9 @@ public class BuildManager : MonoBehaviour
         {
             selectedNode.statue.ShowRangeIndicator(false);
         }
-
-        selectedNode = null;
         nodeUI.Hide();
+        selectedNode = null;
+        
 
     }
 
