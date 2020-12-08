@@ -13785,6 +13785,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1006693095}
   - component: {fileID: 1006693094}
+  - component: {fileID: 1006693096}
   m_Layer: 0
   m_Name: Music Player
   m_TagString: Untagged
@@ -13819,6 +13820,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1006693096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006693093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3445b0daf1c099f48a04a78d8c4475b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1010420569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4532105433677774, guid: 6ac9ec5fb2d8c469bbc24c02c9a9e39d,
