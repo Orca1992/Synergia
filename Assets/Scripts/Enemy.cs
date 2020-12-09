@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public float speed;
     public int worth = 10;
+    public float distanceToGoal { get; private set; }
 
     private Transform[] path;
     public GameObject die_effect;
@@ -24,12 +25,18 @@ public class Enemy : MonoBehaviour
 
     public void Init(Transform[] path)
     {
+
         this.path = path;
         //erster punkt des arrays
         target = path[0];
         canMove = true;
 
         speed = startspeed;
+        for(int i = 0; i < path.Length-1; i++)
+        {
+            //
+            distanceToGoal += Vector3.Distance(path[i].position, path[i + 1].position);
+        }
 
     }
 
@@ -51,6 +58,8 @@ public class Enemy : MonoBehaviour
             
             transform.rotation = rotation;
             transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+
+            distanceToGoal -= speed * Time.deltaTime;
 
 
             if (Vector3.Distance(transform.position, target.position) <= 0.2f)

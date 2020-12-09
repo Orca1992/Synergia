@@ -82,10 +82,7 @@ public class WaveSpawner : MonoBehaviour
     
     void SpawnNextWave()
     {
-        waveIndex++;
-        //timer = 0;
-
-        if(waveIndex >= waves.Length)
+        if(waveIndex+1 >= waves.Length)
         {
             //alle Wellen verbraucht, spiel gewonnen alle Wellen überlebt
 
@@ -93,6 +90,9 @@ public class WaveSpawner : MonoBehaviour
             gameFinished = true;
             return;
         }
+        waveIndex++;
+        //timer = 0;
+
 
         //Debug.LogFormat("maxWaves: {0} von {1}", waveIndex+1, waves.Length );
 

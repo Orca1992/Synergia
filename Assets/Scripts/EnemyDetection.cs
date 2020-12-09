@@ -11,9 +11,49 @@ public class EnemyDetection : MonoBehaviour
     private GameObject curTarget;
     private bool isActive;
 
+    private float timer;
+    private float intervalTick = 0.5f;
+
     public Statue ownStatue;
     public UnityAction<GameObject> OnTargetChanged;
     public Transform rangeIndicator;
+
+    public void Update()
+    {
+        if(isActive)
+        {
+            timer += Time.deltaTime;
+            if(timer >= intervalTick)
+            {
+                UpdateTarget();
+                timer = 0;
+            }
+        }
+    }
+
+    private void UpdateTarget()
+    {
+        GameObject tempTarget = null;
+        if(enemies.Count > 0)
+        {
+            tempTarget = enemies[0];
+        }
+        else
+        {
+            //kein Gegner in Reichweite
+            curTarget = null;
+            OnTargetChanged?.Invoke(curTarget);
+        }
+        foreach(GameObject enemy in enemies)
+        {
+            if(enemy.GetComponent<Enemy>().distanceToGoal < tempTarget.GetComponent<Enemy>().distanceToGoal)
+            {
+                tempTarget = enemy;
+            }
+        }
+        curTarget = tempTarget;
+        OnTargetChanged?.Invoke(curTarget);
+    }
 
     public void SetRange(float range)
     {
@@ -61,19 +101,10 @@ public class EnemyDetection : MonoBehaviour
         if(enemies.Contains(enemy))
         {
             enemies.Remove(enemy);
-
+            UpdateTarget();
         }
 
-        if (enemies.Count > 0)
-        {
-            curTarget = enemies[enemies.Count - 1];
-            OnTargetChanged?.Invoke(curTarget);
-        }
-        else
-        {
-            curTarget = null;
-            OnTargetChanged?.Invoke(curTarget);
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -111,16 +142,7 @@ public class EnemyDetection : MonoBehaviour
                 enemies.Remove(other.gameObject);
                 if(curTarget == other.gameObject)
                 {
-                    if(enemies.Count > 0)
-                    {
-                        curTarget = enemies[enemies.Count - 1];
-                        OnTargetChanged?.Invoke(curTarget);
-                    }
-                    else
-                    {
-                        curTarget = null;
-                        OnTargetChanged?.Invoke(curTarget);
-                    }
+                    UpdateTarget();
                 }
             }
 

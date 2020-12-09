@@ -3927,20 +3927,20 @@ MonoBehaviour:
   - enemies:
     - enemy: {fileID: 7413204824723255175, guid: 5e44a4cee0ba3479992f9e69d234781d,
         type: 3}
-      amountEnemy: 10
-      rate: 3
+      amountEnemy: 2
+      rate: 1
       extraWavetime: 0
       waypoints: {fileID: 2039127911}
     - enemy: {fileID: 857471916493421472, guid: 1d364fe4f870e496881b65624ee06a47,
         type: 3}
-      amountEnemy: 10
-      rate: 3
+      amountEnemy: 2
+      rate: 1
       extraWavetime: 0
       waypoints: {fileID: 2039127911}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 10
-      rate: 3
+      amountEnemy: 2
+      rate: 1
       extraWavetime: 0
       waypoints: {fileID: 2039127911}
   waveCountdownText: {fileID: 371230226}

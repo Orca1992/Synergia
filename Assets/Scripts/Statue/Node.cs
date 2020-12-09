@@ -52,6 +52,22 @@ public class Node : MonoBehaviour
 
     }
 
+    void OnMouseEnter()
+    {
+        if(statue != null)
+        {
+            statue.ShowRangeIndicator(true);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (statue != null)
+        {
+            statue.ShowRangeIndicator(false);
+        }
+    }
+
 
     public void Upgrade(GodType typ)
     {
@@ -141,14 +157,5 @@ public class Node : MonoBehaviour
         
     }
 
-    //void OnMouseEnter()
-    //{
 
-    //    rend.material.color = hoverColor;
-    //}
-
-    //private void OnMouseExit()
-    //{
-    //    rend.material.color = startColor;
-    //}
 }
