@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour
             //Enemy bewegt sich in die richtung(dir)
             Vector3 dir = target.position - transform.position;
             Quaternion rotation = Quaternion.LookRotation(dir);
+            
             transform.rotation = rotation;
             transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 

@@ -94,9 +94,8 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        Debug.LogFormat("maxWaves: {0} von {1}", waveIndex+1, waves.Length );
+        //Debug.LogFormat("maxWaves: {0} von {1}", waveIndex+1, waves.Length );
 
-        
         StartCoroutine(DelaySubWave());
 
     }
@@ -133,6 +132,7 @@ public class WaveSpawner : MonoBehaviour
             {
                 
                 var GO = Instantiate(wavedata.enemy, wavedata.waypoints.points[0].position , wavedata.waypoints.points[0].rotation);
+                //null Exception
                 GO.GetComponent<Enemy>().Init(wavedata.waypoints.points);
                 //Debug.Log("spawned");
                 spawned--;
