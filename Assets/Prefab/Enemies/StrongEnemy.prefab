@@ -197,12 +197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be649505d45c487ea4c2c6f41a1dcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 150
   startspeed: 2.5
   speed: 0
   worth: 50
-  die_effect: {fileID: 1948246521168881508, guid: c7d1f5291222b4bb9b8a20eeb753d903,
-    type: 3}
+  die_effect: {fileID: 1277154925287174, guid: 3b517eddec185dd4a830743a742ad00b, type: 3}
 --- !u!65 &-5022925646025281576
 BoxCollider:
   m_ObjectHideFlags: 0

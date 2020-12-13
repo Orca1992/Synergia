@@ -290,6 +290,7 @@ MonoBehaviour:
   statueTransform: {fileID: 2646463229412256112}
   _buildEffect___: {fileID: 8783113376481011759, guid: 280dd43b51a8f466d909a153e3dc9668,
     type: 3}
+  money: {fileID: 0}
   isUpgraded: 0
 --- !u!65 &7680851358895313866
 BoxCollider:
@@ -583,6 +584,12 @@ PrefabInstance:
       propertyPath: combination.Array.data[2].range
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[2].bulletPrefab
+      value: 
+      objectReference: {fileID: 5754499778733233454, guid: 49ab792eb840946649cd65c87da2c501,
+        type: 3}
     - target: {fileID: 6153764940954470579, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: m_IsActive
