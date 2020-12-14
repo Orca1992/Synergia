@@ -73,12 +73,10 @@ public class CameraController : MonoBehaviour
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-        Vector3 pos = transform.position;
-
-        pos.y -= scroll * 100 * scrollSpeed * Time.deltaTime;
-        pos.y = Mathf.Clamp(pos.y, minY, maxY);
+        Camera.main.fieldOfView -= scroll * 100 * scrollSpeed * Time.deltaTime;
+        Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, minY, maxY);
 
 
-        transform.position = pos;
+        
     }
 }

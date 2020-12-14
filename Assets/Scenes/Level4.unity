@@ -35161,27 +35161,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: minY
-      value: 90
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: scrollSpeed
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: maxY
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
-      propertyPath: minXPosition
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
-      propertyPath: maxXPosition
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
+      propertyPath: minXPosition
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
+      propertyPath: maxXPosition
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: maxZPosition
-      value: -60
+      value: -70
       objectReference: {fileID: 0}
     - target: {fileID: 1958169142, guid: 494397a32d6694c42bb4676a6c78514d, type: 3}
       propertyPath: minZPosition
