@@ -94,7 +94,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyText: {fileID: 8967368093984860897}
-  lowCurrencyText: {fileID: 8967368094538612863}
 --- !u!114 &8967368093984860899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8967368094538612859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -218,7 +217,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 709655f82edc34c6ba4b85c8276c9bdf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

@@ -13,24 +13,17 @@ public class Node : MonoBehaviour
     public Transform statueTransform;
 
     public GameObject _buildEffect___;
-
-    private Renderer rend;
-    public Text money;
-    public Text lowCurrencyText;
-
-    public bool isBuild { get; private set; }
-
-    public Statue statue { get; private set; }
+    public GameObject lowCurrencyText;
 
     [HideInInspector]
     public bool isUpgraded;
 
+    public bool isBuild { get; private set; }
+    public Statue statue { get; private set; }
 
     private void Start()
     {
         statue = statueTransform.GetComponent<Statue>();
-        rend = GetComponent<Renderer>();
-        
         buildManager = BuildManager.instance;
     }
 
@@ -38,7 +31,6 @@ public class Node : MonoBehaviour
     {
         return transform.position + positionOffset;
     }
-
 
     void OnMouseDown()
     {
@@ -87,8 +79,7 @@ public class Node : MonoBehaviour
             if (PlayerStats.Money < buildingCost)
             {
                 //in der ui anzeigen
-                lowCurrencyText.enabled = true;
-                lowCurrencyText.GetComponent<Animator>().Play("LowCurrency");
+                lowCurrencyText.SetActive(true);
                 Debug.Log("Nicht genug Geld um aufzuleveln!");
                 return;
             }
