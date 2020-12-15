@@ -128,7 +128,7 @@ public class Node : MonoBehaviour
             if (PlayerStats.Money < buildingCost)
             {
                 //in der ui anzeigen
-                lowCurrencyText.GetComponent<Animator>().Play("LowCurrency");
+                lowCurrencyText.GetComponent<Animator>().;
                 Debug.Log("Nicht genug Geld um aufzuleveln!");
                 return;
             }
