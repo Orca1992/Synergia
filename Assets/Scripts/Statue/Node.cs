@@ -16,6 +16,7 @@ public class Node : MonoBehaviour
 
     private Renderer rend;
     public Text money;
+    public Text lowCurrencyText;
 
     public bool isBuild { get; private set; }
 
@@ -29,7 +30,7 @@ public class Node : MonoBehaviour
     {
         statue = statueTransform.GetComponent<Statue>();
         rend = GetComponent<Renderer>();
-
+        
         buildManager = BuildManager.instance;
     }
 
@@ -86,7 +87,8 @@ public class Node : MonoBehaviour
             if (PlayerStats.Money < buildingCost)
             {
                 //in der ui anzeigen
-                
+                lowCurrencyText.enabled = true;
+                lowCurrencyText.GetComponent<Animator>().Play("LowCurrency");
                 Debug.Log("Nicht genug Geld um aufzuleveln!");
                 return;
             }
@@ -105,11 +107,7 @@ public class Node : MonoBehaviour
             if (statue.statueType == GodType.Poseidon)
             {
                 statue.useBeam = true;
-                //Debug.Log("ich bin Poseidon, ich schieße einen Wasserstrahl!");
             }
-
-            //statue.SetBullet(statue.statueType, statue.sockelType);
-
             Debug.Log("Statue wurde gekauft! Money left: " + PlayerStats.Money);
         }
         else if (typ == GodType.Sell)
@@ -139,6 +137,7 @@ public class Node : MonoBehaviour
             if (PlayerStats.Money < buildingCost)
             {
                 //in der ui anzeigen
+                lowCurrencyText.GetComponent<Animator>().Play("LowCurrency");
                 Debug.Log("Nicht genug Geld um aufzuleveln!");
                 return;
             }
