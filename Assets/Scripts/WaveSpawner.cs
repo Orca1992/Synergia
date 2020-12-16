@@ -91,8 +91,6 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
         waveIndex++;
-        //timer = 0;
-
 
         //Debug.LogFormat("maxWaves: {0} von {1}", waveIndex+1, waves.Length );
 

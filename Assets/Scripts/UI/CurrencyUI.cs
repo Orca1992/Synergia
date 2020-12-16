@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CurrencyUI : MonoBehaviour
 {
     public Text currencyText;
+    
 
     void Update()
     {
