@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 9222205775017054511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09900001, y: 0.089999996, z: 0.09900001}
+  m_LocalScale: {x: 0.099, y: 0.089999996, z: 0.099}
   m_Children:
   - {fileID: 2646463229412256112}
   - {fileID: 8863966202380144151}
@@ -290,8 +290,8 @@ MonoBehaviour:
   statueTransform: {fileID: 2646463229412256112}
   _buildEffect___: {fileID: 8783113376481011759, guid: 280dd43b51a8f466d909a153e3dc9668,
     type: 3}
-  money: {fileID: 0}
-  lowCurrencyText: {fileID: 0}
+  lowCurrencyText: {fileID: 5533468716463475594, guid: 1886ed72962c24f89a56310c40e7b780,
+    type: 3}
   isUpgraded: 0
 --- !u!65 &7680851358895313866
 BoxCollider:

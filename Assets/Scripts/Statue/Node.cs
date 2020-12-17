@@ -68,6 +68,7 @@ public class Node : MonoBehaviour
     public void Upgrade(GodType typ)
     {
         int buildingCost;
+        lowCurrencyText.SetActive(false);
 
         //keine Statue gebaut
         if (statue.statueType == GodType.None)
@@ -79,6 +80,8 @@ public class Node : MonoBehaviour
 
             buildingCost = statue.config.SockelCost(typ, typ);
 
+            
+            
             if (PlayerStats.Money < buildingCost)
             {
                 //in der ui anzeigen
@@ -86,6 +89,7 @@ public class Node : MonoBehaviour
                 Debug.Log("Nicht genug Geld um aufzuleveln!");
                 return;
             }
+            
 
             PlayerStats.Money -= buildingCost;
 
@@ -131,7 +135,7 @@ public class Node : MonoBehaviour
             if (PlayerStats.Money < buildingCost)
             {
                 //in der ui anzeigen
-                lowCurrencyText.GetComponent<Animator>();
+                lowCurrencyText.SetActive(true);
                 Debug.Log("Nicht genug Geld um aufzuleveln!");
                 return;
             }
