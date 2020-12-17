@@ -505,7 +505,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4691354591668787888}
-          m_MethodName: Toggle
+          m_MethodName: activate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -520,7 +520,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4691354591668787888}
-          m_MethodName: Toggle
+          m_MethodName: deactivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -535,7 +535,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4691354591668787888}
-          m_MethodName: Toggle
+          m_MethodName: deactivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -712,7 +712,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1356563548965572100}
-          m_MethodName: Toggle
+          m_MethodName: activate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -727,7 +727,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1356563548965572100}
-          m_MethodName: Toggle
+          m_MethodName: deactivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -742,7 +742,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1356563548965572100}
-          m_MethodName: Toggle
+          m_MethodName: deactivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1024,7 +1024,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3570105564903301530}
-          m_MethodName: Toggle
+          m_MethodName: activate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1039,7 +1039,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3570105564903301530}
-          m_MethodName: Toggle
+          m_MethodName: deactivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1054,7 +1054,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3570105564903301530}
-          m_MethodName: Toggle
+          m_MethodName: deactivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1231,7 +1231,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1784112746243130508}
-          m_MethodName: Toggle
+          m_MethodName: activate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1246,7 +1246,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1784112746243130508}
-          m_MethodName: Toggle
+          m_MethodName: deactivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1261,7 +1261,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1784112746243130508}
-          m_MethodName: Toggle
+          m_MethodName: deactivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1588,7 +1588,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 753871139212471243}
-          m_MethodName: Toggle
+          m_MethodName: activate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1603,7 +1603,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 753871139212471243}
-          m_MethodName: Toggle
+          m_MethodName: deactivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1618,7 +1618,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 753871139212471243}
-          m_MethodName: Toggle
+          m_MethodName: deactivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

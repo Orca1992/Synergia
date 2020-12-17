@@ -9,12 +9,21 @@ public class NodeUIStats : MonoBehaviour
 
     
 
-    public void Toggle()
+    public void activate()
     {
 
-        obj.SetActive(!obj.activeSelf);
+        obj.SetActive(true);
 
 
     }
+
+    public void deactivate()
+    {
+
+        obj.SetActive(false);
+
+
+    }
+
 
 }
