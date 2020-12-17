@@ -34,7 +34,10 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         if (statue != null)
         {
             buildManager.SelectedNode(this);
@@ -128,7 +131,7 @@ public class Node : MonoBehaviour
             if (PlayerStats.Money < buildingCost)
             {
                 //in der ui anzeigen
-                lowCurrencyText.GetComponent<Animator>().;
+                lowCurrencyText.GetComponent<Animator>();
                 Debug.Log("Nicht genug Geld um aufzuleveln!");
                 return;
             }
