@@ -66,7 +66,7 @@ public class WaveSpawner : MonoBehaviour
             //Text für die UI
             waveCountdownText.text = countdown.ToString("F1");
         }
-        if(gameFinished && EnemiesAlive == 0)
+        if(gameFinished && EnemiesAlive <= 0)
         {
             if(!uiActive)
             {
