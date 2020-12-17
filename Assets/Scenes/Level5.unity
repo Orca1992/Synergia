@@ -8856,12 +8856,12 @@ PrefabInstance:
     - target: {fileID: 3205276092457422342, guid: 205864b05e8344bccb7e03a10d063bf5,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 61.2
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 3205276092457422342, guid: 205864b05e8344bccb7e03a10d063bf5,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 55.1
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 3686781523019359363, guid: 205864b05e8344bccb7e03a10d063bf5,
         type: 3}
