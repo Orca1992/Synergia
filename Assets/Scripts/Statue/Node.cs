@@ -34,7 +34,10 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         if (statue != null)
         {
             buildManager.SelectedNode(this);
