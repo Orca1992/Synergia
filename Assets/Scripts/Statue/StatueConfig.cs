@@ -78,6 +78,7 @@ public class StatueConfig : MonoBehaviour
             case GodType.Hermes:
                 cost = hermesBase.GetComponent<SockelStats>().GetCombination(statuetyp).cost;
                 break;
+
         }
         setVisability(false);
         return cost;

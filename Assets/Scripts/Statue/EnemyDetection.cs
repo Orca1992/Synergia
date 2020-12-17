@@ -163,7 +163,7 @@ public class EnemyDetection : MonoBehaviour
         }
         foreach (var statue in statues)
         {
-            if (statue.GetComponent<Statue>().statueType != GodType.Hermes)
+            if (statue.GetComponent<Statue>().statueType != GodType.Hermes && statue.GetComponent<Statue>().statueType != GodType.None) 
             {
                 Debug.Log(statue.GetComponent<Statue>().statueType);
                 statue.GetComponent<Statue>().onBuff(ownStatue.towerStats);

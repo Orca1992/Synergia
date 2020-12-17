@@ -183,6 +183,7 @@ public class Statue : MonoBehaviour
         }
         else
         {
+
             towerStats = config.GetStats(statueType);
         }
 
@@ -193,7 +194,7 @@ public class Statue : MonoBehaviour
         sockelType = type;
         config.SetSockel(type);
 
-        if (type == GodType.Sell)
+        if (type == GodType.Sell || type == GodType.None)
         {
             SellTower();
         }
