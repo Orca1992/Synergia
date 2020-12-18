@@ -23,6 +23,11 @@ public class Enemy : MonoBehaviour
     Animator animator;
     private AudioSource source;
 
+    public Material Highlight;
+    private Material Current;
+
+    public Renderer renderer;
+
     public void Init(Transform[] path)
     {
 
@@ -42,7 +47,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-
+        Current = renderer.material;
         animator = GetComponent<Animator>();
     }
 
@@ -92,6 +97,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        renderer.material = Highlight;
+        Invoke("ResetHighlight", 0.1f);
         health -= amount;
         if(health <= 0)
         {
@@ -100,6 +107,11 @@ public class Enemy : MonoBehaviour
             PlayerStats.Money += worth;
 
         }
+    }
+
+    void ResetHighlight()
+    {
+        renderer.material = Current;
     }
 
     //besser eine eigene Methode zu schreiben um animation oder partikel einzubauen
