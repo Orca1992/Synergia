@@ -39,14 +39,13 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(timer);
+
         if (GameManager.GameIsOver)
         {
             this.enabled = false;
             return;
         }
 
-        //boolean waveactive true, timer+ reale zeit
         if (waveactive)
         {
 
@@ -92,7 +91,6 @@ public class WaveSpawner : MonoBehaviour
         }
         waveIndex++;
 
-        //Debug.LogFormat("maxWaves: {0} von {1}", waveIndex+1, waves.Length );
 
         StartCoroutine(DelaySubWave());
 
@@ -102,8 +100,6 @@ public class WaveSpawner : MonoBehaviour
     {
         waveTime = GetTotalWaveTime();
         int cachedIndex = waveIndex;
-
-        //Debug.Log(waveIndex);
         for (int i = 0; i < waves[cachedIndex].enemies.Count; i++)
         {
 
@@ -120,7 +116,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnEnemy(Wave wavedata)
     {
-        //Debug.Log(wavedata.rate);
+
         int spawned = wavedata.amountEnemy;
         while (spawned > 0)
         {
@@ -132,7 +128,6 @@ public class WaveSpawner : MonoBehaviour
                 var GO = Instantiate(wavedata.enemy, wavedata.waypoints.points[0].position , wavedata.waypoints.points[0].rotation);
                 //null Exception
                 GO.GetComponent<Enemy>().Init(wavedata.waypoints.points);
-                //Debug.Log("spawned");
                 spawned--;
             }
                 yield return new WaitForSeconds(wavedata.rate);

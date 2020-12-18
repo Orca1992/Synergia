@@ -19102,7 +19102,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &661815414 stripped
 Transform:
@@ -23234,7 +23235,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &793295929 stripped
 Transform:
@@ -29174,7 +29176,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &987434859 stripped
 Transform:
@@ -38794,7 +38797,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &1351564420 stripped
 Transform:
@@ -40573,7 +40577,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &1390681548 stripped
 Transform:
@@ -40778,7 +40783,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &1399117121 stripped
 Transform:
@@ -44091,7 +44097,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &1510694431 stripped
 Transform:
@@ -44289,7 +44296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.122641504, b: 0.120754704, a: 0.46666667}
+  m_Color: {r: 0, g: 0.122641504, b: 0.120754704, a: 0.78431374}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -47320,7 +47327,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &1627984576 stripped
 Transform:
@@ -53848,7 +53856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.9, y: -19}
+  m_AnchoredPosition: {x: 9.9, y: 0.7}
   m_SizeDelta: {x: 600, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1848526400
@@ -53922,21 +53930,21 @@ MonoBehaviour:
     7: 34 Weak + 20 Medium + 8 Strong
 
 
-    Wave 8: 34 Weak + 22 Medium + 8 Strong
+    Wave 8: 34 Weak + 22 Medium + 12 Strong
 
 
     Wave
-    9: 36 Weak + 24 Medium + 10 Strong
+    9: 36 Weak + 24 Medium + 16 Strong
 
 
-    Wave 10: 36 Weak + 26 Medium + 12 Strong
+    Wave 10: 36 Weak + 26 Medium + 18 Strong
 
 
     Wave
-    11: 38 Weak + 28 Medium + 14 Strong
+    11: 38 Weak + 28 Medium + 20 Strong
 
 
-    Wave 12: 40 Weak + 30 Medium + 16 Strong'
+    Wave 12: 40 Weak + 30 Medium + 22 Strong'
 --- !u!222 &1848526402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -54401,7 +54409,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &1866578215 stripped
 Transform:
@@ -56432,7 +56441,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &1929448661 stripped
 Transform:
@@ -59615,7 +59625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a496bb7c2a47b4aaa1cb36e8abe94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 600
+  startMoney: 800
 --- !u!114 &2015925167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59870,7 +59880,7 @@ MonoBehaviour:
       waypoints: {fileID: 1451485964}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 4
+      amountEnemy: 6
       rate: 0.7
       extraWavetime: 0
       waypoints: {fileID: 1824954633}
@@ -59888,7 +59898,7 @@ MonoBehaviour:
       waypoints: {fileID: 1824954633}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 4
+      amountEnemy: 6
       rate: 0.8
       extraWavetime: 40
       waypoints: {fileID: 1451485964}
@@ -59913,7 +59923,7 @@ MonoBehaviour:
       waypoints: {fileID: 1451485964}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 5
+      amountEnemy: 8
       rate: 0.7
       extraWavetime: 0
       waypoints: {fileID: 1451485964}
@@ -59925,7 +59935,7 @@ MonoBehaviour:
       waypoints: {fileID: 1824954633}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 5
+      amountEnemy: 8
       rate: 0.8
       extraWavetime: 40
       waypoints: {fileID: 1824954633}
@@ -59938,7 +59948,7 @@ MonoBehaviour:
       waypoints: {fileID: 1824954633}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 6
+      amountEnemy: 9
       rate: 0.9
       extraWavetime: 20
       waypoints: {fileID: 1451485964}
@@ -59962,20 +59972,20 @@ MonoBehaviour:
       waypoints: {fileID: 1824954633}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 6
+      amountEnemy: 9
       rate: 0.8
       extraWavetime: 40
       waypoints: {fileID: 1451485964}
   - enemies:
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 7
+      amountEnemy: 10
       rate: 0.9
       extraWavetime: 0
       waypoints: {fileID: 1451485964}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 7
+      amountEnemy: 10
       rate: 0.9
       extraWavetime: 0
       waypoints: {fileID: 1451485964}
@@ -60024,7 +60034,7 @@ MonoBehaviour:
       waypoints: {fileID: 1451485964}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 8
+      amountEnemy: 11
       rate: 0.7
       extraWavetime: 0
       waypoints: {fileID: 1451485964}
@@ -60036,7 +60046,7 @@ MonoBehaviour:
       waypoints: {fileID: 1824954633}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 8
+      amountEnemy: 11
       rate: 0.8
       extraWavetime: 40
       waypoints: {fileID: 1824954633}
@@ -63204,7 +63214,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &2108544798 stripped
 Transform:
@@ -63531,7 +63542,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &2119866016 stripped
 Transform:
@@ -63606,7 +63618,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70eb3c5187a784e2b86158daeb7a9343, type: 3}
 --- !u!4 &2133247783 stripped
 Transform:

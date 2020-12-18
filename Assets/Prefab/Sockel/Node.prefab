@@ -380,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: combination.Array.data[3].fireRate
-      value: 0.9
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
@@ -390,6 +390,31 @@ PrefabInstance:
     - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: combination.Array.data[3].buffRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[0].fireRate
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[0].buffRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[1].buffRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[2].fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[2].buffRange
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1106868038212768880, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
@@ -427,6 +452,11 @@ PrefabInstance:
         type: 3}
       propertyPath: combination.Array.data[1].damage
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106868038212768880, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].fireRate
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
@@ -488,6 +518,21 @@ PrefabInstance:
         type: 3}
       propertyPath: combination.Array.data[0].range
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[2].damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062112818743055582, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].damage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4451447664541848988, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
@@ -600,20 +645,30 @@ PrefabInstance:
         type: 3}
       propertyPath: combination.Array.data[1].bulletPrefab
       value: 
-      objectReference: {fileID: 5754499778733233454, guid: 49ab792eb840946649cd65c87da2c501,
+      objectReference: {fileID: 6109158938042981230, guid: 922b89d62a4004d2687d550afb8716eb,
         type: 3}
     - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: combination.Array.data[0].bulletPrefab
       value: 
-      objectReference: {fileID: 5754499778733233454, guid: 49ab792eb840946649cd65c87da2c501,
+      objectReference: {fileID: 4629858410870654290, guid: 825895a6fb8c645bf89b8f660d4ea3fc,
         type: 3}
     - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: combination.Array.data[3].bulletPrefab
       value: 
-      objectReference: {fileID: 5754499778733233454, guid: 49ab792eb840946649cd65c87da2c501,
+      objectReference: {fileID: 6109158938042981230, guid: 922b89d62a4004d2687d550afb8716eb,
         type: 3}
+    - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[0].fireRate
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284508918149486545, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
+        type: 3}
+      propertyPath: combination.Array.data[3].fireRate
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6153764940954470579, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: m_IsActive
