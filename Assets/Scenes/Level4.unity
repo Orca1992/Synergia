@@ -19099,7 +19099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a496bb7c2a47b4aaa1cb36e8abe94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 400
+  startMoney: 600
 --- !u!114 &1137158138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19133,13 +19133,13 @@ MonoBehaviour:
         type: 3}
       amountEnemy: 10
       rate: 1.26
-      extraWavetime: 10
+      extraWavetime: -2
       waypoints: {fileID: 1376528712}
     - enemy: {fileID: 857471916493421472, guid: 1d364fe4f870e496881b65624ee06a47,
         type: 3}
       amountEnemy: 5
       rate: 2.5
-      extraWavetime: 11.74
+      extraWavetime: 4.34
       waypoints: {fileID: 2011100626}
     - enemy: {fileID: 7413204824723255175, guid: 5e44a4cee0ba3479992f9e69d234781d,
         type: 3}
@@ -19151,7 +19151,7 @@ MonoBehaviour:
         type: 3}
       amountEnemy: 7
       rate: 1
-      extraWavetime: 20
+      extraWavetime: 30.02
       waypoints: {fileID: 2011100626}
   - enemies:
     - enemy: {fileID: 7413204824723255175, guid: 5e44a4cee0ba3479992f9e69d234781d,
@@ -19334,7 +19334,7 @@ MonoBehaviour:
       waypoints: {fileID: 1376528712}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 3
+      amountEnemy: 8
       rate: 1.06
       extraWavetime: -9
       waypoints: {fileID: 2011100626}
@@ -19465,19 +19465,19 @@ MonoBehaviour:
         type: 3}
       amountEnemy: 19
       rate: 1.06
-      extraWavetime: 0
+      extraWavetime: -15.2
       waypoints: {fileID: 1376528712}
     - enemy: {fileID: 857471916493421472, guid: 1d364fe4f870e496881b65624ee06a47,
         type: 3}
       amountEnemy: 25
       rate: 0.55
-      extraWavetime: -5.84
+      extraWavetime: -18.23
       waypoints: {fileID: 2011100626}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
       amountEnemy: 10
       rate: 1.07
-      extraWavetime: -2.26
+      extraWavetime: -3.8
       waypoints: {fileID: 1376528712}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
@@ -19490,25 +19490,25 @@ MonoBehaviour:
         type: 3}
       amountEnemy: 25
       rate: 0.83
-      extraWavetime: 0
+      extraWavetime: -11.38
       waypoints: {fileID: 1376528712}
     - enemy: {fileID: 857471916493421472, guid: 1d364fe4f870e496881b65624ee06a47,
         type: 3}
       amountEnemy: 20
       rate: 0.8
-      extraWavetime: -5
+      extraWavetime: -9.83
       waypoints: {fileID: 2011100626}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
       amountEnemy: 20
       rate: 0.8
-      extraWavetime: -2.95
+      extraWavetime: -16.17
       waypoints: {fileID: 1376528712}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
       amountEnemy: 31
       rate: 0.67
-      extraWavetime: 2.85
+      extraWavetime: 15.86
       waypoints: {fileID: 2011100626}
   waveCountdownText: {fileID: 820295019}
 --- !u!4 &1137158140
