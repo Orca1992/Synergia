@@ -17114,7 +17114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.122641504, b: 0.120754704, a: 0.46666667}
+  m_Color: {r: 0, g: 0.122641504, b: 0.120754704, a: 0.5882353}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -31303,14 +31303,14 @@ RectTransform:
   m_GameObject: {fileID: 1710396119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1498, z: 1}
   m_Children: []
   m_Father: {fileID: 950650691}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -16.2}
   m_SizeDelta: {x: 600, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710396121
@@ -31349,10 +31349,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b1a5f892d5929b844851202c0fbeef23, type: 3}
-    m_FontSize: 31
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 126
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -31360,17 +31360,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Wave 1: 15 Enemies
-
-
-    Wave 2: 20 Enemies
-
-
-    Wave 3: 25 Enemies
-
-
-    Wave
-    4: 30 Enemies'
+  m_Text: "Wave 1: 15 Easy + 5 Medium \n\nWave 2: 25 Easy + 12 Medium\n\nWave 3:
+    30 Easy + 15 Medium + 5 Strong\n\nWave 4: 35 Easy + 20 Medium + 10 Strong\n\nWave
+    5: 40 Easy + 30 Medium + 15 Strong\n\nWave 6: 50 Easy +40 Medium + 20 Strong"
 --- !u!222 &1710396123
 CanvasRenderer:
   m_ObjectHideFlags: 0

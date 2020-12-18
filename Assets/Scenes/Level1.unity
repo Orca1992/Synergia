@@ -22433,10 +22433,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b1a5f892d5929b844851202c0fbeef23, type: 3}
-    m_FontSize: 31
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 126
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -22444,17 +22444,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Wave 1: 15 Enemies
+  m_Text: 'Wave 1: 15 Weak Enemies
 
 
-    Wave 2: 45 Enemies
+    Wave 2: 27 Weak  Enemies
 
 
-    Wave 3: 55 Enemies
+    Wave 3: 30
+    Weak Enemies + 5 Medium Enemies
 
 
-    Wave
-    4: 40 Enemies'
+    Wave 4: 30 Weak + 8 Medium + 3 Strong Enemies'
 --- !u!222 &1176082756
 CanvasRenderer:
   m_ObjectHideFlags: 0
