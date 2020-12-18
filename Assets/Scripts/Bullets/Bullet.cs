@@ -42,6 +42,7 @@ public class Bullet : MonoBehaviour
 
         //wenn es kein ziel getroffen hat
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+        transform.LookAt(target);
     }
 
     public void HitTarget()
