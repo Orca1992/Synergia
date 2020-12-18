@@ -385,7 +385,7 @@ PrefabInstance:
     - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
       propertyPath: combination.Array.data[3].damage
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 839331224480940364, guid: 443ab1aec91be4ff4a1c2aa03a69e163,
         type: 3}
