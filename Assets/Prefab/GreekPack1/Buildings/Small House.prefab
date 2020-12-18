@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 4267855745796432}
   - component: {fileID: 33342754087457564}
   - component: {fileID: 23564402923455070}
-  - component: {fileID: 65290086008607082}
   m_Layer: 0
   m_Name: greek_floor_wood (4)
   m_TagString: Untagged
@@ -239,19 +238,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65290086008607082
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032063256447012}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 0.120000005, z: 3.0000021}
-  m_Center: {x: 0, y: -0.040000007, z: 0}
 --- !u!1 &1051516774311084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,7 +1981,6 @@ GameObject:
   - component: {fileID: 4713049795853788}
   - component: {fileID: 33536825424396568}
   - component: {fileID: 23992743393471304}
-  - component: {fileID: 65083898204369666}
   m_Layer: 0
   m_Name: greek_floor_wood (6)
   m_TagString: Untagged
@@ -2064,19 +2049,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65083898204369666
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276381072245494}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 0.120000005, z: 3.0000021}
-  m_Center: {x: 0, y: -0.040000007, z: 0}
 --- !u!1 &1294708363107510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,7 +2141,6 @@ GameObject:
   - component: {fileID: 4507714935975330}
   - component: {fileID: 33607397925033322}
   - component: {fileID: 23265360249936592}
-  - component: {fileID: 65414461609296688}
   m_Layer: 0
   m_Name: greek_floor_wood
   m_TagString: Untagged
@@ -2238,19 +2209,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65414461609296688
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307393913551264}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 0.120000005, z: 3.0000021}
-  m_Center: {x: 0, y: -0.040000007, z: 0}
 --- !u!1 &1352478554795874
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,7 +3094,6 @@ GameObject:
   - component: {fileID: 4659448865825390}
   - component: {fileID: 33860297989504054}
   - component: {fileID: 23847491520196236}
-  - component: {fileID: 65137306131689708}
   m_Layer: 0
   m_Name: greek_floor_wood (3)
   m_TagString: Untagged
@@ -3205,19 +3162,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65137306131689708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501383767051698}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 0.120000005, z: 3.0000021}
-  m_Center: {x: 0, y: -0.040000007, z: 0}
 --- !u!1 &1504905873471062
 GameObject:
   m_ObjectHideFlags: 0
@@ -3229,7 +3173,6 @@ GameObject:
   - component: {fileID: 4684321756816484}
   - component: {fileID: 33392856750683554}
   - component: {fileID: 23601793515298166}
-  - component: {fileID: 65997222685261942}
   m_Layer: 0
   m_Name: greek_floor_wood (7)
   m_TagString: Untagged
@@ -3298,19 +3241,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65997222685261942
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504905873471062}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 0.120000005, z: 3.0000021}
-  m_Center: {x: 0, y: -0.040000007, z: 0}
 --- !u!1 &1534817157942526
 GameObject:
   m_ObjectHideFlags: 0
@@ -4175,7 +4105,6 @@ GameObject:
   - component: {fileID: 4858835986646254}
   - component: {fileID: 33354894238772972}
   - component: {fileID: 23892088329437100}
-  - component: {fileID: 65158509243988596}
   m_Layer: 0
   m_Name: greek_floor_wood (5)
   m_TagString: Untagged
@@ -4244,19 +4173,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65158509243988596
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662378325947148}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 0.120000005, z: 3.0000021}
-  m_Center: {x: 0, y: -0.040000007, z: 0}
 --- !u!1 &1668131117388972
 GameObject:
   m_ObjectHideFlags: 0
@@ -4506,7 +4422,6 @@ GameObject:
   - component: {fileID: 4836366135467604}
   - component: {fileID: 33749030384022538}
   - component: {fileID: 23875556178360712}
-  - component: {fileID: 65277135455009698}
   m_Layer: 0
   m_Name: greek_floor_wood (1)
   m_TagString: Untagged
@@ -4575,19 +4490,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65277135455009698
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682118505345550}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 0.120000005, z: 3.0000021}
-  m_Center: {x: 0, y: -0.040000007, z: 0}
 --- !u!1 &1696814205622384
 GameObject:
   m_ObjectHideFlags: 0
@@ -5475,7 +5377,6 @@ GameObject:
   - component: {fileID: 4561401501603356}
   - component: {fileID: 33000098101827628}
   - component: {fileID: 23685520568611840}
-  - component: {fileID: 64035726400400476}
   m_Layer: 0
   m_Name: greek_bucket
   m_TagString: Untagged
@@ -5544,20 +5445,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64035726400400476
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852636260610358}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 1a06dfb6886bc4a6f8ff0e5f0c1842fc, type: 3}
 --- !u!1 &1856373451336688
 GameObject:
   m_ObjectHideFlags: 0
@@ -6429,7 +6316,6 @@ GameObject:
   - component: {fileID: 4963787575974436}
   - component: {fileID: 33494072174005034}
   - component: {fileID: 23242775079668652}
-  - component: {fileID: 65247613375642842}
   m_Layer: 0
   m_Name: greek_floor_wood (2)
   m_TagString: Untagged
@@ -6498,19 +6384,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65247613375642842
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941403896882790}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 0.120000005, z: 3.0000021}
-  m_Center: {x: 0, y: -0.040000007, z: 0}
 --- !u!1 &1959835276407300
 GameObject:
   m_ObjectHideFlags: 0
