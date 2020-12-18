@@ -95,8 +95,6 @@ public class Statue : MonoBehaviour
         if (statueType == GodType.Hermes)
             return;
 
-        
-
         //shooting Rate
         if(useBeam)
         {
