@@ -53944,7 +53944,7 @@ MonoBehaviour:
     11: 38 Weak + 28 Medium + 20 Strong
 
 
-    Wave 12: 40 Weak + 30 Medium + 22 Strong'
+    Wave 12: 40 Weak + 30 Medium + 30 Strong'
 --- !u!222 &1848526402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60034,7 +60034,7 @@ MonoBehaviour:
       waypoints: {fileID: 1451485964}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 11
+      amountEnemy: 15
       rate: 0.7
       extraWavetime: 0
       waypoints: {fileID: 1451485964}
@@ -60046,7 +60046,7 @@ MonoBehaviour:
       waypoints: {fileID: 1824954633}
     - enemy: {fileID: 519219105013691006, guid: c0f1ca98acad94265831d8839ef5954f,
         type: 3}
-      amountEnemy: 11
+      amountEnemy: 15
       rate: 0.8
       extraWavetime: 40
       waypoints: {fileID: 1824954633}
