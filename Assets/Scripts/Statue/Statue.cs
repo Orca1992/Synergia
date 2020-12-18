@@ -95,15 +95,11 @@ public class Statue : MonoBehaviour
         if (statueType == GodType.Hermes)
             return;
 
-        
-
         //shooting Rate
         if(useBeam)
         {
             if (target == null)
             {
-                //line.enabled = false;
-                //impactBeam.GetComponent<ParticleSystem>().Stop();
                 ParticleBeam.GetComponent<ParticleSystem>().Stop();
             }
             else
@@ -134,21 +130,10 @@ public class Statue : MonoBehaviour
         target.GetComponent<Enemy>().Slow(towerStats.fireRate + upgradeStats.fireRate);
 
         //graphic
-        //if (!line.enabled)
-        //{
-            //line.enabled = true;
-            
 
-        //}
         ParticleBeam.GetComponent<ParticleSystem>().Play();
         Vector3 direction = target.position - firePointPoseidon.position;
         ParticleBeam.LookAt(target);
-        //line.SetPosition(0, firePointPoseidon.position);
-        //line.SetPosition(1, target.position);
-
-        //target Animation
-        //impactBeam.transform.position = target.position;
- 
 
     }
 

@@ -44,8 +44,6 @@ public class Node : MonoBehaviour
             return;
         }
 
-        //buildManager.SelectedNode(this);
-
     }
 
     void OnMouseEnter()
