@@ -198,6 +198,8 @@ MonoBehaviour:
   worth: 20
   die_effect: {fileID: 1948246521168881508, guid: c7d1f5291222b4bb9b8a20eeb753d903,
     type: 3}
+  Highlight: {fileID: 2100000, guid: 9559500d0410c4d29a79be7eb2d174c1, type: 2}
+  renderer: {fileID: 3341084466186428492}
 --- !u!65 &2015289835888693820
 BoxCollider:
   m_ObjectHideFlags: 0
